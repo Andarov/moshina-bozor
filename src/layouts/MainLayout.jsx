@@ -4,13 +4,13 @@ import Footer from '../components/Footer'
 import {Outlet} from 'react-router-dom'
 const MainLayout = () => {
   return (
-    <>
+    <div className='font-montserrat'>
         <Header/>
         <main>
             <Outlet/>
         </main>
         <Footer/>
-    </>
+    </div>
   )
 }
 

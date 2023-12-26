@@ -6,8 +6,15 @@ export default {
   ],
   theme: {
     extend: {
+      colors:{
+        'main': '#E70A32',
+        '111': '#111'
+      },
       fontFamily:{
         'montserrat': ['Montserrat', 'sans-serif']
+      },
+      maxWidth:{
+        'base': '1210px'
       }
     },
   },
