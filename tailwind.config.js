@@ -15,6 +15,9 @@ export default {
       },
       maxWidth:{
         'base': '1210px'
+      },
+      backgroundImage:{
+        'heroBg': "linear-gradient(180deg, rgba(9, 22, 31, 0.70) 0%, #09161F 1000%), url('./img/heroBg.jpg')"
       }
     },
   },
