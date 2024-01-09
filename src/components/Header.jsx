@@ -4,7 +4,7 @@ import {Link, NavLink} from 'react-router-dom'
 import phone from '../img/phone.svg'
 const Header = () => {
   return (
-    <header className='py-5'>
+    <header className='py-5 shadow-header-shadow'>
         <div className="flex justify-between items-center w-full max-w-base mx-auto px-5">
             <Link className='text-[28px] text-main font-bold leading-9' to='/'>
                 <h1>Moshina bozor</h1>
