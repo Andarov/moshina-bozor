@@ -2,6 +2,7 @@ import React from 'react'
 import Catalog from '../components/Catalog'
 import Hero from '../components/Hero'
 import New from '../components/New'
+import News from '../components/News'
 
 const Home = () => {
   return (
@@ -9,6 +10,9 @@ const Home = () => {
         <Hero/>
         <Catalog/>
         <New/>
+        <div className='py-14 bg-[#F2F4F6]'>
+          <News/>
+        </div>
     </>
   )
 }
