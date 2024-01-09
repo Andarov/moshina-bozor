@@ -470,3 +470,62 @@ export const cars = [
         date: '08.01.2024'
     },
 ];
+
+import nomer from './img/news/nomer.jpeg'
+import roewe from './img/news/roewe.jpeg'
+import sony from './img/news/sony.jpeg'
+import uzAM from './img/news/uzAM.jpeg'
+import volga from './img/news/volga.jpeg'
+import xitoy from './img/news/xitoy.jpeg'
+
+export const news = [
+    {
+        id: uuidv4(),
+        img: xitoy,
+        title: "2023 yilda eng ko‘p avtomobilni qaysi davlat eksport qilgani ma’lum bo‘ldi",
+        date: '09-01-2024',
+        text: "2023 yilning oxiriga kelib, Xitoy tashqi bozorlarga jo‘natmalarning ko‘payishi hamda global elektromobil sanoatining o‘sishi tufayli birinchi marta dunyodagi eng yirik avtomobil eksportchisiga aylanishi mumkin. Bu haqda Nikkei ma’lum qildi, deya xabar beradi Kazinform. Xitoy avtomobil ishlab chiqaruvchilar assosiasiyasining (CAAM) dastlabki ma’lumotlariga ko‘ra, Xitoy joriy yil yanvar-noyabr oylari davomida 4,41 million avtomobil eksport qilgan.Yaponiya joriy yilning 11 oyida 3,99 million dona avtomobil eksport qildi va 2023 yil oxiriga kelib jami eksport hajmi taxminan 4,3 millionga yetishi mumkin. Nashrning yozishicha, yanvardan oktyabrgacha Xitoy Rossiyaga 730 ming dona avtomobil eksport qilgan, bu o‘tgan yilga nisbatan yetti barobar ko‘pdir.O‘z navbatida, Meksikaga avtomobil yetkazib berish yiliga 71 foizga o‘sdi va 330 mingtani tashkil etdi. Xitoy joriy yilda elektr va boshqa muqobil energiya vositalarining global eksportini kengaytirdi. Xitoyning yangi elektromobillari eksporti 2023 yilning birinchi 11 oyida 1,09 million donani tashkil etdi, bu o‘tgan yilning shu davriga nisbatan 83,5 foizga ko‘pdir."
+    },
+    {
+        id: uuidv4(),
+        img: nomer,
+        title: "Yangi avtomobilga raqam olish va ro'yxatdan o'tkazish qancha?",
+        date: '08-01-2024',
+        text: "Qonunchilikka ko'ra, avtomototransport vositalariga ro'yxatdan o'tkazish davlat raqami belgilarini berishda hamda ularni ro'yxatdan o'tkazishda quyidagi to'lovlar undirilishi belgilangan: Avtotransport vositalariga ro'yxatdan o'tkazish davlat raqami belgilari (RO'DRB) uchun BHMning 3,5 baravari (1 mln 190 ming so'm) miqdorida; Avtomototransport vositalarini va ularning tirkamalari (yarim tirkamalari)ni ro'yxatdan o'tkazish va qayta ro'yxatdan o'tkazish uchun BHMning10 foizi (34 ming so'm) miqdorida; Avtomototransport vositasi ro'yxatdan o'tkazilganligi to'g'risida guvohnomani berish uchun BHMning 70 foizi (238 ming so'm) miqdorida."
+    },
+    {
+        id: uuidv4(),
+        img: sony,
+        title: "Sony o‘zining ilk elektromobilini namoyish etdi",
+        date: '07-01-2024',
+        text: "Sony o‘zining ilk elektromobilini namoyish etdi. Uni sahnaga DualSense geympadi bilan boshqarib chiqarishdi. Elektromobil ustida Honda bilan birgalikda ishlashgan. Mashina ichida tirbandlikda turganda zerikib qolmaslik uchun top o‘yinlar ham o‘rnatilgan."
+    },
+    {
+        id: uuidv4(),
+        img: roewe,
+        title: "Roewe D5X DMH taqdim etildi",
+        date: '07-01-2024',
+        text: "Roewe’ning yangi modeli bir martalik to‘liq quvvatlanish va to‘la benzin baki bilan CLTC sikli bo‘yicha 1300 km masofa bosib o‘ta oladi. Avtomobil 100 kmga 5,25 litr benzin sarf qiladi. 100 km tezlikka esa 6,9 soniyada chiqadi. Hozircha uning narxi ma’lum qilinmadi."
+    },
+    {
+        id: uuidv4(),
+        img: volga,
+        title: "Rossiyada “Volga” avtomobilining ehtimoliy dizayni suratlari internetda tarqaldi",
+        date: '07-01-2024',
+        text: "Rossiyada “Volga” avtomobilining ehtimolli dizayni suratlari Internetda tarqaldi. Rossiyada ushbu qadimiy markadagi yangilangan avtomobillar Xitoy kompaniyalaridan biri ishtirokida ishlab chiqarilishi mumkin"
+    },
+    {
+        id: uuidv4(),
+        img: uzAM,
+        title: "UzAuto Motors avtomobillarni o‘z egalariga topshirishni vaqtincha to‘xtatib turadi",
+        date: '04-01-2024',
+        text: "“UzAuto Motors” avtomobillarni o‘z egasiga topshirishni vaqtincha to‘xtatib turadi. Bu haqda kompaniya matbuot xizmati xabar berdi. “4−8-yanvar kunlari „Chevrolet“ dilerlik markazlarida rejalashtirilgan inventarizasiya ishlari olib boriladi. Shu sababli, ushbu davr mobaynida avtomobillarni o‘z egasiga topshirish vaqtincha to‘xtatiladi”, — deyiladi kompaniya xabarida."
+    },
+    {
+        id: uuidv4(),
+        img: kiaSorento,
+        title: "“Inomarka”larning faqat dilerlar tomonidan sotilishi tartibi qayta tiklanishi mumkin",
+        date: '29-12-2023',
+        text: "O‘zbekiston hukumati 2023 yil 15 avgustdagi qarori bilan, import qilingan avtomobillarni faqat ishlab chiqaruvchi korxonaning rasmiy dileri tomonidan sotilishiga oid talabni bekor qilgan va bu avtomobil bozorida raqobat muhitini yaxshilashda muhim qadam deb baholangan edi. Ma’lum bo‘lishicha, oradan yarim yil o‘tmay, bu tartibni tiklash masalasi ko‘rib chiqilmoqda. Bu haqda Kun.uz xabar berdi. Shu kunlarda ijtimoiy tarmoqlarda Vazirlar Mahkamasining “Respublika hududiga yengil avtomobillar olib kirishni va ularning muvofiqligini baholash tizimini yanada takomillashtirish chora-tadbirlari to‘g‘risida”gi qarori loyihasi tarqaldi. Loyiha project.gov.uz portaliga idoralararo kelishuv uchun joylangani aytilmoqda. Loyihada yangi import avtotransport vositalari faqat yuridik shaxslar – ishlab chiqaruvchi korxonalarning rasmiy dilerlari tomonidan servis markazlarini tashkil etish sharti bilan sotilishi nazarda tutilgan. Shuningdek, bir yilda 50 donadan ko‘p elektromobil sotgan tadbirkorlik sub’ektlariga ularni quvvatlash stansiyasini tashkil etish va uzluksiz ishlashini ta’minlash majburiyati yuklatilishi mumkin. Qaror loyihasiga ko‘ra, jismoniy shaxslar tomonidan 1 yilda 1 marta o‘z ehtiyoji uchun, o‘z nomiga rasmiylashtirilgan holda olib kiriladigan transport vositalari majburiy sertifikatlashgan ozod etiladi. Ayni paytda, jismoniy shaxslar tomonidan avtotransport vositalarini tijorat maqsadida respublikaga olib kirish taqiqlanishi mumkin. Jismoniy shaxs transport vositasini olib kirayotganida tijoriy maqsadni ko‘zlaganiga qanday baho berilishiga aniqlik kiritilmagan. Shuningdek, davlat korxonalari va tadbirkorlik sub’ektlari tomonidan o‘z ehtiyojlari uchun olib kiriladigan, respublika hududida sotish uchun mo‘ljallanmagan transport vositalarini ham majburiy sertifikatlashdan ozod etish taklif etilmoqda. Bunda, jismoniy shaxslardan farqli o‘laroq, korxonalarga sertifikatlashdan ozod etiladigan import transport vositalari soni bo‘yicha cheklov belgilanmagan. Respublika hududiga tijorat maqsadlarida olib kiriladigan transport vositalari, elektrobus va eletromobillarga xorijiy davlatlarining mavjud sertifikatlari yoki akkreditasiyalangan laboratoriyalari tomonidan taqdim etilgan sinov bayonnomalari asosida hamda O‘zbekiston Respublikasida akkreditasiyalangan laboratoriyalarning imkoniyatlaridan kelib chiqqan holda, transport vositasining turini ma’qullash hujjatlarini rasmiylashtirishga ruxsat berilishi mumkin. Davlat reestriga kiritilgan transport vositasining turini ma’qullash hujjatlari asosida, jismoniy va yuridik shaxslar tomonidan o‘z extiyoji uchun 1 kalendar yilida respublika hududiga 1 dona takroran olib kirilgan (import) shu turdagi transport vositalari qayta sinovdan o‘tkazilmasdan va sertifikatlashtirmasdan, erkin muomalaga chiqarilishi ko‘zda tutilmoqda."
+    }
+]
