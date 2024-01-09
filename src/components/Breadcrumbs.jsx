@@ -7,7 +7,7 @@ const Breadcrumbs = () => {
   const tayyorArr = pathArr.filter((path) => path !== "");
 
   return (
-    <ul className="flex mb-10 text-base leading-6 text-[#767980]">
+    <ul className="flex text-base leading-6 text-[#767980]">
       <li>
         <Link to="/">
           <span>Bosh sahifa</span> 

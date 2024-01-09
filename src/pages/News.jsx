@@ -4,18 +4,18 @@ import { news } from "../data";
 
 const News = () => {
   return (
-    <section>
+    <div className="pb-20">
       <div className="w-full max-w-base mx-auto px-5">
-        <h2 className="text-4xl leading-10 text-111 font-bold mb-9">
-          So'nggi yangiliklar
+        <h2 className="text-4xl leading-10 text-111 font-bold mt-5 mb-8">
+          Yangiliklar
         </h2>
 
-        <ul className="grid grid-cols-3 gap-7">
-          {news.slice(0, 3).map((newsItem) => {
+        <ul className="grid grid-cols-3 gap-x-7 gap-y-10">
+          {news.map((newsItem) => {
             return (
               <li key={newsItem.id}>
                 <img
-                  className="w-full h-[260px] rounded-[18px] mb-5"
+                  className="w-full h-[260px] rounded-[18px] mb-5 object-cover"
                   height={260}
                   src={newsItem.img}
                   alt={newsItem.title}
@@ -39,7 +39,7 @@ const News = () => {
           })}
         </ul>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -10,7 +10,7 @@ const MainLayout = () => {
     <div className="font-montserrat">
       <Header />
       <main>
-        <div className="w-full max-w-base mx-auto px-5">
+        <div className={`w-full max-w-base mx-auto px-5 ${!home ? 'pt-5' : 'pt-0'}`}>
           {!home && <Breadcrumbs />}
         </div>
         <Outlet />
