@@ -10,7 +10,7 @@ const Catalog = () => {
   });
 
   return (
-    <section className="pt-16 pb-8">
+    <section className="pt-14 pb-7">
       <div className="w-full max-w-base mx-auto px-5">
         <h2 className="text-4xl leading-10 text-center text-111 font-bold mb-10">
           Mavjud avtomashina markalari
@@ -28,10 +28,10 @@ const Catalog = () => {
               >
                 <div className="flex items-center space-x-2">
                   <img
-                      src={cars.find((car) => car.model === model)?.logo}
-                      alt={`${model} logo`}
-                      className="w-12 h-12 object-cover mr-2"
-                    />
+                    src={cars.find((car) => car.model === model)?.logo}
+                    alt={`${model} logo`}
+                    className="w-12 h-12 object-cover mr-2"
+                  />
                   <h3 className="text-111">{model}</h3>
                 </div>
                 <span className="text-[#919395]">{modelCounts[model]}</span>

@@ -134,6 +134,7 @@ export const cars = [
         place: 'Andijon',
         color: 'oq',
         images: [malibu, malibu2, malibu3, malibu4],
+        date: '23.12.2023'
     },
     {
         id: uuidv4(),
@@ -145,7 +146,8 @@ export const cars = [
         price: 180000000,
         place: 'Buxoro',
         color: 'qora',
-        images: [onix, onix2, onix3, onix4]
+        images: [onix2,onix, onix3, onix4],
+        date: '20.12.2023'
     },
     {
         id: uuidv4(),
@@ -157,7 +159,8 @@ export const cars = [
         price: 230000000,
         place: 'Samarqand',
         color: 'qora',
-        images: [tracker, tracker2, tracker3, tracker4]
+        images: [tracker, tracker2, tracker3, tracker4],
+        date: '09.01.2024'
     },
     {
         id: uuidv4(),
@@ -169,7 +172,8 @@ export const cars = [
         price: 258000000,
         place: 'Namangan',
         color: 'white',
-        images: [captiva, captiva2, captiva3, captiva4]
+        images: [captiva, captiva2, captiva3, captiva4],
+        date: '29.12.2023'
     },
     {
         id: uuidv4(),
@@ -181,7 +185,8 @@ export const cars = [
         price: 142000000,
         place: 'Jizzax',
         color: 'qora',
-        images: [cobalt, cobalt2, cobalt3, cobalt4]
+        images: [cobalt, cobalt2, cobalt3, cobalt4],
+        date: '25.12.2023'
     },
     {
         id: uuidv4(),
@@ -193,7 +198,8 @@ export const cars = [
         price: 93000000,
         place: 'Fargona',
         color: 'oq',
-        images: [damas, damas2, damas3, damas3, damas4]
+        images: [damas, damas2, damas3, damas3, damas4],
+        date: '31.12.2023'
     },
     {
         id: uuidv4(),
@@ -205,7 +211,8 @@ export const cars = [
         price: 42000000,
         place: 'Sirdaryo',
         color: 'och kulrang',
-        images: [matiz, matiz2, matiz3, matiz4]
+        images: [matiz, matiz2, matiz3, matiz4],
+        date: '03.12.2023'
     },
     {
         id: uuidv4(),
@@ -217,7 +224,8 @@ export const cars = [
         price: 102000000,
         place: 'Andijon',
         color: 'qora',
-        images: [ravon, ravon2, ravon3, ravon4]
+        images: [ravon, ravon2, ravon3, ravon4],
+        date: '27.12.2023'
     },
     {
         id: uuidv4(),
@@ -229,7 +237,8 @@ export const cars = [
         price: 189000000,
         place: 'Buxoro',
         color: 'qora',
-        images: [monza, monza2, monza3, monza4]
+        images: [monza2, monza, monza3, monza4],
+        date: '10.01.2024'
     },
     {
         id: uuidv4(),
@@ -241,7 +250,8 @@ export const cars = [
         price: 74000000,
         place: 'Jizzax',
         color: 'oq',
-        images: [nexia, nexia2, nexia3, nexia4]
+        images: [nexia, nexia2, nexia3, nexia4],
+        date: '29.12.2023'
     },
     {
         id: uuidv4(),
@@ -253,7 +263,8 @@ export const cars = [
         price: 144000000,
         place: 'Fargona',
         color: 'oq',
-        images: [gentra, gentra2, gentra3, gentra4]
+        images: [gentra, gentra2, gentra3, gentra4],
+        date: '31.12.2023'
     },
     {
         id: uuidv4(),
@@ -265,7 +276,8 @@ export const cars = [
         price: 94000000,
         place: 'Fargona',
         color: 'oq',
-        images: [labo, labo2, labo3, labo4]
+        images: [labo, labo2, labo3, labo4],
+        date: '24.12.2023'
     },
     {
         id: uuidv4(),
@@ -277,7 +289,8 @@ export const cars = [
         price: 74000000,
         place: 'Fargona',
         color: 'oq',
-        images: [spark, spark2, spark3, spark4]
+        images: [spark, spark2, spark3, spark4],
+        date: '23.12.2023'
     },
 
     // audi
@@ -291,7 +304,8 @@ export const cars = [
         price: 250000000,
         place: 'Fargona',
         color: 'kulrang',
-        images: [audiA1, audiA1second, audiA1third, audiA1firth]
+        images: [audiA1, audiA1second, audiA1third, audiA1firth],
+        date: '27.12.2023'
     },
     {
         id: uuidv4(),
@@ -303,7 +317,8 @@ export const cars = [
         price: 462000000,
         place: 'Andijon',
         color: 'oq',
-        images: [audiA4, audiA4second, audiA4third, audiA4firth]
+        images: [audiA4, audiA4second, audiA4third, audiA4firth],
+        date: '31.12.2023'
     },
     {
         id: uuidv4(),
@@ -315,7 +330,8 @@ export const cars = [
         price: 562000000,
         place: 'Samarqand',
         color: 'kulrang',
-        images: [audiA5, audiA5second, audiA5third, audiA5firth]
+        images: [audiA5, audiA5second, audiA5third, audiA5firth],
+        date: '08.01.2024'
     },
     {
         id: uuidv4(),
@@ -327,7 +343,8 @@ export const cars = [
         price: 592000000,
         place: 'Sirdaryo',
         color: "ko'k",
-        images: [audiQ5, audiQ5second, audiQ5third, audiQ5firth]
+        images: [audiQ5, audiQ5second, audiQ5third, audiQ5firth],
+        date: '23.12.2023'
     },
     {
         id: uuidv4(),
@@ -339,7 +356,8 @@ export const cars = [
         price: 703000000,
         place: 'Andijon',
         color: "kulrang",
-        images: [audiQ7, audiQ7second, audiQ7third, audiQ7firth]
+        images: [audiQ7, audiQ7second, audiQ7third, audiQ7firth],
+        date: '01.01.2024'
     },
 
     // kia
@@ -353,7 +371,8 @@ export const cars = [
         price: 353000000,
         place: 'Namangan',
         color: "oq",
-        images: [kiaK5, kiaK5second, kiaK5third, kiaK5firth]
+        images: [kiaK5, kiaK5second, kiaK5third, kiaK5firth],
+        date: '05.01.2024'
     },
     {
         id: uuidv4(),
@@ -365,7 +384,8 @@ export const cars = [
         price: 453000000,
         place: 'Toshkent',
         color: "oq",
-        images: [kiaSorento, kiaSorento2, kiaSorento3, kiaSorento4]
+        images: [kiaSorento, kiaSorento2, kiaSorento3, kiaSorento4],
+        date: '06.01.2024'
     },
     {
         id: uuidv4(),
@@ -377,7 +397,8 @@ export const cars = [
         price: 499000000,
         place: 'Andijon',
         color: "oq",
-        images: [kiaSportage1, kiaSportage2, kiaSportage3, kiaSportage4]
+        images: [kiaSportage1, kiaSportage2, kiaSportage3, kiaSportage4],
+        date: '09.01.2024'
     },
 
     // mers
@@ -386,12 +407,13 @@ export const cars = [
         model: 'Mersedes',
         logo: mers,
         marka: 'AMG',
-        year: 2020,
-        run: 209000,
+        year: 2023,
+        run: 29000,
         price: 799000000,
         place: 'Buxoro',
         color: "qora",
-        images: [mersAMG, mersAMG2, mersAMG3, mersAMG4]
+        images: [mersAMG, mersAMG2, mersAMG3, mersAMG4],
+        date: '23.12.2023'
     },
     {
         id: uuidv4(),
@@ -403,7 +425,8 @@ export const cars = [
         price: 499000000,
         place: 'Samarqand',
         color: "qora",
-        images: [mersGLC, mersGLC2, mersGLC3, mersGLC4]
+        images: [mersGLC, mersGLC2, mersGLC3, mersGLC4],
+        date: '08.01.2024'
     },
     {
         id: uuidv4(),
@@ -415,7 +438,8 @@ export const cars = [
         price: 2499000000,
         place: 'Andijon',
         color: "qora",
-        images: [mersMaybach, mersMaybach2, mersMaybach3, mersMaybach4]
+        images: [mersMaybach, mersMaybach2, mersMaybach3, mersMaybach4],
+        date: '10.01.2024'
     },
 
     // tayota
@@ -429,7 +453,8 @@ export const cars = [
         price: 599000000,
         place: 'Buxoro',
         color: "ko'k",
-        images: [tayotaCamry, tayotaCamry2, tayotaCamry3, tayotaCamry4]
+        images: [tayotaCamry, tayotaCamry2, tayotaCamry3, tayotaCamry4],
+        date: '01.01.2024'
     },
     {
         id: uuidv4(),
@@ -441,6 +466,7 @@ export const cars = [
         price: 789000000,
         place: 'Andijon',
         color: "Qizil (black-line)",
-        images: [tayotaCrown, tayotaCrown2, tayotaCrown3, tayotaCrown4]
+        images: [tayotaCrown, tayotaCrown2, tayotaCrown3, tayotaCrown4],
+        date: '08.01.2024'
     },
 ];
