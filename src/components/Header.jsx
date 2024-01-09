@@ -7,22 +7,19 @@ const Header = () => {
     <header className='py-5'>
         <div className="flex justify-between items-center w-full max-w-base mx-auto px-5">
             <Link className='text-[28px] text-main font-bold leading-9' to='/'>
-                <h1>AвтоЭксперт</h1>
+                <h1>Moshina bozor</h1>
             </Link>
 
             <nav>
                 <ul className='flex items-center space-x-10 text-lg font-medium text-111 leading-7'>
                     <li>
-                        <NavLink to='/catalog'>Каталог</NavLink>
+                        <NavLink to='/catalog'>Katalog</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/catalog'>Акции</NavLink>
+                        <NavLink to='/aksiya'>Aksiya</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/catalog'>Кредит</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/catalog'>Контакты</NavLink>
+                        <NavLink to='/contact'>Bog'lanish</NavLink>
                     </li>
                 </ul>
             </nav>
