@@ -16,7 +16,7 @@ const Header = () => {
                         <NavLink to='/catalog'>Katalog</NavLink>
                     </li>
                     <li>
-                        <NavLink to='/aksiya'>Aksiya</NavLink>
+                        <NavLink to='/news'>Yangiliklar</NavLink>
                     </li>
                     <li>
                         <NavLink to='/contact'>Bog'lanish</NavLink>
