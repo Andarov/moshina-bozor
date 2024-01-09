@@ -1,56 +1,65 @@
-import {v4 as uuidv4} from 'uuidv4'
-import malibu from './img.malibu.jpg'
-import malibu2 from './img.malibu2.jpg'
-import malibu3 from './img.malibu3.jpg'
-import malibu4 from './img.malibu4.jpg'
-import onix from './img.onix.jpg'
-import onix2 from './img.onix2.jpg'
-import onix3 from './img.onix3.jpg'
-import onix4 from './img.onix4.jpg'
-import tracker from './img.tracker.jpg'
-import tracker2 from './img.tracker2.jpg'
-import tracker3 from './img.tracker3.jpg'
-import tracker4 from './img.tracker4.jpg'
-import captiva from './img.captiva.jpg'
-import captiva2 from './img.captiva2.jpg'
-import captiva3 from './img.captiva3.jpg'
-import captiva4 from './img.captiva4.jpg'
-import cobalt from './img.cobalt.jpg'
-import cobalt2 from './img.cobalt2.jpg'
-import cobalt3 from './img.cobalt3.jpg'
-import cobalt4 from './img.cobalt4.jpg'
-import damas from './img.damas.jpg'
-import damas2 from './img.damas2.jpg'
-import damas3 from './img.damas3.jpg'
-import damas4 from './img.damas4.jpg'
-import matiz from './img.matiz.jpg'
-import matiz2 from './img.matiz2.jpg'
-import matiz3 from './img.matiz3.jpg'
-import matiz4 from './img.matiz4.jpg'
-import ravon from './img.ravon.jpg'
-import ravon2 from './img.ravon2.jpg'
-import ravon3 from './img.ravon3.jpg'
-import ravon4 from './img.ravon4.jpg'
-import monza from './img.monza.jpg'
-import monza2 from './img.monza2.jpg'
-import monza3 from './img.monza3.jpg'
-import monza4 from './img.monza4.jpg'
-import nexia from './img.nexia.jpg'
-import nexia2 from './img.nexia2.jpg'
-import nexia3 from './img.nexia3.jpg'
-import nexia4 from './img.nexia4.jpg'
-import gentra from './img.gentra.jpg'
-import gentra2 from './img.gentra2.jpg'
-import gentra3 from './img.gentra3.jpg'
-import gentra4 from './img.gentra4.jpg'
-import labo from './img.labo.jpg'
-import labo2 from './img.labo2.jpg'
-import labo3 from './img.labo3.jpg'
-import labo4 from './img.labo4.jpg'
-import spark from './img.spark.jpg'
-import spark2 from './img.spark2.jpg'
-import spark3 from './img.spark3.jpg'
-import spark4 from './img.spark4.jpg'
+import {v4 as uuidv4} from 'uuid'
+
+// car model icons
+import chevrolet from './img/model/chevrolet.svg'
+import toyota from './img/model/toyota.svg'
+import mers from './img/model/mers.svg'
+import audi from './img/model/audi.svg'
+import kia from './img/model/kia.svg'
+
+// car markas images
+import malibu from './img/malibu.jpg'
+import malibu2 from './img/malibu2.jpg'
+import malibu3 from './img/malibu3.jpg'
+import malibu4 from './img/malibu4.jpg'
+import onix from './img/onix.jpg'
+import onix2 from './img/onix2.jpg'
+import onix3 from './img/onix3.jpg'
+import onix4 from './img/onix4.jpg'
+import tracker from './img/tracker.jpg'
+import tracker2 from './img/tracker2.jpg'
+import tracker3 from './img/tracker3.jpg'
+import tracker4 from './img/tracker4.jpg'
+import captiva from './img/captiva.jpg'
+import captiva2 from './img/captiva2.jpg'
+import captiva3 from './img/captiva3.jpg'
+import captiva4 from './img/captiva4.jpg'
+import cobalt from './img/cobalt.jpg'
+import cobalt2 from './img/cobalt2.jpg'
+import cobalt3 from './img/cobalt3.jpg'
+import cobalt4 from './img/cobalt4.jpg'
+import damas from './img/damas.jpg'
+import damas2 from './img/damas2.jpg'
+import damas3 from './img/damas3.jpg'
+import damas4 from './img/damas4.jpg'
+import matiz from './img/matiz.jpg'
+import matiz2 from './img/matiz2.jpg'
+import matiz3 from './img/matiz3.jpg'
+import matiz4 from './img/matiz4.jpg'
+import ravon from './img/ravon.jpg'
+import ravon2 from './img/ravon2.jpg'
+import ravon3 from './img/ravon3.jpg'
+import ravon4 from './img/ravon4.jpg'
+import monza from './img/monza.jpg'
+import monza2 from './img/monza2.jpg'
+import monza3 from './img/monza3.jpg'
+import monza4 from './img/monza4.jpg'
+import nexia from './img/nexia.jpg'
+import nexia2 from './img/nexia2.jpg'
+import nexia3 from './img/nexia3.jpg'
+import nexia4 from './img/nexia4.jpg'
+import gentra from './img/gentra.jpg'
+import gentra2 from './img/gentra2.jpg'
+import gentra3 from './img/gentra3.jpg'
+import gentra4 from './img/gentra4.jpg'
+import labo from './img/labo.jpg'
+import labo2 from './img/labo2.jpg'
+import labo3 from './img/labo3.jpg'
+import labo4 from './img/labo4.jpg'
+import spark from './img/spark.jpg'
+import spark2 from './img/spark2.jpg'
+import spark3 from './img/spark3.jpg'
+import spark4 from './img/spark4.jpg'
 
 // audi
 import audiA1 from './img/audiA1.jpg'
@@ -79,55 +88,57 @@ import kiaK5 from './img/kiaK5.jpg'
 import kiaK5second from './img/kiaK5second.jpg'
 import kiaK5third from './img/kiaK5third.jpg'
 import kiaK5firth from './img/kiaK5firth.jpg'
-import kiaSorento from './img.kiaSorento.jpg'
-import kiaSorento2 from './img.kiaSorento2.jpg'
-import kiaSorento3 from './img.kiaSorento3.jpg'
-import kiaSorento4 from './img.kiaSorento4.jpg'
-import kiaSportage from './img.kiaSportage.jpg'
-import kiaSportage2 from './img.kiaSportage2.jpg'
-import kiaSportage3 from './img.kiaSportage3.jpg'
-import kiaSportage4 from './img.kiaSportage4.jpg'
+import kiaSorento from './img/kiaSorento.jpg'
+import kiaSorento2 from './img/kiaSorento2.jpg'
+import kiaSorento3 from './img/kiaSorento3.jpg'
+import kiaSorento4 from './img/kiaSorento4.jpg'
+import kiaSportage1 from './img/kiaSportage1.jpg'
+import kiaSportage2 from './img/kiaSportage2.jpg'
+import kiaSportage3 from './img/kiaSportage3.jpg'
+import kiaSportage4 from './img/kiaSportage4.jpg'
 
 // mers
-import mersAMG from './img.mersAMG.jpg'
-import mersAMG2 from './img.mersAMG2.jpg'
-import mersAMG3 from './img.mersAMG3.jpg'
-import mersAMG4 from './img.mersAMG4.jpg'
-import mersGLC from './img.mersGLC.jpg'
-import mersGLC2 from './img.mersGLC2.jpg'
-import mersGLC3 from './img.mersGLC3.jpg'
-import mersGLC4 from './img.mersGLC4.jpg'
-import mersMaybach from './img.mersMaybach.jpg'
-import mersMaybach2 from './img.mersMaybach2.jpg'
-import mersMaybach3 from './img.mersMaybach3.jpg'
-import mersMaybach4 from './img.mersMaybach4.jpg'
+import mersAMG from './img/mersAMG.jpg'
+import mersAMG2 from './img/mersAMG2.jpg'
+import mersAMG3 from './img/mersAMG3.jpg'
+import mersAMG4 from './img/mersAMG4.jpg'
+import mersGLC from './img/mersGLC.jpg'
+import mersGLC2 from './img/mersGLC2.jpg'
+import mersGLC3 from './img/mersGLC3.jpg'
+import mersGLC4 from './img/mersGLC4.jpg'
+import mersMaybach from './img/mersMaybach.jpg'
+import mersMaybach2 from './img/mersMaybach2.jpg'
+import mersMaybach3 from './img/mersMaybach3.jpg'
+import mersMaybach4 from './img/mersMaybach4.jpg'
 
 // tayota
-import tayotaCamry from './img.tayotaCamry.jpg'
-import tayotaCamry2 from './img.tayotaCamry2.jpg'
-import tayotaCamry3 from './img.tayotaCamry3.jpg'
-import tayotaCamry4 from './img.tayotaCamry4.jpg'
-import tayotaCrown from './img.tayotaCrown.jpg'
-import tayotaCrown2 from './img.tayotaCrown2.jpg'
-import tayotaCrown3 from './img.tayotaCrown3.jpg'
-import tayotaCrown4 from './img.tayotaCrown4.jpg'
+import tayotaCamry from './img/tayotaCamry.jpg'
+import tayotaCamry2 from './img/tayotaCamry2.jpg'
+import tayotaCamry3 from './img/tayotaCamry3.jpg'
+import tayotaCamry4 from './img/tayotaCamry4.jpg'
+import tayotaCrown from './img/tayotaCrown.jpg'
+import tayotaCrown2 from './img/tayotaCrown2.jpg'
+import tayotaCrown3 from './img/tayotaCrown3.jpg'
+import tayotaCrown4 from './img/tayotaCrown4.jpg'
 
 export const cars = [
     // chevrolet
     {
         id: uuidv4(),
         model: 'Chevrolet',
+        logo: chevrolet,
         marka: 'Malibu',
         year: 2019,
         run: 32000,
         price: 252000000,
         place: 'Andijon',
         color: 'oq',
-        images: [malibu, malibu2, malibu3, malibu4]
+        images: [malibu, malibu2, malibu3, malibu4],
     },
     {
         id: uuidv4(),
         model: 'Chevrolet',
+        logo: chevrolet,
         marka: 'Onix',
         year: 2023,
         run: 10000,
@@ -139,6 +150,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Chevrolet',
+        logo: chevrolet,
         marka: 'Tracker-2',
         year: 2023,
         run: 8300,
@@ -150,6 +162,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Chevrolet',
+        logo: chevrolet,
         marka: 'Captiva',
         year: 2018,
         run: 83000,
@@ -161,6 +174,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Chevrolet',
+        logo: chevrolet,
         marka: 'Cobalt',
         year: 2020,
         run: 83000,
@@ -172,6 +186,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Chevrolet',
+        logo: chevrolet,
         marka: 'Damas',
         year: 2018,
         run: 65748,
@@ -183,6 +198,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Chevrolet',
+        logo: chevrolet,
         marka: 'Matiz',
         year: 2012,
         run: 200748,
@@ -194,6 +210,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Chevrolet',
+        logo: chevrolet,
         marka: 'Ravon',
         year: 2019,
         run: 62748,
@@ -205,6 +222,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Chevrolet',
+        logo: chevrolet,
         marka: 'Monza',
         year: 2023,
         run: 0,
@@ -216,6 +234,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Chevrolet',
+        logo: chevrolet,
         marka: 'Nexia 2',
         year: 2012,
         run: 290000,
@@ -227,6 +246,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Chevrolet',
+        logo: chevrolet,
         marka: 'Gentra',
         year: 2019,
         run: 120000,
@@ -238,6 +258,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Chevrolet',
+        logo: chevrolet,
         marka: 'Labo',
         year: 2022,
         run: 12000,
@@ -249,6 +270,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Chevrolet',
+        logo: chevrolet,
         marka: 'Spark',
         year: 2020,
         run: 250000,
@@ -262,6 +284,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Audi',
+        logo: audi,
         marka: 'A1',
         year: 2019,
         run: 120000,
@@ -273,6 +296,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Audi',
+        logo: audi,
         marka: 'A4',
         year: 2020,
         run: 119000,
@@ -284,6 +308,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Audi',
+        logo: audi,
         marka: 'A5',
         year: 2021,
         run: 89000,
@@ -295,6 +320,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Audi',
+        logo: audi,
         marka: 'Q5',
         year: 2022,
         run: 69000,
@@ -306,6 +332,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Audi',
+        logo: audi,
         marka: 'Q7',
         year: 2022,
         run: 69000,
@@ -319,6 +346,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Kia',
+        logo: kia,
         marka: 'K5',
         year: 2022,
         run: 179000,
@@ -330,6 +358,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Kia',
+        logo: kia,
         marka: 'Sorento',
         year: 2022,
         run: 129000,
@@ -341,19 +370,21 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Kia',
+        logo: kia,
         marka: 'Sportage',
         year: 2023,
         run: 89000,
         price: 499000000,
         place: 'Andijon',
         color: "oq",
-        images: [kiaSportage, kiaSportage2, kiaSportage3, kiaSportage4]
+        images: [kiaSportage1, kiaSportage2, kiaSportage3, kiaSportage4]
     },
 
     // mers
     {
         id: uuidv4(),
         model: 'Mersedes',
+        logo: mers,
         marka: 'AMG',
         year: 2020,
         run: 209000,
@@ -365,6 +396,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Mersedes',
+        logo: mers,
         marka: 'GLC',
         year: 2021,
         run: 119000,
@@ -376,6 +408,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Mersedes',
+        logo: mers,
         marka: 'Maybach',
         year: 2022,
         run: 79000,
@@ -389,6 +422,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Tayota',
+        logo: toyota,
         marka: 'Camry',
         year: 2022,
         run: 139000,
@@ -400,6 +434,7 @@ export const cars = [
     {
         id: uuidv4(),
         model: 'Tayota',
+        logo: toyota,
         marka: 'Crown',
         year: 2023,
         run: 0,
@@ -408,5 +443,4 @@ export const cars = [
         color: "Qizil (black-line)",
         images: [tayotaCrown, tayotaCrown2, tayotaCrown3, tayotaCrown4]
     },
-
 ];
