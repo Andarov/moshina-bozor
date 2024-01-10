@@ -474,7 +474,7 @@ export const cars = [
 import nomer from './img/news/nomer.jpeg'
 import roewe from './img/news/roewe.jpeg'
 import sony from './img/news/sony.jpeg'
-import uzAM from './img/news/uzAM.jpeg'
+import gm from './img/news/gm.jpeg'
 import volga from './img/news/volga.jpeg'
 import xitoy from './img/news/xitoy.jpeg'
 
@@ -516,7 +516,7 @@ export const news = [
     },
     {
         id: uuidv4(),
-        img: uzAM,
+        img: gm,
         title: "UzAuto Motors avtomobillarni o‘z egalariga topshirishni vaqtincha to‘xtatib turadi",
         date: '04-01-2024',
         text: "“UzAuto Motors” avtomobillarni o‘z egasiga topshirishni vaqtincha to‘xtatib turadi. Bu haqda kompaniya matbuot xizmati xabar berdi. “4−8-yanvar kunlari „Chevrolet“ dilerlik markazlarida rejalashtirilgan inventarizasiya ishlari olib boriladi. Shu sababli, ushbu davr mobaynida avtomobillarni o‘z egasiga topshirish vaqtincha to‘xtatiladi”, — deyiladi kompaniya xabarida."
