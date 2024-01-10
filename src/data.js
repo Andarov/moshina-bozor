@@ -529,3 +529,28 @@ export const news = [
         text: "O‘zbekiston hukumati 2023 yil 15 avgustdagi qarori bilan, import qilingan avtomobillarni faqat ishlab chiqaruvchi korxonaning rasmiy dileri tomonidan sotilishiga oid talabni bekor qilgan va bu avtomobil bozorida raqobat muhitini yaxshilashda muhim qadam deb baholangan edi. Ma’lum bo‘lishicha, oradan yarim yil o‘tmay, bu tartibni tiklash masalasi ko‘rib chiqilmoqda. Bu haqda Kun.uz xabar berdi. Shu kunlarda ijtimoiy tarmoqlarda Vazirlar Mahkamasining “Respublika hududiga yengil avtomobillar olib kirishni va ularning muvofiqligini baholash tizimini yanada takomillashtirish chora-tadbirlari to‘g‘risida”gi qarori loyihasi tarqaldi. Loyiha project.gov.uz portaliga idoralararo kelishuv uchun joylangani aytilmoqda. Loyihada yangi import avtotransport vositalari faqat yuridik shaxslar – ishlab chiqaruvchi korxonalarning rasmiy dilerlari tomonidan servis markazlarini tashkil etish sharti bilan sotilishi nazarda tutilgan. Shuningdek, bir yilda 50 donadan ko‘p elektromobil sotgan tadbirkorlik sub’ektlariga ularni quvvatlash stansiyasini tashkil etish va uzluksiz ishlashini ta’minlash majburiyati yuklatilishi mumkin. Qaror loyihasiga ko‘ra, jismoniy shaxslar tomonidan 1 yilda 1 marta o‘z ehtiyoji uchun, o‘z nomiga rasmiylashtirilgan holda olib kiriladigan transport vositalari majburiy sertifikatlashgan ozod etiladi. Ayni paytda, jismoniy shaxslar tomonidan avtotransport vositalarini tijorat maqsadida respublikaga olib kirish taqiqlanishi mumkin. Jismoniy shaxs transport vositasini olib kirayotganida tijoriy maqsadni ko‘zlaganiga qanday baho berilishiga aniqlik kiritilmagan. Shuningdek, davlat korxonalari va tadbirkorlik sub’ektlari tomonidan o‘z ehtiyojlari uchun olib kiriladigan, respublika hududida sotish uchun mo‘ljallanmagan transport vositalarini ham majburiy sertifikatlashdan ozod etish taklif etilmoqda. Bunda, jismoniy shaxslardan farqli o‘laroq, korxonalarga sertifikatlashdan ozod etiladigan import transport vositalari soni bo‘yicha cheklov belgilanmagan. Respublika hududiga tijorat maqsadlarida olib kiriladigan transport vositalari, elektrobus va eletromobillarga xorijiy davlatlarining mavjud sertifikatlari yoki akkreditasiyalangan laboratoriyalari tomonidan taqdim etilgan sinov bayonnomalari asosida hamda O‘zbekiston Respublikasida akkreditasiyalangan laboratoriyalarning imkoniyatlaridan kelib chiqqan holda, transport vositasining turini ma’qullash hujjatlarini rasmiylashtirishga ruxsat berilishi mumkin. Davlat reestriga kiritilgan transport vositasining turini ma’qullash hujjatlari asosida, jismoniy va yuridik shaxslar tomonidan o‘z extiyoji uchun 1 kalendar yilida respublika hududiga 1 dona takroran olib kirilgan (import) shu turdagi transport vositalari qayta sinovdan o‘tkazilmasdan va sertifikatlashtirmasdan, erkin muomalaga chiqarilishi ko‘zda tutilmoqda."
     }
 ]
+
+import location from './img/location.svg'
+import call from './img/call.svg'
+import hour from './img/hour.svg'
+
+export const contactInfos = [
+    {
+        id: uuidv4(),
+        img: location,
+        title: 'Manzil',
+        text: "Andijon shahar, Qo'shariq 22-uy"
+    },
+    {
+        id: uuidv4(),
+        img: call,
+        title: 'Telefon',
+        text: "+998(88) 169-00-33"
+    },
+    {
+        id: uuidv4(),
+        img: hour,
+        title: 'Ish vaqti',
+        text: "24/7"
+    }
+]

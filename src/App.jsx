@@ -1,6 +1,7 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider, createRoutesFromElements, Route } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
+import Contact from './pages/Contact'
 import Home from './pages/Home'
 import News from './pages/News'
 
@@ -10,6 +11,7 @@ const App = () => {
       <Route path='/' element={<MainLayout/>}>
         <Route index element={<Home/>}/>
         <Route path='/news' element={<News/>}/>
+        <Route path='/contact' element={<Contact/>}/>
       </Route>
     )
   )
