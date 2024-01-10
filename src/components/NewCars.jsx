@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { cars } from "../data";
 
-const New = () => {
+const NewCars = () => {
   const sortedCars = cars.sort((a, b) => new Date(b.year) - new Date(a.year));
   const newestCars = sortedCars.slice(0, 6);
 
@@ -59,4 +59,4 @@ const New = () => {
   );
 };
 
-export default New;
+export default NewCars;
