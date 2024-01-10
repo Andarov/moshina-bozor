@@ -1,6 +1,10 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider, createRoutesFromElements, Route } from 'react-router-dom'
+
+// Layouts
 import MainLayout from './layouts/MainLayout'
+
+// Pages
 import Contact from './pages/Contact'
 import Home from './pages/Home'
 import News from './pages/News'
