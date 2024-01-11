@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider, createRoutesFromElements, Route } 
 
 // Layouts
 import MainLayout from './layouts/MainLayout'
+import Catalog from './pages/Catalog'
 
 // Pages
 import Contact from './pages/Contact'
@@ -14,6 +15,7 @@ const App = () => {
     createRoutesFromElements(
       <Route path='/' element={<MainLayout/>}>
         <Route index element={<Home/>}/>
+        <Route path='/catalog' element={<Catalog/>}/>
         <Route path='/news' element={<News/>}/>
         <Route path='/contact' element={<Contact/>}/>
       </Route>
