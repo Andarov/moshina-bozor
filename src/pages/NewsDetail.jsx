@@ -5,7 +5,6 @@ import { news } from "../data";
 const NewsDetail = () => {
   const { title } = useParams();
   const newsItem = news.find((newsItem)=> newsItem.title === title);
-  console.log(newsItem);
 
   return (
     <div className="pb-20">

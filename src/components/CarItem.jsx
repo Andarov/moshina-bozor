@@ -8,7 +8,7 @@ const CarItem = ({id, marka, model, images, year, run, color, place, price}) => 
         {/* car image */}
         <div className="relative w-full h-[260px] mb-3">
           <img
-            className="w-full h-full object-cover rounded-[18px] hover:scale-105 transition-all  duration-300 cursor-pointer"
+            className="w-full h-full bg-gray-400 object-cover rounded-[18px] hover:scale-105 transition-all  duration-300 cursor-pointer"
             height={260}
             src={images[0]}
             alt={marka}

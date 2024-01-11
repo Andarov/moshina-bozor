@@ -9,7 +9,7 @@ const NewsItem = ({ id, img, title, date }) => {
   return (
     <li className="flex flex-col" key={id}>
       <img
-        className="w-full h-[260px] rounded-[18px] mb-5 object-cover"
+        className="w-full h-[260px] rounded-[18px] mb-5 object-cover bg-gray-400"
         height={260}
         src={img}
         alt={title}

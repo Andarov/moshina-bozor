@@ -50,7 +50,7 @@ const Contact = () => {
                 </div>
             </div>
           </div>
-          <div className="w-full max-w-[600px]">
+          <div className="w-full max-w-[600px] bg-gray-400">
           <iframe className="w-full h-[400px] border-0" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6497.36229050489!2d72.34037696855025!3d40.808700407126736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1704911053862!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
