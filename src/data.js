@@ -488,13 +488,6 @@ export const news = [
     },
     {
         id: uuidv4(),
-        img: nomer,
-        title: "Yangi avtomobilga raqam olish va ro'yxatdan o'tkazish qancha?",
-        date: '08-01-2024',
-        text: "Qonunchilikka ko'ra, avtomototransport vositalariga ro'yxatdan o'tkazish davlat raqami belgilarini berishda hamda ularni ro'yxatdan o'tkazishda quyidagi to'lovlar undirilishi belgilangan: Avtotransport vositalariga ro'yxatdan o'tkazish davlat raqami belgilari (RO'DRB) uchun BHMning 3,5 baravari (1 mln 190 ming so'm) miqdorida; Avtomototransport vositalarini va ularning tirkamalari (yarim tirkamalari)ni ro'yxatdan o'tkazish va qayta ro'yxatdan o'tkazish uchun BHMning10 foizi (34 ming so'm) miqdorida; Avtomototransport vositasi ro'yxatdan o'tkazilganligi to'g'risida guvohnomani berish uchun BHMning 70 foizi (238 ming so'm) miqdorida."
-    },
-    {
-        id: uuidv4(),
         img: sony,
         title: "Sony o‘zining ilk elektromobilini namoyish etdi",
         date: '07-01-2024',
