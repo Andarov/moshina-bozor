@@ -27,6 +27,11 @@ const Catalog = () => {
     });
   };
 
+  const alertChiq = (e)=>{
+    e.preventDefault();
+    alert('Tez orada ishlaydi');
+  }
+
   return (
     <div className="pb-20" ref={catalogRef}>
       <div className="w-full max-w-base mx-auto px-5">
@@ -84,7 +89,7 @@ const Catalog = () => {
           </Select>
           <Input color="teal" label="Summa (so'm)dan" name="Narxdan" />
           <Input color="teal" label="Summa (so'm)gacha" name="Narxgacha" />
-          <button className="bg-teal-500 text-white font-semibold rounded-md">
+          <button onClick={alertChiq} className="bg-teal-500 text-white font-semibold rounded-md">
             Saralash
           </button>
         </form>
