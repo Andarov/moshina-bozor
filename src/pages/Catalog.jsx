@@ -2,12 +2,22 @@ import React, { useRef, useState } from "react";
 import { cars } from "../data";
 import { Select, Option, Input } from "@material-tailwind/react";
 import CarItem from "../components/CarItem";
+import { Link, useParams } from "react-router-dom";
 
 const Catalog = () => {
+  const { model, marka } = useParams();
+  const carsOfModel = cars.filter((car) => car.model === model);
+  const carsOfMarka = cars.filter((car) => car.marka === marka);
+  const targetArray = carsOfModel.length > 0 ? carsOfModel : cars;
+  const markaArray = carsOfMarka.length > 0 ? carsOfMarka : targetArray;
+
+  // const isModelPage = !!model;
+  // console.log(isModelPage);
+
   const catalogRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 15;
-  const totalPages = Math.ceil(cars.length / itemsPerPage);
+  const totalPages = Math.ceil(markaArray.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = currentPage * itemsPerPage;
 
@@ -27,17 +37,37 @@ const Catalog = () => {
     });
   };
 
-  const alertChiq = (e)=>{
+  const alertChiq = (e) => {
     e.preventDefault();
-    alert('Tez orada ishlaydi');
-  }
+    alert("Tez orada ishlaydi");
+  };
 
   return (
     <div className="pb-20" ref={catalogRef}>
       <div className="w-full max-w-base mx-auto px-5">
         <h1 className="text-4xl leading-10 text-111 font-bold mt-5 mb-10">
-          Katalog
+          {model ? model : "Katalog"}
         </h1>
+
+        {model && (
+          <ul className="w-full max-w-5xl grid grid-cols-5 mb-10">
+            {carsOfModel.map((modelCar) => {
+              return (
+                <li
+                  key={modelCar.id}
+                  className="w-full h-16 border-2 border-teal-500 transition-all duration-300 hover:bg-teal-500 hover:text-white relative"
+                >
+                  <Link
+                    className="w-full h-full inline-flex justify-center items-center absolute inset-0 text-lg font-medium"
+                    to={`/catalog/${model}/${modelCar.marka}`}
+                  >
+                    {modelCar.marka}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        )}
 
         {/* filtr */}
         <form className="grid grid-cols-3 gap-7 mb-10">
@@ -89,13 +119,16 @@ const Catalog = () => {
           </Select>
           <Input color="teal" label="Summa (so'm)dan" name="Narxdan" />
           <Input color="teal" label="Summa (so'm)gacha" name="Narxgacha" />
-          <button onClick={alertChiq} className="bg-teal-500 text-white font-semibold rounded-md">
+          <button
+            onClick={alertChiq}
+            className="bg-teal-500 text-white font-semibold rounded-md"
+          >
             Saralash
           </button>
         </form>
 
         <ul className="grid grid-cols-3 gap-x-7 gap-y-10">
-          {cars.slice(startIndex, endIndex).map((car) => (
+          {markaArray.slice(startIndex, endIndex).map((car) => (
             <CarItem key={car.id} {...car} />
           ))}
         </ul>
@@ -105,7 +138,9 @@ const Catalog = () => {
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             className={`${
-              currentPage === 1 ? "bg-gray-200 text-gray-700" : "bg-teal-500 text-white"
+              currentPage === 1
+                ? "bg-gray-200 text-gray-700"
+                : "bg-teal-500 text-white"
             }  font-semibold rounded-md px-4 py-2 mx-1`}
             disabled={currentPage === 1}
           >
@@ -117,7 +152,9 @@ const Catalog = () => {
               key={index}
               onClick={() => handlePageChange(index + 1)}
               className={`${
-                currentPage === index + 1 ? "bg-teal-500 text-white" : "bg-gray-200 text-gray-700"
+                currentPage === index + 1
+                  ? "bg-teal-500 text-white"
+                  : "bg-gray-200 text-gray-700"
               } font-semibold rounded-md px-4 py-2 mx-1`}
             >
               {index + 1}
@@ -127,7 +164,9 @@ const Catalog = () => {
           <button
             onClick={() => handlePageChange(currentPage + 1)}
             className={`${
-              currentPage === totalPages ? "bg-gray-200 text-gray-700" : "bg-teal-500 text-white"
+              currentPage === totalPages
+                ? "bg-gray-200 text-gray-700"
+                : "bg-teal-500 text-white"
             } font-semibold rounded-md px-4 py-2 mx-1`}
             disabled={currentPage === totalPages}
           >

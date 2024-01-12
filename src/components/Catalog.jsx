@@ -23,7 +23,7 @@ const Catalog = () => {
               className="p-5 rounded-[10px] border border-[#e0e1e7]"
             >
               <Link
-                to={`/cars/${model}`}
+                to={`/catalog/${model}`}
                 className="flex justify-between items-center text-base font-medium leading-6"
               >
                 <div className="flex items-center space-x-2">

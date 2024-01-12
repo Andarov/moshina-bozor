@@ -5,6 +5,7 @@ const Breadcrumbs = () => {
   const location = useLocation();
   const pathArr = location.pathname.split("/");
   const isNewsPath = location.pathname.startsWith('/news/');
+  const isCatalogPath = location.pathname.startsWith('/catalog/');
   const tayyorArr = pathArr.filter((path) => path !== "");
 
   return (
@@ -20,7 +21,7 @@ const Breadcrumbs = () => {
         return (
           <li key={index}>
             {index !== tayyorArr.length - 1 ? (
-              <Link to={path}>
+              <Link to={`${isCatalogPath && index === 1 ? '/catalog' : ''}/${path}`}>
                 {path}
                 {!isNewsPath && <span className="mx-3">/</span>}
               </Link> 
