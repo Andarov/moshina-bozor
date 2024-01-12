@@ -1,5 +1,5 @@
 import React from "react";
-import { Select, Option, Input } from "@material-tailwind/react";
+import { Select, Option } from "@material-tailwind/react";
 import {cars} from '../data'
 
 const Filter = () => {
@@ -7,7 +7,7 @@ const Filter = () => {
     e.preventDefault();
     alert("Tez orada ishlaydi");
   };
-  
+
   return (
     <form className="grid grid-cols-3 gap-7 mb-10">
       {/* model */}
@@ -56,8 +56,38 @@ const Filter = () => {
             </Option>
           ))}
       </Select>
-      <Input color="teal" label="Summa (so'm)dan" name="Narxdan" />
-      <Input color="teal" label="Summa (so'm)gacha" name="Narxgacha" />
+      {/* place */}
+      <Select color="teal" label="Viloyatni tanlang" name="Viloyat">
+        {cars
+          .reduce((uniquePlaces, car) => {
+            if (!uniquePlaces.includes(car.place)) {
+              uniquePlaces.push(car.place);
+            }
+            return uniquePlaces;
+          }, [])
+          .sort()
+          .map((model, index) => (
+            <Option key={index} value={model}>
+              {model}
+            </Option>
+          ))}
+      </Select>
+      {/* colour */}
+      <Select color="teal" label="Rangni tanlang" name="Moshina rangi">
+        {cars
+          .reduce((uniqueColors, car) => {
+            if (!uniqueColors.includes(car.color)) {
+              uniqueColors.push(car.color);
+            }
+            return uniqueColors;
+          }, [])
+          .sort()
+          .map((model, index) => (
+            <Option key={index} value={model}>
+              {model}
+            </Option>
+          ))}
+      </Select>
       <button
         onClick={alertChiq}
         className="bg-teal-500 text-white font-semibold rounded-md"
