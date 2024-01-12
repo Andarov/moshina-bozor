@@ -1,5 +1,3 @@
-// Catalog.jsx
-
 import React, { useRef, useState } from "react";
 import { cars } from "../data";
 import CarItem from "../components/CarItem";
