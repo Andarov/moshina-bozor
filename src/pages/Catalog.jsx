@@ -65,7 +65,7 @@ const Catalog = () => {
         )}
 
         {/* filtr */}
-        <Filter/>
+        <Filter markaArray={markaArray}/>
 
         <ul className="grid grid-cols-3 gap-x-7 gap-y-10">
           {markaArray.slice(startIndex, endIndex).map((car) => (

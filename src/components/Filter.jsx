@@ -2,7 +2,7 @@ import React from "react";
 import { Select, Option } from "@material-tailwind/react";
 import {cars} from '../data'
 
-const Filter = () => {
+const Filter = ({markaArray}) => {
   const alertChiq = (e) => {
     e.preventDefault();
     alert("Tez orada ishlaydi");
