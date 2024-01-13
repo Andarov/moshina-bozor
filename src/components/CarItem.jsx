@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 const CarItem = ({id, marka, model, images, year, run, color, place, price}) => {
   return (
     <li key={id}>
-      <Link to={`cars/${marka}`}>
+      <Link to={`/catalog/${model}/car/${marka}`}>
         {/* car image */}
         <div className="relative w-full h-[260px] mb-3">
           <img

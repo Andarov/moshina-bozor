@@ -7,26 +7,25 @@ const Breadcrumbs = () => {
   const isNewsPath = location.pathname.startsWith('/news/');
   const isCatalogPath = location.pathname.startsWith('/catalog/');
   const tayyorArr = pathArr.filter((path) => path !== "");
+  const isCarPath = tayyorArr.find((path)=> path === 'car');
 
   return (
     <ul className="flex text-base leading-6 text-[#767980]">
       <li>
         <Link to="/">
-          <span>Bosh sahifa</span> 
-          <span className="mx-3">/</span>
+          <span className="slash">Bosh sahifa</span> 
         </Link>
       </li>
       
-    {tayyorArr.map((path, index) => {
+      {tayyorArr.map((path, index) => {
         return (
           <li key={index}>
             {index !== tayyorArr.length - 1 ? (
               <Link to={`${isCatalogPath && index === 1 ? '/catalog' : ''}/${path}`}>
-                {path}
-                {!isNewsPath && <span className="mx-3">/</span>}
+                {isCarPath && index === 2 ? '' : <span className={`${isNewsPath && 'after:hidden'} slash`}>{path}</span>}
               </Link> 
             ) : (
-              !isNewsPath && path
+              !isNewsPath && <span>{path}</span>
             )}
           </li>
         );

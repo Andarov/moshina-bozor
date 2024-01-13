@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
-const NewsLayout = () => {
+const CatalogLayout = () => {
   return (
     <>
         <Outlet/>
@@ -9,4 +9,4 @@ const NewsLayout = () => {
   )
 }
 
-export default NewsLayout
+export default CatalogLayout
