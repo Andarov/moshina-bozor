@@ -1,100 +1,113 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Select, Option } from "@material-tailwind/react";
-import {cars} from '../data'
+import { cars } from "../data";
 import { useLocation } from "react-router-dom";
 
-const Filter = ({markaArray}) => {
+const Filter = ({ markaArray }) => {
   const location = useLocation();
-  const isHome = location.pathname === '/'
-  
-  const alertChiq = (e) => {
-    e.preventDefault();
-    alert("Tez orada ishlaydi");
+  const isHome = location.pathname === "/";
+
+  const [selectedModel, setSelectedModel] = useState("");
+  const [selectedMarka, setSelectedMarka] = useState("");
+  const [selectedYear, setSelectedYear] = useState("");
+  const [selectedPlace, setSelectedPlace] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
+
+  const getUniqueValues = (key) => {
+    if (!markaArray || markaArray.length === 0) {
+      return [];
+    }
+
+    return markaArray
+      .reduce((uniqueValues, car) => {
+        if (!uniqueValues.includes(car[key])) {
+          uniqueValues.push(car[key]);
+        }
+        return uniqueValues;
+      }, [])
+      .sort();
   };
+
+  const renderOptions = (key) => {
+    return (
+      (getUniqueValues(key) || []).length > 0
+        ? getUniqueValues(key)
+        : Array.from(new Set(cars.map((car) => car[key])))
+    ).map((value, index) => (
+      <Option key={index} value={value}>
+        {value}
+      </Option>
+    ));
+  };
+
+  useEffect(() => {
+    setSelectedModel("");
+    setSelectedMarka("");
+    setSelectedYear("");
+    setSelectedPlace("");
+    setSelectedColor("");
+  }, [markaArray]);
 
   return (
     <form className="grid grid-cols-3 gap-7 mb-10">
-      {/* model */}
-      <Select className={`${isHome && 'bg-white'}`} color="teal" label="Modelni tanlang" name="Model">
-        {cars
-          .reduce((uniqueModels, car) => {
-            if (!uniqueModels.includes(car.model)) {
-              uniqueModels.push(car.model);
-            }
-            return uniqueModels;
-          }, [])
-          .map((model, index) => (
-            <Option key={index} value={model}>
-              {model}
-            </Option>
-          ))}
+      <Select
+        className={`${isHome && "bg-white"}`}
+        color="teal"
+        label="Modelni tanlang"
+        name="Model"
+        value={selectedModel}
+        onChange={(e) => setSelectedModel(e.target.value)}
+      >
+        {renderOptions("model")}
       </Select>
-      {/* marka */}
-      <Select className={`${isHome && 'bg-white'}`} color="teal" label="Markani tanlang" name="Marka">
-        {cars
-          .reduce((uniqueMarkas, car) => {
-            if (!uniqueMarkas.includes(car.marka)) {
-              uniqueMarkas.push(car.marka);
-            }
-            return uniqueMarkas;
-          }, [])
-          .map((model, index) => (
-            <Option key={index} value={model}>
-              {model}
-            </Option>
-          ))}
+      <Select
+        className={`${isHome && "bg-white"}`}
+        color="teal"
+        label="Markani tanlang"
+        name="Marka"
+        value={selectedMarka}
+        onChange={(e) => setSelectedMarka(e.target.value)}
+      >
+        {renderOptions("marka")}
       </Select>
-      {/* year */}
-      <Select className={`${isHome && 'bg-white'}`} color="teal" label="Yilni tanlang" name="Yil">
-        {cars
-          .reduce((uniqueYears, car) => {
-            if (!uniqueYears.includes(car.year)) {
-              uniqueYears.push(car.year);
-            }
-            return uniqueYears;
-          }, [])
-          .sort()
-          .map((model, index) => (
-            <Option key={index} value={model}>
-              {model}
-            </Option>
-          ))}
+      <Select
+        className={`${isHome && "bg-white"}`}
+        color="teal"
+        label="Yilni tanlang"
+        name="Yil"
+        value={selectedYear}
+        onChange={(e) => setSelectedYear(e.target.value)}
+      >
+        {renderOptions("year")}
       </Select>
-      {/* place */}
-      <Select className={`${isHome && 'bg-white'}`} color="teal" label="Viloyatni tanlang" name="Viloyat">
-        {cars
-          .reduce((uniquePlaces, car) => {
-            if (!uniquePlaces.includes(car.place)) {
-              uniquePlaces.push(car.place);
-            }
-            return uniquePlaces;
-          }, [])
-          .sort()
-          .map((model, index) => (
-            <Option key={index} value={model}>
-              {model}
-            </Option>
-          ))}
+      <Select
+        className={`${isHome && "bg-white"}`}
+        color="teal"
+        label="Viloyatni tanlang"
+        name="Viloyat"
+        value={selectedPlace}
+        onChange={(e) => setSelectedPlace(e.target.value)}
+      >
+        {renderOptions("place")}
       </Select>
-      {/* colour */}
-      <Select className={`${isHome && 'bg-white'}`} color="teal" label="Rangni tanlang" name="Moshina rangi">
-        {cars
-          .reduce((uniqueColors, car) => {
-            if (!uniqueColors.includes(car.color)) {
-              uniqueColors.push(car.color);
-            }
-            return uniqueColors;
-          }, [])
-          .sort()
-          .map((model, index) => (
-            <Option key={index} value={model}>
-              {model}
-            </Option>
-          ))}
+      <Select
+        className={`${isHome && "bg-white"}`}
+        color="teal"
+        label="Rangni tanlang"
+        name="Moshina rangi"
+        value={selectedColor}
+        onChange={(e) => setSelectedColor(e.target.value)}
+      >
+        {renderOptions("color")}
       </Select>
       <button
-        onClick={alertChiq}
-        className={`${isHome ? 'bg-main' : 'bg-teal-500'} text-white font-semibold rounded-md`}
+        onClick={(e) => {
+          e.preventDefault();
+          alert("Tez orada ishlaydi");
+        }}
+        className={`${
+          isHome ? "bg-main" : "bg-teal-500"
+        } text-white font-semibold rounded-md`}
       >
         Qidirish
       </button>
