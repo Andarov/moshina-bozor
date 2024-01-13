@@ -8,6 +8,7 @@ const Breadcrumbs = () => {
   const isCatalogPath = location.pathname.startsWith('/catalog/');
   const tayyorArr = pathArr.filter((path) => path !== "");
   const isCarPath = tayyorArr.find((path)=> path === 'car');
+  console.log(tayyorArr);
 
   return (
     <ul className="flex text-base leading-6 text-[#767980]">
@@ -22,10 +23,10 @@ const Breadcrumbs = () => {
           <li key={index}>
             {index !== tayyorArr.length - 1 ? (
               <Link to={`${isCatalogPath && index === 1 ? '/catalog' : ''}/${path}`}>
-                {isCarPath && index === 2 ? '' : <span className={`${isNewsPath && 'after:hidden'} slash`}>{path}</span>}
+                {isCarPath && index === 2 ? '' : <span className={`${isNewsPath && index >= 0 && 'after:hidden'} slash`}>{path}</span>}
               </Link> 
             ) : (
-              !isNewsPath && <span>{path}</span>
+              !isNewsPath && !isCarPath && <span>{path}</span>
             )}
           </li>
         );

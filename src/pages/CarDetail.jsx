@@ -1,13 +1,23 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { cars } from '../data';
 
 const CarDetail = () => {
-  const {marka} = useParams();
-  console.log(marka);
-  
-  return (
-    <div>CarDetail</div>
-  )
-}
+  const { id } = useParams();
+  const carItem = cars.find((car) => car.id === id);
 
-export default CarDetail
+  return (
+    <div>
+      {carItem ? (
+        <div>
+          <h2>{carItem.marka}</h2>
+          {/* Display other car details */}
+        </div>
+      ) : (
+        <p>Car not found</p>
+      )}
+    </div>
+  );
+};
+
+export default CarDetail;
