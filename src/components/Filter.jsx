@@ -1,8 +1,12 @@
 import React from "react";
 import { Select, Option } from "@material-tailwind/react";
 import {cars} from '../data'
+import { useLocation } from "react-router-dom";
 
 const Filter = ({markaArray}) => {
+  const location = useLocation();
+  const isHome = location.pathname === '/'
+  
   const alertChiq = (e) => {
     e.preventDefault();
     alert("Tez orada ishlaydi");
@@ -11,7 +15,7 @@ const Filter = ({markaArray}) => {
   return (
     <form className="grid grid-cols-3 gap-7 mb-10">
       {/* model */}
-      <Select color="teal" label="Modelni tanlang" name="Model">
+      <Select className={`${isHome && 'bg-white'}`} color="teal" label="Modelni tanlang" name="Model">
         {cars
           .reduce((uniqueModels, car) => {
             if (!uniqueModels.includes(car.model)) {
@@ -26,7 +30,7 @@ const Filter = ({markaArray}) => {
           ))}
       </Select>
       {/* marka */}
-      <Select color="teal" label="Markani tanlang" name="Marka">
+      <Select className={`${isHome && 'bg-white'}`} color="teal" label="Markani tanlang" name="Marka">
         {cars
           .reduce((uniqueMarkas, car) => {
             if (!uniqueMarkas.includes(car.marka)) {
@@ -41,7 +45,7 @@ const Filter = ({markaArray}) => {
           ))}
       </Select>
       {/* year */}
-      <Select color="teal" label="Yilni tanlang" name="Yil">
+      <Select className={`${isHome && 'bg-white'}`} color="teal" label="Yilni tanlang" name="Yil">
         {cars
           .reduce((uniqueYears, car) => {
             if (!uniqueYears.includes(car.year)) {
@@ -57,7 +61,7 @@ const Filter = ({markaArray}) => {
           ))}
       </Select>
       {/* place */}
-      <Select color="teal" label="Viloyatni tanlang" name="Viloyat">
+      <Select className={`${isHome && 'bg-white'}`} color="teal" label="Viloyatni tanlang" name="Viloyat">
         {cars
           .reduce((uniquePlaces, car) => {
             if (!uniquePlaces.includes(car.place)) {
@@ -73,7 +77,7 @@ const Filter = ({markaArray}) => {
           ))}
       </Select>
       {/* colour */}
-      <Select color="teal" label="Rangni tanlang" name="Moshina rangi">
+      <Select className={`${isHome && 'bg-white'}`} color="teal" label="Rangni tanlang" name="Moshina rangi">
         {cars
           .reduce((uniqueColors, car) => {
             if (!uniqueColors.includes(car.color)) {
@@ -90,9 +94,9 @@ const Filter = ({markaArray}) => {
       </Select>
       <button
         onClick={alertChiq}
-        className="bg-teal-500 text-white font-semibold rounded-md"
+        className={`${isHome ? 'bg-main' : 'bg-teal-500'} text-white font-semibold rounded-md`}
       >
-        Saralash
+        Qidirish
       </button>
     </form>
   );
