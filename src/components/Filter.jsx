@@ -49,10 +49,10 @@ const Filter = ({ markaArray }) => {
   }, [markaArray]);
 
   return (
-    <form className="grid grid-cols-3 gap-7 mb-10">
+    <form className="grid grid-cols-1 gap-7 mb-10 sm:grid-cols-2 md:grid-cols-3">
       <Select
         className={`${isHome && "bg-white"}`}
-        color="teal"
+        color="red"
         label="Modelni tanlang"
         name="Model"
         value={selectedModel}
@@ -62,7 +62,7 @@ const Filter = ({ markaArray }) => {
       </Select>
       <Select
         className={`${isHome && "bg-white"}`}
-        color="teal"
+        color="red"
         label="Markani tanlang"
         name="Marka"
         value={selectedMarka}
@@ -72,7 +72,7 @@ const Filter = ({ markaArray }) => {
       </Select>
       <Select
         className={`${isHome && "bg-white"}`}
-        color="teal"
+        color="red"
         label="Yilni tanlang"
         name="Yil"
         value={selectedYear}
@@ -82,7 +82,7 @@ const Filter = ({ markaArray }) => {
       </Select>
       <Select
         className={`${isHome && "bg-white"}`}
-        color="teal"
+        color="red"
         label="Viloyatni tanlang"
         name="Viloyat"
         value={selectedPlace}
@@ -92,7 +92,7 @@ const Filter = ({ markaArray }) => {
       </Select>
       <Select
         className={`${isHome && "bg-white"}`}
-        color="teal"
+        color="red"
         label="Rangni tanlang"
         name="Moshina rangi"
         value={selectedColor}
@@ -107,7 +107,7 @@ const Filter = ({ markaArray }) => {
         }}
         className={`${
           isHome ? "bg-main" : "bg-teal-500"
-        } text-white font-semibold rounded-md`}
+        } text-white font-semibold rounded-md py-2`}
       >
         Qidirish
       </button>

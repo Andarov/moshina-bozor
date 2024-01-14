@@ -17,7 +17,7 @@ module.exports = withMT({
         'base': '1210px'
       },
       backgroundImage:{
-        'heroBg': "linear-gradient(180deg, rgba(9, 22, 31, 0.70) 0%, #09161F 1000%), url('./img/heroBg.jpg')"
+        'heroBg': "linear-gradient(180deg, rgba(9, 9, 9, 0.70) 0%, #09161F 1000%), url('./img/heroBg.jpg')"
       },
       boxShadow: {
         'header-shadow': '0px 5px 20px 0px rgba(44, 41, 51, 0.10)',

@@ -8,10 +8,10 @@ const Home = () => {
   return (
     <>
         <Hero/>
-        <Catalog/>
-        <New/>
+        {/* <Catalog/> */}
+        {/* <New/> */}
         <div className='py-14 bg-[#F2F4F6]'>
-          <News/>
+          {/* <News/> */}
         </div>
     </>
   )
