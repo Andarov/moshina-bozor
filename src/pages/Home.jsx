@@ -11,7 +11,7 @@ const Home = () => {
         <Catalog/>
         <New/>
         <div className='py-14 bg-[#F2F4F6]'>
-          {/* <News/> */}
+          <News/>
         </div>
     </>
   )

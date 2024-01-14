@@ -10,7 +10,7 @@ const News = () => {
           So'nggi yangiliklar
         </h2>
 
-        <ul className="grid grid-cols-3 gap-7">
+        <ul className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
           {news.slice(0, 3).map((newsItem) => {
             return (
               <NewsItem key={newsItem.id} {...newsItem} />
