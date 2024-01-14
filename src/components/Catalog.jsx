@@ -12,11 +12,11 @@ const Catalog = () => {
   return (
     <section className="pt-14 pb-7">
       <div className="w-full max-w-base mx-auto px-5">
-        <h2 className="text-4xl leading-10 text-center text-111 font-bold mb-10">
+        <h2 className="text-2xl leading-7 text-center text-111 font-bold mb-10 sm:text-3xl md:text-4xl md:leading-10">
           Mavjud avtomashina markalari
         </h2>
 
-        <ul className="grid grid-cols-4 gap-x-7 gap-y-2.5">
+        <ul className="grid grid-cols-1 gap-x-7 gap-y-2.5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {Object.keys(modelCounts).map((model) => (
             <li
               key={model}
