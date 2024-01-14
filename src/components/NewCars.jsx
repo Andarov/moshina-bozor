@@ -9,11 +9,11 @@ const NewCars = () => {
   return (
     <section className="pt-7 pb-14">
       <div className="w-full max-w-base mx-auto px-5">
-        <h2 className="text-4xl leading-10 text-111 font-bold mb-9">
+        <h2 className="text-2xl leading-7 text-111 font-bold mb-9 sm:text-3xl md:text-4xl md:leading-10">
           Yangi avtomobillar
         </h2>
 
-        <ul className="grid grid-cols-3 gap-x-7 gap-y-10">
+        <ul className="grid grid-cols-1 gap-7 md:gap-y-10 md:grid-cols-2 lg:grid-cols-3">
           {newestCars.map((car) => (
             <CarItem key={car.id} {...car}/>
           ))}
