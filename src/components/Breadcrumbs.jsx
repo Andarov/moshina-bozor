@@ -11,10 +11,10 @@ const Breadcrumbs = () => {
   console.log(tayyorArr);
 
   return (
-    <ul className="flex text-base leading-6 text-[#767980]">
+    <ul className="flex flex-wrap text-base leading-6 text-[#767980] mb-10">
       <li>
         <Link to="/">
-          <span className="slash">Bosh sahifa</span> 
+          <span className="text-main font-semibold slash">Bosh sahifa</span> 
         </Link>
       </li>
       
@@ -22,7 +22,7 @@ const Breadcrumbs = () => {
         return (
           <li key={index}>
             {index !== tayyorArr.length - 1 ? (
-              <Link to={`${isCatalogPath && index === 1 ? '/catalog' : ''}/${path}`}>
+              <Link className="text-main font-semibold" to={`${isCatalogPath && index === 1 ? '/catalog' : ''}/${path}`}>
                 {isCarPath && index === 2 ? '' : <span className={`${isNewsPath && index >= 0 && 'after:hidden'} slash`}>{path}</span>}
               </Link> 
             ) : (

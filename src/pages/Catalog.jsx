@@ -38,17 +38,17 @@ const Catalog = () => {
   return (
     <div className="pb-20" ref={catalogRef}>
       <div className="w-full max-w-base mx-auto px-5">
-        <h1 className="text-4xl leading-10 text-111 font-bold mt-5 mb-10">
+        <h1 className="text-3xl leading-7 text-111 font-bold mb-7 md:mb-10 md:text-4xl md:leading-10">
           {model ? model : "Katalog"}
         </h1>
 
         {model && (
-          <ul className="w-full max-w-5xl grid grid-cols-5 mb-10">
+          <ul className="w-full max-w-5xl grid grid-cols-2 mb-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {carsOfModel.map((modelCar) => {
               return (
                 <li
                   key={modelCar.id}
-                  className="w-full h-16 border-2 border-teal-500 transition-all duration-300 hover:bg-teal-500 hover:text-white relative"
+                  className="w-full h-14 border-2 border-teal-500 transition-all duration-300 hover:bg-teal-500 hover:text-white relative md:h-16"
                 >
                   <Link
                     className="w-full h-full inline-flex justify-center items-center absolute inset-0 text-lg font-medium"
@@ -65,7 +65,7 @@ const Catalog = () => {
         {/* filtr */}
         <Filter markaArray={markaArray} />
 
-        <ul className="grid grid-cols-3 gap-x-7 gap-y-10">
+        <ul className="grid grid-cols-1 gap-7 md:gap-y-10 md:grid-cols-2 lg:grid-cols-3">
           {markaArray.slice(startIndex, endIndex).map((car) => (
             <CarItem key={car.id} {...car} />
           ))}
