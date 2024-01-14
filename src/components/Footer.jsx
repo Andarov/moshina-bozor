@@ -5,13 +5,13 @@ const Footer = () => {
   return (
     <footer>
       <div className="py-10 bg-[#0A1B28] text-white">
-        <div className="w-full max-w-base mx-auto px-5 flex justify-between items-center">
+        <div className="w-full max-w-base mx-auto px-5 flex flex-col items-start space-y-5 md:items-center lg:flex-row lg:justify-between lg:space-y-0">
           <Link className="text-[28px] font-bold leading-9" to="/">
             <h1>Moshina bozor</h1>
           </Link>
 
           <nav>
-            <ul className="flex items-center space-x-10 text-lg font-medium leading-7">
+            <ul className="flex flex-col items-start space-y-6 text-lg font-medium leading-7 sm:flex-row sm:items-center sm:space-x-10 sm:space-y-0">
               <li>
                 <NavLink to="/catalog">Katalog</NavLink>
               </li>
@@ -33,7 +33,7 @@ const Footer = () => {
       </div>
 
       <div className="py-5 bg-[#162633]">
-        <div className="w-full max-w-base mx-auto px-5 flex items-center justify-between text-sm leading-5 text-[#E0E1E7]">
+        <div className="w-full max-w-base mx-auto px-5 flex flex-col items-start justify-between text-sm leading-5 text-[#E0E1E7] space-y-2 md:space-y-0 md:flex-row md:items-center">
           <p>© 2024. - Moshina bozor. Barcha huqular himoyalangan</p>
           <p>Maxfiylik siyosati</p>
         </div>
