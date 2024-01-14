@@ -7,7 +7,7 @@ const NewsDetail = () => {
   const newsItem = news.find((newsItem)=> newsItem.title === title);
 
   return (
-    <div className="pb-10 md:pb-20">
+    <div className="pb-16 md:pb-20">
       <div className="w-full max-w-base mx-auto px-5">
         <h1 className="text-[25px] leading-7 text-111 font-bold mb-7 lg:text-4xl md:leading-8 md:mb-8">
           {newsItem.title}
