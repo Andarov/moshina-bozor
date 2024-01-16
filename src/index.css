@@ -26,4 +26,14 @@ button[aria-expanded="true"] + label {
   font-size: 14px;
 }
 
+.slider{
+  display: flex !important;
+  flex-direction: row;
+}
 
+@media only screen and (max-width: 960px) {
+  .slider{
+    display: flex;
+    flex-direction: column;
+  }
+}

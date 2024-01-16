@@ -1,4 +1,5 @@
 import React from 'react'
+import BestCars from '../components/BestCars'
 import Catalog from '../components/Catalog'
 import Filter from '../components/Filter'
 import Hero from '../components/Hero'
@@ -17,7 +18,8 @@ const Home = () => {
         </div>
         <Catalog/>
         <New/>
-        <div className='py-14 bg-[#F2F4F6]'>
+        <div className='pt-7 pb-14 bg-[#F2F4F6] sm:pt-14'>
+          <BestCars/>
           <News/>
         </div>
     </>
