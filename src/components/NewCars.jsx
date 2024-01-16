@@ -9,7 +9,7 @@ const NewCars = () => {
   return (
     <section className="pt-7 pb-14">
       <div className="w-full max-w-base mx-auto px-5">
-        <h2 className="text-2xl leading-7 text-111 font-bold mb-9 sm:text-3xl md:text-4xl md:leading-10">
+        <h2 className="text-2xl leading-7 text-111 font-bold mb-8 sm:text-3xl md:leading-9">
           Yangi avtomobillar
         </h2>
 

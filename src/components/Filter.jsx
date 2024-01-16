@@ -49,7 +49,7 @@ const Filter = ({ markaArray }) => {
   }, [markaArray]);
 
   return (
-    <form className="grid grid-cols-1 gap-7 mb-10 sm:grid-cols-2 md:grid-cols-3">
+    <form className="grid grid-cols-1 gap-5 pb-10 md:gap-7 sm:grid-cols-2 md:grid-cols-3">
       <Select
         className={`${isHome && "bg-white"}`}
         color="red"

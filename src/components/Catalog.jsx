@@ -10,9 +10,9 @@ const Catalog = () => {
   });
 
   return (
-    <section className="pt-14 pb-7">
+    <section className="py-7">
       <div className="w-full max-w-base mx-auto px-5">
-        <h2 className="text-2xl leading-7 text-center text-111 font-bold mb-10 sm:text-3xl md:text-4xl md:leading-10">
+        <h2 className="text-2xl leading-7 text-111 font-bold mb-8 sm:text-3xl md:leading-9">
           Mavjud avtomashina markalari
         </h2>
 
