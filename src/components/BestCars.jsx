@@ -52,7 +52,7 @@ const BestCars = () => {
               {/* slider item */}
               {sortedCars.map((car) => {
                 return (
-                  <div className="slider">
+                  <div key={car.id} className="slider">
                     {/* image */}
                     <div className="w-full col-span-1.5 h-60 mb-5 lg:mr-8 lg:max-w-xl md:h-[340px]">
                       <img
