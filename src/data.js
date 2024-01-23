@@ -122,12 +122,13 @@ import tayotaCrown3 from './img/tayotaCrown3.jpg'
 import tayotaCrown4 from './img/tayotaCrown4.jpg'
 
 const savedCars = JSON.parse(localStorage.getItem('cars')) || [];
-const idToUse = savedCars.length > 0 ? savedCars[0].id : uuidv4();
+
+const generateUniqueId = () => uuidv4();
 
 export const cars = savedCars.length > 0 ? savedCars : [
     // chevrolet
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Chevrolet',
         logo: chevrolet,
         marka: 'Malibu',
@@ -140,7 +141,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '23.12.2023'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Chevrolet',
         logo: chevrolet,
         marka: 'Onix',
@@ -153,7 +154,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '20.12.2023'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Chevrolet',
         logo: chevrolet,
         marka: 'Tracker-2',
@@ -166,7 +167,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '09.01.2024'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Chevrolet',
         logo: chevrolet,
         marka: 'Captiva',
@@ -179,7 +180,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '29.12.2023'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Chevrolet',
         logo: chevrolet,
         marka: 'Cobalt',
@@ -192,7 +193,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '25.12.2023'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Chevrolet',
         logo: chevrolet,
         marka: 'Damas',
@@ -205,7 +206,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '31.12.2023'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Chevrolet',
         logo: chevrolet,
         marka: 'Matiz',
@@ -218,7 +219,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '03.12.2023'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Chevrolet',
         logo: chevrolet,
         marka: 'Ravon',
@@ -231,7 +232,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '27.12.2023'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Chevrolet',
         logo: chevrolet,
         marka: 'Monza',
@@ -244,7 +245,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '10.01.2024'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Chevrolet',
         logo: chevrolet,
         marka: 'Nexia 2',
@@ -257,7 +258,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '29.12.2023'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Chevrolet',
         logo: chevrolet,
         marka: 'Gentra',
@@ -270,7 +271,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '31.12.2023'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Chevrolet',
         logo: chevrolet,
         marka: 'Labo',
@@ -283,7 +284,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '24.12.2023'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Chevrolet',
         logo: chevrolet,
         marka: 'Spark',
@@ -298,7 +299,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
 
     // audi
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Audi',
         logo: audi,
         marka: 'A1',
@@ -311,7 +312,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '27.12.2023'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Audi',
         logo: audi,
         marka: 'A4',
@@ -324,7 +325,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '31.12.2023'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Audi',
         logo: audi,
         marka: 'A5',
@@ -337,7 +338,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '08.01.2024'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Audi',
         logo: audi,
         marka: 'Q5',
@@ -350,7 +351,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '23.12.2023'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Audi',
         logo: audi,
         marka: 'Q7',
@@ -365,7 +366,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
 
     // kia
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Kia',
         logo: kia,
         marka: 'K5',
@@ -378,7 +379,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '05.01.2024'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Kia',
         logo: kia,
         marka: 'Sorento',
@@ -391,7 +392,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '06.01.2024'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Kia',
         logo: kia,
         marka: 'Sportage',
@@ -406,7 +407,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
 
     // mers
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Mersedes',
         logo: mers,
         marka: 'AMG',
@@ -419,7 +420,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '23.12.2023'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Mersedes',
         logo: mers,
         marka: 'GLC',
@@ -432,7 +433,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '08.01.2024'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Mersedes',
         logo: mers,
         marka: 'Maybach',
@@ -447,7 +448,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
 
     // tayota
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Tayota',
         logo: toyota,
         marka: 'Camry',
@@ -460,7 +461,7 @@ export const cars = savedCars.length > 0 ? savedCars : [
         date: '01.01.2024'
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         model: 'Tayota',
         logo: toyota,
         marka: 'Crown',
@@ -485,42 +486,42 @@ import xitoy from './img/news/xitoy.jpeg'
 
 export const news = [
     {
-        id: idToUse,
+        id: generateUniqueId(),
         img: xitoy,
         title: "2023 yilda eng ko‘p avtomobilni qaysi davlat eksport qilgani ma’lum bo‘ldi",
         date: '09-01-2024',
         text: "2023 yilning oxiriga kelib, Xitoy tashqi bozorlarga jo‘natmalarning ko‘payishi hamda global elektromobil sanoatining o‘sishi tufayli birinchi marta dunyodagi eng yirik avtomobil eksportchisiga aylanishi mumkin. Bu haqda Nikkei ma’lum qildi, deya xabar beradi Kazinform. Xitoy avtomobil ishlab chiqaruvchilar assosiasiyasining (CAAM) dastlabki ma’lumotlariga ko‘ra, Xitoy joriy yil yanvar-noyabr oylari davomida 4,41 million avtomobil eksport qilgan.Yaponiya joriy yilning 11 oyida 3,99 million dona avtomobil eksport qildi va 2023 yil oxiriga kelib jami eksport hajmi taxminan 4,3 millionga yetishi mumkin. Nashrning yozishicha, yanvardan oktyabrgacha Xitoy Rossiyaga 730 ming dona avtomobil eksport qilgan, bu o‘tgan yilga nisbatan yetti barobar ko‘pdir.O‘z navbatida, Meksikaga avtomobil yetkazib berish yiliga 71 foizga o‘sdi va 330 mingtani tashkil etdi. Xitoy joriy yilda elektr va boshqa muqobil energiya vositalarining global eksportini kengaytirdi. Xitoyning yangi elektromobillari eksporti 2023 yilning birinchi 11 oyida 1,09 million donani tashkil etdi, bu o‘tgan yilning shu davriga nisbatan 83,5 foizga ko‘pdir."
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         img: sony,
         title: "Sony o‘zining ilk elektromobilini namoyish etdi",
         date: '07-01-2024',
         text: "Sony o‘zining ilk elektromobilini namoyish etdi. Uni sahnaga DualSense geympadi bilan boshqarib chiqarishdi. Elektromobil ustida Honda bilan birgalikda ishlashgan. Mashina ichida tirbandlikda turganda zerikib qolmaslik uchun top o‘yinlar ham o‘rnatilgan."
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         img: roewe,
         title: "Roewe D5X DMH taqdim etildi",
         date: '07-01-2024',
         text: "Roewe’ning yangi modeli bir martalik to‘liq quvvatlanish va to‘la benzin baki bilan CLTC sikli bo‘yicha 1300 km masofa bosib o‘ta oladi. Avtomobil 100 kmga 5,25 litr benzin sarf qiladi. 100 km tezlikka esa 6,9 soniyada chiqadi. Hozircha uning narxi ma’lum qilinmadi."
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         img: volga,
         title: "Rossiyada “Volga” avtomobilining ehtimoliy dizayni suratlari internetda tarqaldi",
         date: '07-01-2024',
         text: "Rossiyada “Volga” avtomobilining ehtimolli dizayni suratlari Internetda tarqaldi. Rossiyada ushbu qadimiy markadagi yangilangan avtomobillar Xitoy kompaniyalaridan biri ishtirokida ishlab chiqarilishi mumkin"
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         img: gm,
         title: "UzAuto Motors avtomobillarni o‘z egalariga topshirishni vaqtincha to‘xtatib turadi",
         date: '04-01-2024',
         text: "“UzAuto Motors” avtomobillarni o‘z egasiga topshirishni vaqtincha to‘xtatib turadi. Bu haqda kompaniya matbuot xizmati xabar berdi. “4−8-yanvar kunlari „Chevrolet“ dilerlik markazlarida rejalashtirilgan inventarizasiya ishlari olib boriladi. Shu sababli, ushbu davr mobaynida avtomobillarni o‘z egasiga topshirish vaqtincha to‘xtatiladi”, — deyiladi kompaniya xabarida."
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         img: kiaSorento,
         title: "“Inomarka”larning faqat dilerlar tomonidan sotilishi tartibi qayta tiklanishi mumkin",
         date: '29-12-2023',
@@ -534,19 +535,19 @@ import hour from './img/hour.svg'
 
 export const contactInfos = [
     {
-        id: idToUse,
+        id: generateUniqueId(),
         img: location,
         title: 'Manzil',
         text: "Andijon shahar, Qo'shariq 22-uy"
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         img: call,
         title: 'Telefon',
         text: "+998(88) 169-00-33"
     },
     {
-        id: idToUse,
+        id: generateUniqueId(),
         img: hour,
         title: 'Ish vaqti',
         text: "24/7"
