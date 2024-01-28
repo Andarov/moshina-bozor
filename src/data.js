@@ -138,7 +138,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Andijon',
         color: 'oq',
         images: [malibu, malibu2, malibu3, malibu4],
-        date: '23.12.2023'
+        date: '23.12.2023',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -151,7 +154,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Buxoro',
         color: 'qora',
         images: [onix2,onix, onix3, onix4],
-        date: '20.12.2023'
+        date: '20.12.2023',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -164,7 +170,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Samarqand',
         color: 'qora',
         images: [tracker, tracker2, tracker3, tracker4],
-        date: '09.01.2024'
+        date: '09.01.2024',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -177,7 +186,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Namangan',
         color: 'white',
         images: [captiva, captiva2, captiva3, captiva4],
-        date: '29.12.2023'
+        date: '29.12.2023',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -190,7 +202,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Jizzax',
         color: 'qora',
         images: [cobalt, cobalt2, cobalt3, cobalt4],
-        date: '25.12.2023'
+        date: '25.12.2023',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -203,7 +218,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Fargona',
         color: 'oq',
         images: [damas, damas2, damas3, damas3, damas4],
-        date: '31.12.2023'
+        date: '31.12.2023',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -216,7 +234,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Sirdaryo',
         color: 'och kulrang',
         images: [matiz, matiz2, matiz3, matiz4],
-        date: '03.12.2023'
+        date: '03.12.2023',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -229,7 +250,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Andijon',
         color: 'qora',
         images: [ravon, ravon2, ravon3, ravon4],
-        date: '27.12.2023'
+        date: '27.12.2023',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -242,7 +266,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Buxoro',
         color: 'qora',
         images: [monza2, monza, monza3, monza4],
-        date: '10.01.2024'
+        date: '10.01.2024',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -255,7 +282,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Jizzax',
         color: 'oq',
         images: [nexia, nexia2, nexia3, nexia4],
-        date: '29.12.2023'
+        date: '29.12.2023',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -268,7 +298,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Fargona',
         color: 'oq',
         images: [gentra, gentra2, gentra3, gentra4],
-        date: '31.12.2023'
+        date: '31.12.2023',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -281,7 +314,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Fargona',
         color: 'oq',
         images: [labo, labo2, labo3, labo4],
-        date: '24.12.2023'
+        date: '24.12.2023',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -294,7 +330,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Fargona',
         color: 'oq',
         images: [spark, spark2, spark3, spark4],
-        date: '23.12.2023'
+        date: '23.12.2023',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
 
     // audi
@@ -309,7 +348,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Fargona',
         color: 'kulrang',
         images: [audiA1, audiA1second, audiA1third, audiA1firth],
-        date: '27.12.2023'
+        date: '27.12.2023',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -322,7 +364,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Andijon',
         color: 'oq',
         images: [audiA4, audiA4second, audiA4third, audiA4firth],
-        date: '31.12.2023'
+        date: '31.12.2023',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -335,7 +380,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Samarqand',
         color: 'kulrang',
         images: [audiA5, audiA5second, audiA5third, audiA5firth],
-        date: '08.01.2024'
+        date: '08.01.2024',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -348,7 +396,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Sirdaryo',
         color: "ko'k",
         images: [audiQ5, audiQ5second, audiQ5third, audiQ5firth],
-        date: '23.12.2023'
+        date: '23.12.2023',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -361,7 +412,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Andijon',
         color: "kulrang",
         images: [audiQ7, audiQ7second, audiQ7third, audiQ7firth],
-        date: '01.01.2024'
+        date: '01.01.2024',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
 
     // kia
@@ -376,7 +430,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Namangan',
         color: "oq",
         images: [kiaK5, kiaK5second, kiaK5third, kiaK5firth],
-        date: '05.01.2024'
+        date: '05.01.2024',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -389,7 +446,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Toshkent',
         color: "oq",
         images: [kiaSorento, kiaSorento2, kiaSorento3, kiaSorento4],
-        date: '06.01.2024'
+        date: '06.01.2024',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -402,7 +462,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Andijon',
         color: "oq",
         images: [kiaSportage1, kiaSportage2, kiaSportage3, kiaSportage4],
-        date: '09.01.2024'
+        date: '09.01.2024',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
 
     // mers
@@ -417,7 +480,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Buxoro',
         color: "qora",
         images: [mersAMG, mersAMG2, mersAMG3, mersAMG4],
-        date: '23.12.2023'
+        date: '23.12.2023',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -430,7 +496,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Samarqand',
         color: "qora",
         images: [mersGLC, mersGLC2, mersGLC3, mersGLC4],
-        date: '08.01.2024'
+        date: '08.01.2024',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -443,7 +512,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Andijon',
         color: "qora",
         images: [mersMaybach, mersMaybach2, mersMaybach3, mersMaybach4],
-        date: '10.01.2024'
+        date: '10.01.2024',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
 
     // tayota
@@ -458,7 +530,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Buxoro',
         color: "ko'k",
         images: [tayotaCamry, tayotaCamry2, tayotaCamry3, tayotaCamry4],
-        date: '01.01.2024'
+        date: '01.01.2024',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
     {
         id: generateUniqueId(),
@@ -471,7 +546,10 @@ export const cars = savedCars.length > 0 ? savedCars : [
         place: 'Andijon',
         color: "Qizil (black-line)",
         images: [tayotaCrown, tayotaCrown2, tayotaCrown3, tayotaCrown4],
-        date: '08.01.2024'
+        date: '08.01.2024',
+        description: 'Moshina urilmagan, qirilmagan. Tiniq holatda',
+        author: 'Inomjon',
+        tel: '+998(88)-169-00-33'
     },
 ];
 
