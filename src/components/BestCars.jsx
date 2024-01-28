@@ -8,6 +8,12 @@ import { cars } from "../data";
 import { Link } from "react-router-dom";
 
 const BestCars = () => {
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+
+  const handleBeforeChange = (current, next) => {
+    setCurrentSlide(next);
+  };
+
   // Mashinalarni narxi bo'yicha tartiblash
   const sortedCars = [...cars].sort((a, b) => b.price - a.price).slice(0, 3);
 
@@ -37,7 +43,7 @@ const BestCars = () => {
     nextArrow: <CustomNextArrow />,
     prevArrow: <CustomPrevArrow />,
     adaptiveHeight: true,
-    fade: true,
+    beforeChange: handleBeforeChange,
   };
 
   return (
@@ -50,9 +56,9 @@ const BestCars = () => {
             </h2>
             <Slider {...settings}>
               {/* slider item */}
-              {sortedCars.map((car) => {
+              {sortedCars.map((car, index) => {
                 return (
-                  <div key={car.id} className="slider">
+                  <div key={car.id} className={`slider slick-fade ${currentSlide === index ? 'slick-current' : ''}`}>
                     {/* image */}
                     <div className="w-full col-span-1.5 h-60 mb-5 lg:mr-8 lg:max-w-xl md:h-[340px]">
                       <img
