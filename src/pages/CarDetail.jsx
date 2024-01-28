@@ -13,7 +13,7 @@ const CarDetail = () => {
 
   const CustomNextArrow = (props) => (
     <div
-      className="w-8 h-8 bg-lime-100 rounded-full absolute right-0 z-50 border-2 top-1/2 border-main"
+      className="w-8 h-8 bg-lime-100 rounded-full absolute right-0 z-50 border-2 top-1/2 border-main cursor-pointer"
       onClick={props.onClick}
     >
       <img className="rotate-180" src={arrow} alt="" />
@@ -22,7 +22,7 @@ const CarDetail = () => {
 
   const CustomPrevArrow = (props) => (
     <div
-      className="w-8 h-8 bg-lime-100 rounded-full absolute border-2 border-main top-1/2 z-50"
+      className="w-8 h-8 bg-lime-100 rounded-full absolute border-2 border-main top-1/2 z-50 cursor-pointer"
       onClick={props.onClick}
     >
       <img src={arrow} alt="" />
@@ -49,22 +49,22 @@ const CarDetail = () => {
   };
 
   return (
-    <div className="w-full max-w-base mx-auto px-5 pb-24">
+    <div className="w-full max-w-base mx-auto px-5 pb-16 md:pb-24">
       {carItem ? (
         <div>
-          <h1 className="text-2xl leading-7 text-111 font-bold mb-8 sm:text-3xl md:leading-9">
+          <h1 className="text-2xl leading-7 text-111 font-bold mb-4 sm:text-3xl md:leading-9">
             {carItem.marka}
           </h1>
 
           {/* Main car detail */}
-          <div className="grid grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:gap-7 md:grid-cols-2 lg:gap-10">
             {/* slider */}
             <Slider {...settings}>
               <div>
                 <img
                   width={565}
                   height={400}
-                  className="h-[400px] object-cover"
+                  className="h-[280px] object-cover w-full rounded-2xl sm:h-[320px] md:h-[400px]"
                   src={carItem.images[0]}
                 />
               </div>
@@ -72,7 +72,7 @@ const CarDetail = () => {
                 <img
                   width={565}
                   height={400}
-                  className="h-[400px] object-cover"
+                  className="h-[280px] object-cover w-full rounded-2xl sm:h-[320px] md:h-[400px]"
                   src={carItem.images[1]}
                 />
               </div>
@@ -80,7 +80,7 @@ const CarDetail = () => {
                 <img
                   width={565}
                   height={400}
-                  className="h-[400px] object-cover"
+                  className="h-[280px] object-cover w-full rounded-2xl sm:h-[320px] md:h-[400px]"
                   src={carItem.images[2]}
                 />
               </div>
@@ -88,14 +88,14 @@ const CarDetail = () => {
                 <img
                   width={565}
                   height={400}
-                  className="h-[400px] object-cover"
+                  className="h-[280px] object-cover w-full rounded-2xl sm:h-[320px] md:h-[400px]"
                   src={carItem.images[3]}
                 />
               </div>
             </Slider>
 
             {/* car detail content */}
-            <div className="space-y-4 relative p-5">
+            <div className="space-y-2 relative p-0 md:space-y-4 lg:p-5">
               <img
                 className="absolute right-0 top-0"
                 src={carItem.logo}

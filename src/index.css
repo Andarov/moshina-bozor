@@ -63,9 +63,13 @@ button[aria-expanded="true"] + label {
 }
 
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 990px) {
   .slider{
     display: flex;
     flex-direction: column;
+  }
+
+  .slick-dots li {
+    display: none !important;
   }
 }
