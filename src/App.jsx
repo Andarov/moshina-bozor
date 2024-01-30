@@ -13,6 +13,7 @@ import Contact from './pages/Contact'
 import Home from './pages/Home'
 import News from './pages/News'
 import NewsDetail from './pages/NewsDetail'
+import Ad from './pages/Ad'
 
 const App = () => {
   const router = createBrowserRouter(
@@ -30,6 +31,7 @@ const App = () => {
           <Route path='/news/:title' element={<NewsDetail/>}/>
         </Route>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/ad' element={<Ad/>}/>
       </Route>
     )
   )

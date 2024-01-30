@@ -52,7 +52,7 @@ button[aria-expanded="true"] + label {
 }
 
 .slick-thumb li.slick-active img{
-  border: 3px solid #E70A32;
+  border: 3px solid rgb(231, 10, 50);
 }
 
 .slick-thumb li img{
@@ -61,7 +61,6 @@ button[aria-expanded="true"] + label {
   object-fit: cover;
   border-radius: 12px;
 }
-
 
 @media only screen and (max-width: 990px) {
   .slider{
