@@ -121,10 +121,9 @@ import tayotaCrown2 from './img/tayotaCrown2.jpg'
 import tayotaCrown3 from './img/tayotaCrown3.jpg'
 import tayotaCrown4 from './img/tayotaCrown4.jpg'
 
+// cars
 const savedCars = JSON.parse(localStorage.getItem('cars')) || [];
-
 const generateUniqueId = () => uuidv4();
-
 export const cars = savedCars.length > 0 ? savedCars : [
     // chevrolet
     {
@@ -552,16 +551,36 @@ export const cars = savedCars.length > 0 ? savedCars : [
         tel: '+998(88)-169-00-33'
     },
 ];
-
 localStorage.setItem('cars', JSON.stringify(cars));
 
-import nomer from './img/news/nomer.jpeg'
+import userIcon from './img/userIcon.png'
+export const comments = [
+    {
+        id: uuidv4(),
+        img: userIcon,
+        author: 'Islombek',
+        comment: "Sayt juda ajoyib hali moshina olish niyyatim yo'q bo'lsada bugungi kun moshina narxlari bilan tanishib olyabman."
+    },
+    {
+        id: uuidv4(),
+        img: userIcon,
+        author: 'Shoxruh',
+        comment: "Sayt juda ajoyib hali moshina olish niyyatim yo'q bo'lsada bugungi kun moshina narxlari bilan tanishib olyabman."
+    },
+    {
+        id: uuidv4(),
+        img: userIcon,
+        author: 'Abror',
+        comment: "Sayt juda ajoyib hali moshina olish niyyatim yo'q bo'lsada bugungi kun moshina narxlari bilan tanishib olyabman."
+    },
+];
+
+// news
 import roewe from './img/news/roewe.jpeg'
 import sony from './img/news/sony.jpeg'
 import gm from './img/news/gm.jpeg'
 import volga from './img/news/volga.jpeg'
 import xitoy from './img/news/xitoy.jpeg'
-
 export const news = [
     {
         id: generateUniqueId(),
@@ -607,10 +626,10 @@ export const news = [
     }
 ]
 
+// contact-infos
 import location from './img/location.svg'
 import call from './img/call.svg'
 import hour from './img/hour.svg'
-
 export const contactInfos = [
     {
         id: generateUniqueId(),
