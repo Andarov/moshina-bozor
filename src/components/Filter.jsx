@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Select, Option } from "@material-tailwind/react";
 import { cars } from "../data";
 import { useLocation } from "react-router-dom";
+import { Select } from 'antd';
+
+const { Option } = Select;
 
 const Filter = ({ markaArray }) => {
   const location = useLocation();
@@ -51,53 +53,43 @@ const Filter = ({ markaArray }) => {
   return (
     <form className="grid grid-cols-1 gap-5 pb-10 md:gap-7 sm:grid-cols-2 md:grid-cols-3">
       <Select
-        className={`${isHome && "bg-white"}`}
-        color="red"
-        label="Modelni tanlang"
-        name="Model"
-        value={selectedModel}
-        onChange={(e) => setSelectedModel(e.target.value)}
+        size="large"
+        defaultValue="Modelni tanlang"
+        onChange={value => setSelectedModel(value)}
       >
+        <Option value="Modelni tanlang" disabled>Modelni tanlang</Option>
         {renderOptions("model")}
       </Select>
       <Select
-        className={`${isHome && "bg-white"}`}
-        color="red"
-        label="Markani tanlang"
-        name="Marka"
-        value={selectedMarka}
-        onChange={(e) => setSelectedMarka(e.target.value)}
+        size="large"
+        defaultValue="Markani tanlang"
+        onChange={value => setSelectedMarka(value)}
       >
+        <Option value="Markani tanlang" disabled>Markani tanlang</Option>
         {renderOptions("marka")}
       </Select>
       <Select
-        className={`${isHome && "bg-white"}`}
-        color="red"
-        label="Yilni tanlang"
-        name="Yil"
-        value={selectedYear}
-        onChange={(e) => setSelectedYear(e.target.value)}
+        size="large"
+        defaultValue="Yilni tanlang"
+        onChange={value => setSelectedYear(value)}
       >
+        <Option value="Yilni tanlang" disabled>Yilni tanlang</Option>
         {renderOptions("year")}
       </Select>
       <Select
-        className={`${isHome && "bg-white"}`}
-        color="red"
-        label="Viloyatni tanlang"
-        name="Viloyat"
-        value={selectedPlace}
-        onChange={(e) => setSelectedPlace(e.target.value)}
+        size="large"
+        defaultValue="Viloyatni tanlang"
+        onChange={value => setSelectedPlace(value)}
       >
+        <Option value="Viloyatni tanlang" disabled>Viloyatni tanlang</Option>
         {renderOptions("place")}
       </Select>
       <Select
-        className={`${isHome && "bg-white"}`}
-        color="red"
-        label="Rangni tanlang"
-        name="Moshina rangi"
-        value={selectedColor}
-        onChange={(e) => setSelectedColor(e.target.value)}
+        size="large"
+        defaultValue="Rangni tanlang"
+        onChange={value => setSelectedColor(value)}
       >
+        <Option value="Rangni tanlang" disabled>Rangni tanlang</Option>
         {renderOptions("color")}
       </Select>
       <button
