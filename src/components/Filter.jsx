@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { cars } from "../data";
 import { useLocation } from "react-router-dom";
-import { Select } from 'antd';
+import { Select } from "antd";
 
 const { Option } = Select;
 
@@ -14,6 +14,43 @@ const Filter = ({ markaArray }) => {
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedPlace, setSelectedPlace] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
+  const [filteredCarCount, setFilteredCarCount] = useState(null);
+  const [filteredCars, setFilteredCars] = useState([]);
+
+  const filterCars = () => {
+    return cars.filter((car) => {
+      return (
+        (selectedModel === "" || car.model === selectedModel) &&
+        (selectedMarka === "" || car.marka === selectedMarka) &&
+        (selectedYear === "" || car.year === selectedYear) &&
+        (selectedPlace === "" || car.place === selectedPlace) &&
+        (selectedColor === "" || car.color === selectedColor)
+      );
+    });
+  };
+
+  console.log(cars.length === filteredCarCount);
+
+  const updateFilteredCars = () => {
+    const filteredCars = filterCars();
+    setFilteredCars(filteredCars);
+    setFilteredCarCount(filteredCars.length);
+  };
+
+  useEffect(() => {
+    updateFilteredCars();
+  }, [
+    selectedModel,
+    selectedMarka,
+    selectedYear,
+    selectedPlace,
+    selectedColor,
+  ]);
+
+  const handleFilter = (e) => {
+    e.preventDefault();
+    updateFilteredCars();
+  };
 
   const getUniqueValues = (key) => {
     if (!markaArray || markaArray.length === 0) {
@@ -31,77 +68,77 @@ const Filter = ({ markaArray }) => {
   };
 
   const renderOptions = (key) => {
-    return (
-      (getUniqueValues(key) || []).length > 0
-        ? getUniqueValues(key)
-        : Array.from(new Set(cars.map((car) => car[key])))
-    ).map((value, index) => (
+    const filteredOptions = filterCars().map(car => car[key]);
+    const uniqueValues = Array.from(new Set(filteredOptions));
+    
+    return uniqueValues.map((value, index) => (
       <Option key={index} value={value}>
         {value}
       </Option>
     ));
   };
-
-  useEffect(() => {
-    setSelectedModel("");
-    setSelectedMarka("");
-    setSelectedYear("");
-    setSelectedPlace("");
-    setSelectedColor("");
-  }, [markaArray]);
-
+  
   return (
     <form className="grid grid-cols-1 gap-5 pb-10 md:gap-7 sm:grid-cols-2 md:grid-cols-3">
       <Select
         size="large"
         defaultValue="Modelni tanlang"
-        onChange={value => setSelectedModel(value)}
+        onChange={(value) => setSelectedModel(value)}
       >
-        <Option value="Modelni tanlang" disabled>Modelni tanlang</Option>
+        <Option value="Modelni tanlang" disabled>
+          Modelni tanlang
+        </Option>
         {renderOptions("model")}
       </Select>
       <Select
         size="large"
         defaultValue="Markani tanlang"
-        onChange={value => setSelectedMarka(value)}
+        onChange={(value) => setSelectedMarka(value)}
       >
-        <Option value="Markani tanlang" disabled>Markani tanlang</Option>
+        <Option value="Markani tanlang" disabled>
+          Markani tanlang
+        </Option>
         {renderOptions("marka")}
       </Select>
       <Select
         size="large"
         defaultValue="Yilni tanlang"
-        onChange={value => setSelectedYear(value)}
+        onChange={(value) => setSelectedYear(value)}
       >
-        <Option value="Yilni tanlang" disabled>Yilni tanlang</Option>
+        <Option value="Yilni tanlang" disabled>
+          Yilni tanlang
+        </Option>
         {renderOptions("year")}
       </Select>
       <Select
         size="large"
         defaultValue="Viloyatni tanlang"
-        onChange={value => setSelectedPlace(value)}
+        onChange={(value) => setSelectedPlace(value)}
       >
-        <Option value="Viloyatni tanlang" disabled>Viloyatni tanlang</Option>
+        <Option value="Viloyatni tanlang" disabled>
+          Viloyatni tanlang
+        </Option>
         {renderOptions("place")}
       </Select>
       <Select
         size="large"
         defaultValue="Rangni tanlang"
-        onChange={value => setSelectedColor(value)}
+        onChange={(value) => setSelectedColor(value)}
       >
-        <Option value="Rangni tanlang" disabled>Rangni tanlang</Option>
+        <Option value="Rangni tanlang" disabled>
+          Rangni tanlang
+        </Option>
         {renderOptions("color")}
       </Select>
       <button
-        onClick={(e) => {
-          e.preventDefault();
-          alert("Tez orada ishlaydi");
-        }}
+        onClick={handleFilter}
         className={`${
           isHome ? "bg-main" : "bg-teal-500"
         } text-white font-semibold rounded-md py-2`}
       >
-        Qidirish
+        {filteredCarCount !== cars.length
+          ? `${filteredCarCount} ta moshina`
+          : "Qidirish"}
       </button>
     </form>
   );
