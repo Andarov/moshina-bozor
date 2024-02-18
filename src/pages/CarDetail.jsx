@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { cars } from "../data";
-import arrow from "../img/arrow.svg";
+import redArrow from "../img/redArrow.png";
 import CarItem from "../components/CarItem";
 
 import Slider from "react-slick";
@@ -16,19 +16,19 @@ const CarDetail = () => {
 
   const CustomNextArrow = (props) => (
     <div
-      className="w-8 h-8 bg-lime-100 rounded-full absolute right-0 z-50 border-2 top-1/2 border-main cursor-pointer"
+      className="w-10 h-10 flex justify-center items-center bg-white rounded-full absolute right-0 z-50 border-2 top-1/2 border-main cursor-pointer"
       onClick={props.onClick}
     >
-      <img className="rotate-180" src={arrow} alt="" />
+      <img className="w-6 h-6" src={redArrow} alt="" />
     </div>
   );
 
   const CustomPrevArrow = (props) => (
     <div
-      className="w-8 h-8 bg-lime-100 rounded-full absolute border-2 border-main top-1/2 z-50 cursor-pointer"
+      className="w-10 h-10 flex justify-center items-center bg-white rounded-full absolute border-2 border-main top-1/2 z-50 cursor-pointer"
       onClick={props.onClick}
     >
-      <img src={arrow} alt="" />
+      <img className="rotate-180 w-6 h-6"  src={redArrow} alt="" />
     </div>
   );
 
