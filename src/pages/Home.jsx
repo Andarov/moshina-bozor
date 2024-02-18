@@ -14,12 +14,6 @@ const Home = () => {
     <>
         <Hero/>
         <Count/>
-        <div className="w-full max-w-base mx-auto px-5 pt-6">
-          <h2 className="text-2xl leading-7 text-111 font-bold mb-8 sm:text-3xl md:leading-9">
-            Kerakli avtomobilni tanlang
-          </h2>
-          <Filter/>
-        </div>
         <Catalog/>
         <New/>
         <Comments/>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { cars } from "../data";
 import CarItem from "../components/CarItem";
 import { Link, useParams } from "react-router-dom";
@@ -7,24 +7,30 @@ import Pagination from "../components/Pagination";
 
 const Catalog = () => {
   const { model, marka } = useParams();
-  const carsOfModel = cars.filter((car) => car.model === model);
-  const carsOfMarka = cars.filter((car) => car.marka === marka);
-  const targetArray = carsOfModel.length > 0 ? carsOfModel : cars;
-  const markaArray = carsOfMarka.length > 0 ? carsOfMarka : targetArray;
-
   const catalogRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [filteredCars, setFilteredCars] = useState([]);
+
   const itemsPerPage = 15;
-  const totalPages = Math.ceil(markaArray.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredCars.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = currentPage * itemsPerPage;
+
+  useEffect(() => {
+    const carsOfModel = cars.filter((car) => car.model === model);
+    const carsOfMarka = cars.filter((car) => car.marka === marka);
+    const targetArray = carsOfModel.length > 0 ? carsOfModel : cars;
+    const markaArray = carsOfMarka.length > 0 ? carsOfMarka : targetArray;
+    setFilteredCars(markaArray);
+  }, [model, marka]);
+
+  useEffect(() => {
+    scrollToTop();
+  }, [currentPage]);
 
   const handlePageChange = (pageNumber) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);
-      setTimeout(() => {
-        scrollToTop();
-      }, 0);
     }
   };
 
@@ -44,7 +50,7 @@ const Catalog = () => {
 
         {model && (
           <ul className="w-full max-w-5xl grid grid-cols-2 mb-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {carsOfModel.map((modelCar) => {
+            {filteredCars.map((modelCar) => {
               return (
                 <li
                   key={modelCar.id}
@@ -62,16 +68,14 @@ const Catalog = () => {
           </ul>
         )}
 
-        {/* filtr */}
-        <Filter markaArray={markaArray} />
+        <Filter markaArray={filteredCars} setFilteredCars={setFilteredCars}/>
 
         <ul className="grid grid-cols-1 gap-7 md:gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          {markaArray.slice(startIndex, endIndex).map((car) => (
+          {filteredCars.slice(startIndex, endIndex).map((car) => (
             <CarItem key={car.id} {...car} />
           ))}
         </ul>
 
-        {/* Pagination buttons */}
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}

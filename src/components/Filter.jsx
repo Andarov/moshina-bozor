@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { cars } from "../data";
-import { useLocation } from "react-router-dom";
 import { Select } from "antd";
 
 const { Option } = Select;
 
-const Filter = ({ markaArray }) => {
-  const location = useLocation();
-  const isHome = location.pathname === "/";
-
+const Filter = ({ markaArray, setFilteredCars }) => {
   const [selectedModel, setSelectedModel] = useState("");
   const [selectedMarka, setSelectedMarka] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedPlace, setSelectedPlace] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
   const [filteredCarCount, setFilteredCarCount] = useState(null);
-  const [filteredCars, setFilteredCars] = useState([]);
 
   const filterCars = () => {
     return cars.filter((car) => {
@@ -28,8 +23,6 @@ const Filter = ({ markaArray }) => {
       );
     });
   };
-
-  console.log(cars.length === filteredCarCount);
 
   const updateFilteredCars = () => {
     const filteredCars = filterCars();
@@ -132,9 +125,7 @@ const Filter = ({ markaArray }) => {
       </Select>
       <button
         onClick={handleFilter}
-        className={`${
-          isHome ? "bg-main" : "bg-teal-500"
-        } text-white font-semibold rounded-md py-2`}
+        className={"bg-teal-500 text-white font-semibold rounded-md py-2"}
       >
         {filteredCarCount !== cars.length
           ? `${filteredCarCount} ta moshina`
