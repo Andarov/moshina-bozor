@@ -1,19 +1,22 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider, createRoutesFromElements, Route } from 'react-router-dom'
-import CatalogLayout from './layouts/CatalogLayout'
 
 // Layouts
 import MainLayout from './layouts/MainLayout'
 import NewsLayout from './layouts/NewsLayout'
-import CarDetail from './pages/CarDetail'
-import Catalog from './pages/Catalog'
+import CatalogLayout from './layouts/CatalogLayout'
+import FormLayout from './layouts/FormLayout'
 
 // Pages
 import Contact from './pages/Contact'
+import CarDetail from './pages/CarDetail'
+import Catalog from './pages/Catalog'
 import Home from './pages/Home'
 import News from './pages/News'
 import NewsDetail from './pages/NewsDetail'
 import Ad from './pages/Ad'
+import AddCar from './pages/AddCar'
+import AddComment from './pages/AddComment'
 
 const App = () => {
   const router = createBrowserRouter(
@@ -29,6 +32,10 @@ const App = () => {
         <Route path='/news' element={<NewsLayout/>}>
           <Route index element={<News/>}/>
           <Route path='/news/:title' element={<NewsDetail/>}/>
+        </Route>
+        <Route path='/form' element={<FormLayout/>}>
+          <Route index element={<AddCar/>}/>
+          <Route path='/form/comment' element={<AddComment/>}/>
         </Route>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/ad' element={<Ad/>}/>
