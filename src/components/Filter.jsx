@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { cars } from "../data";
 import { Select } from "antd";
+import '../css/antd.css'
 
 const { Option } = Select;
 
