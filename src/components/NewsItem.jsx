@@ -1,6 +1,7 @@
 // NewsItem.js
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import dateIcon from '../img/date.svg'
 
 const NewsItem = ({ id, img, title, date }) => {
   const location = useLocation();
@@ -23,7 +24,10 @@ const NewsItem = ({ id, img, title, date }) => {
           Batafsil
         </Link>
 
-        <span>{date}</span>
+        <div className="flex items-center space-x-1"> 
+          <img className="w-5 h-5" src={dateIcon} alt="" />
+          <span>{date}</span>
+        </div>
       </div>
     </li>
   );

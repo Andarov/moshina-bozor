@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { news } from "../data";
+import dateIcon from '../img/date.svg'
 
 const NewsDetail = () => {
   const { title } = useParams();
@@ -15,7 +16,8 @@ const NewsDetail = () => {
         <img className="w-full rounded-xl mb-6 h-96 object-cover md:h-[480px] md:rounded-2xl lg:rounded-3xl" src={newsItem.img} alt={newsItem.title} />
         <p className="text-base mb-10 text-111 font-medium">{newsItem.text}</p>
 
-        <div className="text-right">
+        <div className="flex justify-end items-center space-x-1"> 
+          <img className="w-5 h-5" src={dateIcon} alt="" />
             <span className="text-main font-semibold">{newsItem.date}</span>
         </div>
       </div>
