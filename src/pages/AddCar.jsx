@@ -26,8 +26,8 @@ const AddCar = () => {
         {/* rang */}
         <input className='px-6 py-3 border-2 rounded-lg' type="text" name="Rangi" placeholder='Rangi' />
         {/* rasm */}
-        <label class="px-6 py-3 border-2 rounded-lg col-span-3 text-center" for="image-input">Mashina rasmlarini joylang</label>
-        <input id="image-input" class="hidden" type="file" name="mashina rasmlari" accept=".jpg, .jpeg, .png" multiple=""></input>
+        <label className="px-6 py-3 border-2 rounded-lg col-span-3 text-center" htmlFor="image-input">Mashina rasmlarini joylang</label>
+        <input id="image-input" className="hidden" type="file" name="mashina rasmlari" accept=".jpg, .jpeg, .png" multiple=""></input>
         {/* extra */}
         <textarea className='px-6 py-3 border-2 rounded-lg resize-none col-span-3' name="Qoshimcha malumotlar" placeholder="Qo'shimcha malumotlar"></textarea>
       </form>

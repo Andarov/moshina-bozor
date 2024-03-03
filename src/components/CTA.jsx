@@ -1,6 +1,7 @@
 import React from "react";
 import carIcon from '../img/carIcon.png'
 import telegramIcon from '../img/telegramIcon.png'
+import {Link} from 'react-router-dom'
 
 const CTA = () => {
   return (
@@ -16,10 +17,10 @@ const CTA = () => {
                 <img className="w-6 h-6" width={24} height={24} src={telegramIcon} alt="Telegram Icon" />
                 <span className="font-semibold">Telegram</span>
             </a>
-            <a className="inline-flex items-center px-3 py-3 bg-main rounded-lg space-x-2 sm:px-8 sm:space-x-4" href="https://t.me/Andarov_B">
+            <Link to='/elon' className="inline-flex items-center px-3 py-3 bg-main rounded-lg space-x-2 sm:px-8 sm:space-x-4">
                 <img className="w-6 h-6" width={24} height={24} src={carIcon} alt="Ad Icon" />
                 <span className="font-semibold">Elon joylash</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

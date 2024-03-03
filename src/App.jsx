@@ -33,9 +33,9 @@ const App = () => {
           <Route index element={<News/>}/>
           <Route path='/news/:title' element={<NewsDetail/>}/>
         </Route>
-        <Route path='/form' element={<FormLayout/>}>
+        <Route path='/elon' element={<FormLayout/>}>
           <Route index element={<AddCar/>}/>
-          <Route path='/form/comment' element={<AddComment/>}/>
+          <Route path='/elon/sharx' element={<AddComment/>}/>
         </Route>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/ad' element={<Ad/>}/>

@@ -176,7 +176,7 @@ const Header = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  
+
   return (
     <>
       <header className="py-5 bg-teal-900/10 z-10">
@@ -220,13 +220,19 @@ const Header = () => {
             <ul
               className={`${
                 isHome ? "text-white" : "text-111"
-              } hidden items-center gap-8 text-lg font-medium leading-7 md:flex`}
+              } hidden items-center gap-6 text-base font-medium leading-7 md:flex`}
             >
               <li>
                 <NavLink to="/catalog">Katalog</NavLink>
               </li>
               <li>
                 <NavLink to="/news">Yangiliklar</NavLink>
+              </li>
+              <li>
+                <NavLink to="/elon">Elon joylash</NavLink>
+              </li>
+              <li>
+                <NavLink to="/elon/sharx">Sharx qoldirish</NavLink>
               </li>
               <li>
                 <NavLink to="/contact">Bog'lanish</NavLink>
@@ -372,13 +378,19 @@ const Header = () => {
         <nav className="mb-auto">
           <ul className="flex text-lg text-111 font-medium leading-7 flex-col items-start gap-3">
             <li>
-              <Link to="/catalog">Katalog</Link>
+              <NavLink to="/catalog">Katalog</NavLink>
             </li>
             <li>
-              <Link to="/news">Yangiliklar</Link>
+              <NavLink to="/news">Yangiliklar</NavLink>
             </li>
             <li>
-              <Link to="/contact">Bog'lanish</Link>
+              <NavLink to="/elon">Elon joylash</NavLink>
+            </li>
+            <li>
+              <NavLink to="/elon/sharx">Sharx qoldirish</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact">Bog'lanish</NavLink>
             </li>
           </ul>
         </nav>

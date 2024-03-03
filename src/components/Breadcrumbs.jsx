@@ -8,7 +8,6 @@ const Breadcrumbs = () => {
   const isCatalogPath = location.pathname.startsWith('/catalog/');
   const tayyorArr = pathArr.filter((path) => path !== "");
   const isCarPath = tayyorArr.find((path)=> path === 'car');
-  console.log(tayyorArr);
 
   return (
     <ul className="flex flex-wrap text-base leading-6 text-[#767980] mb-10">
