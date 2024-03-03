@@ -16,19 +16,19 @@ const CarDetail = () => {
 
   const CustomNextArrow = (props) => (
     <div
-      className="w-10 h-10 flex justify-center items-center bg-white rounded-full absolute right-0 z-50 border-2 top-1/2 border-main cursor-pointer"
+      className="w-10 h-10 flex justify-center items-center bg-white/90 rounded-full absolute right-0 z-50 border-2 top-1/2 border-main cursor-pointer"
       onClick={props.onClick}
     >
-      <img className="w-6 h-6" src={redArrow} alt="" />
+      <img className="w-4 h-4" src={redArrow} alt="" />
     </div>
   );
 
   const CustomPrevArrow = (props) => (
     <div
-      className="w-10 h-10 flex justify-center items-center bg-white rounded-full absolute border-2 border-main top-1/2 z-50 cursor-pointer"
+      className="w-10 h-10 flex justify-center items-center bg-white/90 rounded-full absolute border-2 border-main top-1/2 z-50 cursor-pointer"
       onClick={props.onClick}
     >
-      <img className="rotate-180 w-6 h-6"  src={redArrow} alt="" />
+      <img className="rotate-180 w-4 h-4"  src={redArrow} alt="" />
     </div>
   );
 
