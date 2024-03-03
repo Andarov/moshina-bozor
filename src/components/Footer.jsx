@@ -5,18 +5,24 @@ const Footer = () => {
   return (
     <footer>
       <div className="py-10 bg-[#0A1B28] text-white">
-        <div className="w-full max-w-base mx-auto px-5 flex flex-col items-start space-y-5 md:items-center lg:flex-row lg:justify-between lg:space-y-0">
+        <div className="w-full max-w-base mx-auto px-5 flex flex-col items-start space-y-5 md:items-center xl:flex-row xl:justify-between xl:space-y-0">
           <Link className="text-[28px] font-bold leading-9" to="/">
             <h1>Moshina bozor</h1>
           </Link>
 
           <nav>
-            <ul className="flex flex-col items-start space-y-6 text-lg font-medium leading-7 sm:flex-row sm:items-center sm:space-x-10 sm:space-y-0">
+            <ul className="flex flex-col items-start gap-3 text-base font-medium leading-7 md:flex-row md:items-center md:gap-6 ">
               <li>
                 <NavLink to="/catalog">Katalog</NavLink>
               </li>
               <li>
                 <NavLink to="/news">Yangiliklar</NavLink>
+              </li>
+              <li>
+                <NavLink to="/elon">Elon joylash</NavLink>
+              </li>
+              <li>
+                <NavLink to="/elon/sharx">Sharx qoldirish</NavLink>
               </li>
               <li>
                 <NavLink to="/contact">Bog'lanish</NavLink>
