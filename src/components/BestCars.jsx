@@ -60,7 +60,7 @@ const BestCars = () => {
                 return (
                   <div key={car.id} className={`slider slick-fade ${currentSlide === index ? 'slick-current' : ''}`}>
                     {/* image */}
-                    <div className="w-full col-span-1.5 h-60 mb-5 lg:mr-8 lg:max-w-xl md:h-[340px]">
+                    <div className="w-full bg-gray-400 rounded-2xl col-span-1.5 h-60 mb-5 lg:mr-8 lg:max-w-xl md:h-[340px]">
                       <img
                         height={350}
                         width={560}
