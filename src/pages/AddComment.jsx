@@ -9,7 +9,7 @@ const AddComment = () => {
       <hr className="mb-14" />
 
       <form className="space-y-6">
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {/* ism */}
           <input
             className="px-6 py-3 border-2 rounded-lg"
@@ -27,15 +27,15 @@ const AddComment = () => {
         </div>
         {/* extra */}
         <textarea
-          className="w-full px-6 py-3 border-2 rounded-lg resize-none col-span-3"
+          className="w-full min-h-40 px-6 py-3 border-2 rounded-lg resize-none col-span-3"
           name="Qoshimcha malumotlar"
           placeholder="Qo'shimcha malumotlar"
         ></textarea>
 
         <div className="flex justify-between items-center">
-          <label className="flex items-center space-x-5">
+          <label className="flex items-center space-x-2">
             <input className="w-5 h-5" type="checkbox" />
-            <span>Sharxni anonim yuborish</span>
+            <span className="text-sm md:text-base">Anonim yuborish</span>
           </label>
 
           <button className="bg-main px-8 py-2 rounded-md text-white font-medium">Yuborish</button>
