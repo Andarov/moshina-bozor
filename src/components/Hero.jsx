@@ -1,18 +1,34 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
+import React from "react";
+import { Link } from "react-router-dom";
 const Hero = () => {
   return (
-    <div className='bg-heroBg bg-no-repeat bg-gray-400 bg-cover w-full py-20 bg-111/40'>
-        <div className="w-full max-w-base mx-auto px-5">
-          <div className="w-full max-w-xl mx-auto text-center text-white">
-            <h1 className='font-bold text-3xl mb-5 sm:text-4xl md:text-5xl'>Moshina bozor</h1>
-            <p className='text-base font-medium mb-9 sm:text-lg md:text-xl'>Har xil markadagi moshinalarni hamyonbop narxda <br /> Oson soting va sotib oling !</p>
-            <Link to='/catalog' className='text-base border-2 border-main bg-main w-56 inline-block text-center py-2 rounded-lg font-semibold hover:bg-white hover:text-main transition-all duration-300 md:py-3'>Katalog</Link>
-          </div>
+    <div className="flex items-center pb-14 pt-24 sm:py-28">
+      <div className="w-full max-w-base mx-auto px-5">
+        {/* contents */}
+        <div className="flex flex-col items-start space-y-3.5 text-white text-start sm:items-center sm:text-center">
+          <h1 className="text-lg max-w-56 leading-5 sm:text-xl sm:max-w-max">
+            Mashina bozor Lorem, ipsum dolor.
+          </h1>
+          <p className="hidden text-4xl font-bold sm:block">
+            O'zbekistondagi #1 mashina bozor sayti!
+          </p>
+          <p className="block font-bold text-3xl sm:hidden">
+            O'zbekistondagi <br /> #1 mashina bozor sayti!
+          </p>
+          <p className="max-w-lg font-medium text-xl leading-6 sm:max-w-2xl sm:text-2xl">
+            Har xil markadagi moshinalarni hamyonbop narxda Oson soting va sotib
+            oling!
+          </p>
+          <Link
+            to="/catalog"
+            className="text-base border-2 border-main bg-main w-56 inline-block text-center py-2 rounded-lg font-semibold hover:bg-white hover:text-main transition-all duration-300 md:py-3"
+          >
+            Katalog
+          </Link>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

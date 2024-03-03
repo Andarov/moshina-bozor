@@ -3,18 +3,30 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Outlet, useLocation } from "react-router-dom";
 import Breadcrumbs from "../components/Breadcrumbs";
+import Hero from "../components/Hero";
 const MainLayout = () => {
   const location = useLocation();
   const home = location.pathname === "/";
   useEffect(() => {
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
   }, [location.pathname]);
-  
+
   return (
     <div className="font-montserrat">
-      {/* <Header /> */}
+      <div
+        className={`${
+          home ? "bg-heroBg" : "bg-white"
+        } bg-cover bg-bottom bg-no-repeat`}
+      >
+        <Header />
+        {home && <Hero />}
+      </div>
       <main>
-        <div className={`w-full max-w-base mx-auto px-5 ${!home ? 'pt-5' : 'pt-0'}`}>
+        <div
+          className={`w-full max-w-base mx-auto px-5 ${
+            !home ? "pt-10" : "pt-0"
+          }`}
+        >
           {!home && <Breadcrumbs />}
         </div>
         <Outlet />

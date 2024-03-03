@@ -125,7 +125,7 @@ const Filter = ({ markaArray, setFilteredCars }) => {
       </Select>
       <button
         onClick={handleFilter}
-        className={"bg-teal-500 text-white font-semibold rounded-md py-2"}
+        className={"bg-main text-white font-semibold rounded-md py-2"}
       >
         {filteredCarCount !== cars.length
           ? `${filteredCarCount} ta moshina`

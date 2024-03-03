@@ -3,9 +3,53 @@
 @tailwind utilities;
 
 @layer base{
+    *{
+      z-index: 1;
+    }
     html{
         scroll-behavior: smooth;
     }
+}
+
+@layer components {
+  .hamburger-btn {
+    @apply block !z-30 md:hidden;
+  }
+
+  .hamburger-btn_items-wrapper {
+    @apply flex items-center flex-col justify-center relative w-7 h-7;
+    transition: transform 0.4s ease;
+  }
+
+  .hamburger-btn_item {
+    @apply inline-block absolute w-full h-0.5 bg-white rounded-full;
+    transition: transform 0.2s linear;
+  }
+
+  .hamburger-btn_item:nth-child(1) {
+    transform: translateY(8px);
+  }
+
+  .hamburger-btn_item:nth-child(3) {
+    transform: translateY(-8px);
+  }
+
+  /* active hamburger button */
+  .hamburger-btn-active .hamburger-btn_items-wrapper {
+    transform: rotate(135deg);
+  }
+
+  .hamburger-btn-active .hamburger-btn_item:nth-child(1) {
+    transform: translateY(0) rotate(180deg);
+  }
+
+  .hamburger-btn-active .hamburger-btn_item:nth-child(2) {
+    transform: rotate(90deg);
+  }
+
+  .hamburger-btn-active .hamburger-btn_item:nth-child(3) {
+    transform: translateY(0) rotate(90deg);
+  }
 }
 
 .line-clamp-2 {

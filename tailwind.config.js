@@ -22,7 +22,10 @@ module.exports = withMT({
       },
       boxShadow: {
         'header-shadow': '0px 5px 20px 0px rgba(44, 41, 51, 0.10)',
-      }
+      },
+      dropShadow: {
+        "header-logo-shadow": "0px 0px 2px rgba(0,0,0,0.4)",
+      },
     },
   },
   plugins: [],

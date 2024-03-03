@@ -1,0 +1,53 @@
+.ant-select-item-option-disabled {
+  display: none !important;
+}
+
+.ant-select * {
+  font-family: "Montserrat", sans-serif !important;
+  height: 40px !important;
+}
+
+.ant-select-selector {
+  border: 1px solid #e0e1e7 !important;
+}
+
+.ant-select-open .ant-select-selector {
+  border: 1px solid #e70a32 !important;
+  box-shadow: 0px 0px 0px #e70a32 !important;
+}
+
+.ant-select-focused .ant-select-selector {
+  box-shadow: 0px 0px 0px #e70a32 !important;
+}
+
+.ant-select-item-option-active,
+.ant-select-item-option-selected {
+  background: rgba(224, 225, 231, 0.4) !important;
+}
+
+.ant-select-selection-item,
+.ant-select-item-option-content {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  font-family: "Montserrat", sans-serif !important;
+  color: #111 !important;
+}
+
+.ant-select-selection-item {
+  height: 24px !important;
+}
+
+.ant-select-item-option-content {
+  font-weight: 400 !important;
+}
+
+.ant-select-arrow {
+  margin-top: -4px !important;
+}
+
+.ant-select-arrow,
+.ant-select-arrow * {
+  width: 14px !important;
+  height: 14px !important;
+}
