@@ -385,7 +385,7 @@ const Header = () => {
       {/* search */}
       <div
         style={searchStyles}
-        className="fixed z-30 w-full min-h-screen bg-white top-0 right-0 bottom-0 left-0 transition-all duration-300"
+        className="fixed z-30 w-full min-h-screen bg-white inset-0 transition-all duration-300"
       >
         {/* content header */}
         <div className="z-20 bg-[#EFF2F4] py-6">

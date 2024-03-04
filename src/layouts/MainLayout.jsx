@@ -16,7 +16,7 @@ const MainLayout = () => {
       <div
         className={`${
           home ? "bg-heroBg" : "bg-white"
-        } bg-cover bg-bottom bg-no-repeat`}
+        } bg-cover bg-bottom bg-no-repeat z-[9999]`}
       >
         <Header />
         {home && <Hero />}
