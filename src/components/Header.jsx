@@ -2,112 +2,110 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { cars } from "../data";
 import CarItem from "./CarItem";
-import Hero from "./Hero";
 
-// images
 import logo from "../img/logo.svg";
 import search from "../img/search.svg";
 import cross from "../img/cross.svg";
 import malibu from "../img/favicon-40x40.svg";
+
 const Header = () => {
-  // navbar
-  const [openNavbar, setOpenNavbar] = useState(true);
+  const [openNavbar, setOpenNavbar] = useState(false);
   const [isHome, setIsHome] = useState(true);
   const location = useLocation();
 
-  // search
   const [searchStyles, setSearchStyles] = useState({
     display: "none",
     opacity: 0,
     transform: "translateY(-100px)",
   });
 
-  const allKeywords = cars.map((car) => {
-    return {
-      name: car.model + " " + car.marka,
-      model: car.model,
-      marka: car.marka,
-    };
-  });
+  const allKeywords = cars.map((car) => ({
+    name: `${car.model} ${car.marka}`,
+    model: car.model,
+    marka: car.marka,
+  }));
 
   const [searchedCars, setSearchedCars] = useState([]);
   const [keywords, setKeywords] = useState([]);
-  const [openSearch, setOpenSearch] = useState(true);
+  const [openSearch, setOpenSearch] = useState(false);
   const [isSearched, setIsSearched] = useState(false);
   const [searchInputValue, setSearchInputValue] = useState("");
   const searchInputRef = useRef(null);
 
-  // filter autocomplete keywords
+  // filter && sort
   const filterKeywords = (e) => {
-    // checked value
-    const checkedValue = e.target.value
-      .split("")
-      .every((value) => value === " ");
-
-    // formatted value
-    const formattedValue = e.target.value
-      .split(" ")
-      .filter((value) => value !== "")
-      .join(" ");
-
+    const formattedValue = e.target.value.trim();
     setSearchInputValue(formattedValue);
 
-    if (!checkedValue) {
-      // filtered keywords
-      const filteredKeywordsByName = allKeywords
-        .filter((keyword) => {
-          return keyword.name
-            .toLowerCase()
-            .includes(formattedValue.toLowerCase());
-        })
-        .map((keyword) => keyword.name);
-
-      // sorted filtered keywords
-      const sortedKeywords = filteredKeywordsByName.sort((a, b) => {
-        return (
-          a.toLowerCase().indexOf(formattedValue.toLowerCase()) -
-          b.toLowerCase().indexOf(formattedValue.toLowerCase())
-        );
-      });
-
-      // set keywords
-      setKeywords(sortedKeywords.slice(0, 6));
+    if (formattedValue !== "") {
+      const filteredKeywords = allKeywords
+        .filter((keyword) =>
+          keyword.name.toLowerCase().includes(formattedValue.toLowerCase())
+        )
+        .map((keyword) => keyword.name)
+        .sort(
+          (a, b) =>
+            a.toLowerCase().indexOf(formattedValue.toLowerCase()) -
+            b.toLowerCase().indexOf(formattedValue.toLowerCase())
+        )
+        .slice(0, 6);
+      setKeywords(filteredKeywords);
     } else {
       setKeywords([]);
     }
   };
 
-  // search Cars
+  // find cars
   const searchCars = () => {
-    if (
-      !searchInputRef.current.value.split(" ").every((value) => value === "")
-    ) {
-      if (!isSearched) {
-        setIsSearched(true);
-      }
-
-      // clear search input values
-      const formattedSearchInputValue = searchInputRef.current.value
-        .split(" ")
-        .filter((value) => value !== "")
-        .join(" ");
-      searchInputRef.current = formattedSearchInputValue;
-
-      // filtered cars
-      const filteredCars = cars.filter((car) => {
-        const findByName = (car.model + " " + car.marka)
+    const formattedSearchInputValue = searchInputRef.current.value.trim();
+    if (formattedSearchInputValue !== "") {
+      setIsSearched(true);
+      const filteredCars = cars.filter((car) =>
+        `${car.model} ${car.marka}`
           .toLowerCase()
-          .includes(searchInputRef.current.toLowerCase());
-        return findByName;
-      });
-
-      //   set searched cars
+          .includes(formattedSearchInputValue.toLowerCase())
+      );
       setSearchedCars(filteredCars);
       setKeywords([]);
     }
   };
 
-  // toggle open search with animation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setOpenNavbar(false);
+        setOpenSearch(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  // close search and navbar
+  useEffect(() => {
+    setIsHome(location.pathname === "/");
+    setOpenSearch(false);
+    setOpenNavbar(false);
+  }, [location]);
+
+  // close navbar > 768
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setOpenNavbar(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  // animation search panel
   useEffect(() => {
     if (openSearch) {
       setSearchStyles({
@@ -139,46 +137,9 @@ const Header = () => {
     }
   }, [openSearch]);
 
-  // close navbar and search
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        setOpenNavbar(false);
-        setOpenSearch(false);
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (location.pathname === "/") {
-      setIsHome(true);
-    } else {
-      setIsHome(false);
-    }
-    setOpenSearch(false);
-    setOpenNavbar(false);
-  }, [location]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setOpenNavbar(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <>
+      {/* header */}
       <header className="py-5 bg-teal-900/10 z-10">
         <div className="flex justify-between items-center w-full max-w-base mx-auto px-5">
           {/* logo */}
@@ -427,7 +388,7 @@ const Header = () => {
         className="fixed z-30 w-full min-h-screen bg-white top-0 right-0 bottom-0 left-0 transition-all duration-300"
       >
         {/* content header */}
-        <div className="z-20 bg-[#EFF2F4] py-6 mb-5 md:mb-10">
+        <div className="z-20 bg-[#EFF2F4] py-6">
           <div className="flex max-w-base w-full gap-5 items-center px-5 mx-auto">
             <img
               width={28}
@@ -507,8 +468,9 @@ const Header = () => {
         </div>
 
         {/* search results */}
-        <div className="z-10 h-[calc(100%-136px)] overflow-y-auto">
+        <div className="z-10 h-[calc(100%-136px)] pt-5 md:pt-10 overflow-y-auto search-result">
           <div className="w-full max-w-base mx-auto px-5 pt-2 pb-10">
+            <h1 className="text-xl leading-7 text-111 font-semibold mb-8 sm:text-2xl md:leading-9">Qidiruv bo'yicha natijalar:</h1>
             {searchedCars.length > 0 ? (
               <ul className="grid grid-cols-1 gap-7 md:gap-y-10 md:grid-cols-2 lg:grid-cols-3">
                 {searchedCars.map((car) => (

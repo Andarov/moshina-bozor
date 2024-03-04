@@ -106,6 +106,20 @@ button[aria-expanded="true"] + label {
   border-radius: 12px;
 }
 
+.search-result::-webkit-scrollbar {
+  width: 12px;
+}
+
+.search-result::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.search-result::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: #E70A32;
+}
+
+
 @media only screen and (max-width: 990px) {
   .slider{
     display: flex;
