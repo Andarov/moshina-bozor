@@ -20,11 +20,10 @@ const Catalog = () => {
           {Object.keys(modelCounts).map((model) => (
             <li
               key={model}
-              className="p-5 rounded-[10px] border border-[#e0e1e7]"
             >
               <Link
                 to={`/catalog/${model}`}
-                className="flex justify-between items-center text-base font-medium leading-6"
+                className="flex justify-between items-center text-base font-medium leading-6 p-5 rounded-[10px] border border-[#e0e1e7]"
               >
                 <div className="flex items-center space-x-2">
                   <img
