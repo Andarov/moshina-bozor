@@ -56,7 +56,7 @@ const Comments = () => {
             <p className="text-gray-800 font-medium font-base">
               Mashinabozor sayti haqida foydalanuvchilar fikri bilan tanishing.
             </p>
-            <Link className="inline-block bg-teal-400 text-white font-semibold border-2 border-teal-400 px-6 py-2 rounded-md hover:text-teal-400 hover:bg-white transition-all duration-300" to='/elon/sharx'>Sharx qoldirish</Link>
+            <Link className="inline-block bg-teal-400 text-white font-semibold border-2 border-teal-400 px-6 py-2 rounded-md hover:text-teal-400 hover:bg-transparent transition-all duration-300" to='/elon/sharx'>Sharx qoldirish</Link>
           </div>
 
           <div className="w-full max-w-2xl rounded-2xl shadow-xl p-8 bg-white border-r-4 border-b-4 border-teal-400">
