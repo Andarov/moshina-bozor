@@ -12,7 +12,7 @@ const MainLayout = () => {
   }, [location.pathname]);
 
   return (
-    <div className="font-montserrat">
+    <div className="w-full min-h-screen flex flex-col font-montserrat">
       <div
         className={`${
           home ? "bg-heroBg" : "bg-white"
@@ -21,7 +21,7 @@ const MainLayout = () => {
         <Header />
         {home && <Hero />}
       </div>
-      <main>
+      <main className="grow">
         <div
           className={`w-full max-w-base mx-auto px-5 ${
             !home ? "pt-10" : "pt-0"
