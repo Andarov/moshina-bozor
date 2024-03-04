@@ -7,7 +7,7 @@ const Hero = () => {
         {/* contents */}
         <div className="flex flex-col items-start space-y-3.5 text-white text-start sm:items-center sm:text-center">
           <h1 className="text-lg max-w-56 leading-5 sm:text-xl sm:max-w-max">
-            Mashina bozor - sizlagan izlagan moshina bizda bor
+            Mashina bozor - siz izlagan mashina bizda bor
           </h1>
           <p className="hidden text-4xl font-bold sm:block">
             O'zbekistondagi #1 mashina bozor sayti!
