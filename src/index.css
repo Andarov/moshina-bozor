@@ -2,13 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    *{
-      z-index: 1;
-    }
-    html{
-        scroll-behavior: smooth;
-    }
+@layer base {
+  * {
+    z-index: 1;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  button, a {
+    @apply cursor-pointer;
+  }
 }
 
 @layer components {
@@ -59,9 +62,9 @@
   -webkit-line-clamp: 2;
 }
 
-.slash::after{
+.slash::after {
   display: inline-block;
-  content: '>';
+  content: ">";
   margin: 0 15px;
 }
 
@@ -70,7 +73,7 @@ button[aria-expanded="true"] + label {
   font-size: 14px;
 }
 
-.slider{
+.slider {
   display: flex !important;
   flex-direction: row;
 }
@@ -85,21 +88,21 @@ button[aria-expanded="true"] + label {
 }
 
 .slick-dots.slick-thumb {
-  display: flex; 
+  display: flex;
 }
 
-.slick-thumb li{
+.slick-thumb li {
   width: 100%;
   max-width: 100px;
   height: 65px;
   object-fit: cover;
 }
 
-.slick-thumb li.slick-active img{
+.slick-thumb li.slick-active img {
   border: 3px solid rgb(231, 10, 50);
 }
 
-.slick-thumb li img{
+.slick-thumb li img {
   width: 100%;
   height: 65px;
   object-fit: cover;
@@ -116,12 +119,11 @@ button[aria-expanded="true"] + label {
 
 .search-result::-webkit-scrollbar-thumb {
   border-radius: 12px;
-  background: #E70A32;
+  background: #e70a32;
 }
 
-
 @media only screen and (max-width: 990px) {
-  .slider{
+  .slider {
     display: flex;
     flex-direction: column;
   }
