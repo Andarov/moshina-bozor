@@ -6,6 +6,7 @@ const Comments = () => {
   const [filterRate, setFilterRate] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("new");
+  const [visibleCount, setVisibleCount] = useState(10);
 
   const handleRateFilter = (rate) => {
     setFilterRate(rate);
@@ -17,6 +18,10 @@ const Comments = () => {
 
   const handleSortChange = (event) => {
     setSortOption(event.target.value);
+  };
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + 10);
   };
 
   const filteredComments = carComments
@@ -33,6 +38,9 @@ const Comments = () => {
       if (sortOption === "worst") return a.rate - b.rate;
       return 0;
     });
+
+  // commentlar soniga qarab yuklash
+  const commentsToShow = filteredComments.slice(0, visibleCount);
 
   return (
     <div className="py-14 bg-gray-300">
@@ -93,10 +101,22 @@ const Comments = () => {
           </div>
 
           <ul className="flex flex-col space-y-5">
-            {filteredComments.map((car) => (
+            {commentsToShow.map((car) => (
               <CarCommentItem key={car.id} {...car} />
             ))}
           </ul>
+
+          {/* Load More Button */}
+          {filteredComments.length > visibleCount && (
+            <div className="flex justify-center mt-5">
+              <button
+                onClick={handleLoadMore}
+                className="w-full px-6 py-2 bg-blue-500 text-white rounded-md"
+              >
+                Yana yuklash
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
