@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import CarCommentItem from "../components/CarCommentItem";
+import { Link } from "react-router-dom";
 import { carComments } from "../data";
+import { getUniqueCars } from "../utils";
 
 const Comments = () => {
   const [filterRate, setFilterRate] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortOption, setSortOption] = useState("new");
-  const [visibleCount, setVisibleCount] = useState(10);
+  const [sortOption, setSortOption] = useState("all");
 
   const handleRateFilter = (rate) => {
     setFilterRate(rate);
@@ -20,33 +20,34 @@ const Comments = () => {
     setSortOption(event.target.value);
   };
 
-  const handleLoadMore = () => {
-    setVisibleCount((prev) => prev + 10);
-  };
+  const uniqueCars = getUniqueCars(carComments);
 
-  const filteredComments = carComments
-    .filter((car) => !filterRate || car.rate === filterRate)
+  const filteredCars = uniqueCars
     .filter(
       (car) =>
         car.model.toLowerCase().includes(searchTerm.toLowerCase()) ||
         car.marka.toLowerCase().includes(searchTerm.toLowerCase())
     )
-    .sort((a, b) => {
-      if (sortOption === "new") return new Date(b.date) - new Date(a.date);
-      if (sortOption === "old") return new Date(a.date) - new Date(b.date);
-      if (sortOption === "best") return b.rate - a.rate;
-      if (sortOption === "worst") return a.rate - b.rate;
+    .filter((car) => !filterRate || Math.round(car.averageRate) === filterRate);
+
+  const sortedCars = () => {
+    if (sortOption === "all") {
+      return filteredCars; // No additional sorting
+    }
+
+    return filteredCars.sort((a, b) => {
+      if (sortOption === "few") return a.count - b.count;
+      if (sortOption === "more") return b.count - a.count;
+      if (sortOption === "best") return b.averageRate - a.averageRate;
+      if (sortOption === "worst") return a.averageRate - b.averageRate;
       return 0;
     });
-
-  // commentlar soniga qarab yuklash
-  const commentsToShow = filteredComments.slice(0, visibleCount);
+  };
 
   return (
     <div className="py-14 bg-gray-300">
-      <div className="w-full max-w-7xl mx-auto px-5 grid items-start grid-cols-1 md:grid-cols-3 gap-5">
-        {/* Filtr */}
-        <div className="bg-white p-5 rounded-md shadow-md">
+      <div className="w-full max-w-7xl mx-auto px-5 grid items-start grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="w-full bg-white p-5 rounded-md shadow-md">
           <div className="flex flex-col space-y-4">
             <div className="flex items-center space-x-3">
               {[1, 2, 3, 4, 5].map((rate) => (
@@ -60,7 +61,6 @@ const Comments = () => {
                   {rate}
                 </button>
               ))}
-              {/* Clear filter button */}
               {filterRate && (
                 <button
                   onClick={() => setFilterRate(null)}
@@ -70,7 +70,6 @@ const Comments = () => {
                 </button>
               )}
             </div>
-
             <div>
               <h3 className="text-lg font-medium mb-2">Moshina nomi</h3>
               <input
@@ -84,39 +83,48 @@ const Comments = () => {
           </div>
         </div>
 
-        {/* Comments */}
-        <div className="col-span-2">
+        <div>
           <div className="flex justify-between items-center mb-10">
-            <h2 className="text-xl font-semibold">Barcha sharxlar</h2>
+            <h2 className="text-xl font-semibold">Barcha moshinalar</h2>
             <select
               value={sortOption}
               onChange={handleSortChange}
               className="p-2 border rounded-md"
             >
-              <option value="new">Yangi sharxlar</option>
-              <option value="old">Eski sharxlar</option>
-              <option value="best">Eng yaxshi sharxlar</option>
-              <option value="worst">Eng yomon sharxlar</option>
+              <option value="all">Hammasi</option>
+              <option value="few">Eng kam sharx</option>
+              <option value="more">Eng kop sharx</option>
+              <option value="best">Eng yuqori reyting</option>
+              <option value="worst">Eng past reyting</option>
             </select>
           </div>
 
           <ul className="flex flex-col space-y-5">
-            {commentsToShow.map((car) => (
-              <CarCommentItem key={car.id} {...car} />
+            {sortedCars().map((car, index) => (
+              <li
+                key={index}
+                className="cursor-pointer p-4 bg-white rounded-md shadow-md"
+              >
+                <div className="flex justify-between">
+                  <div>
+                    <h3 className="text-lg font-semibold">
+                      {car.model} {car.marka}
+                    </h3>
+                    <p>Sharhlar soni: {car.count}</p>
+                    <p>O'rtacha reyting: {car.averageRate.toFixed(1)}</p>
+                  </div>
+                  <div className="flex items-center">
+                    <Link
+                      to={`/comments/${car.model}/${car.marka}`}
+                      className="text-blue-500"
+                    >
+                      Ko'proq
+                    </Link>
+                  </div>
+                </div>
+              </li>
             ))}
           </ul>
-
-          {/* Load More Button */}
-          {filteredComments.length > visibleCount && (
-            <div className="flex justify-center mt-5">
-              <button
-                onClick={handleLoadMore}
-                className="w-full px-6 py-2 bg-blue-500 text-white rounded-md"
-              >
-                Yana yuklash
-              </button>
-            </div>
-          )}
         </div>
       </div>
     </div>
