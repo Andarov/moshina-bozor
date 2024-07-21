@@ -190,7 +190,7 @@ const Header = () => {
                 <NavLink to="/news">Yangiliklar</NavLink>
               </li>
               <li>
-                <NavLink to="/comments">Sharxlar</NavLink>
+                <NavLink to="/rating">Reyting</NavLink>
               </li>
               <li>
                 <NavLink to="/elon">Elon joylash</NavLink>

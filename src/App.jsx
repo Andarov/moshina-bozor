@@ -18,7 +18,7 @@ import Ad from './pages/Ad'
 import AddCar from './pages/AddCar'
 import AddComment from './pages/AddComment'
 import Comments from './pages/Comments'
-import CarComments from './pages/CarComments' // Yangi sahifa
+import CarComments from './pages/CarComments'
 
 const App = () => {
   const router = createBrowserRouter(
@@ -31,8 +31,8 @@ const App = () => {
           <Route path='/catalog/:model/:marka' element={<Catalog />} />
           <Route path='/catalog/:model/car/:id' element={<CarDetail />} />
         </Route>
-        <Route path='/comments' element={<Comments />} />
-        <Route path='/comments/:model/:marka' element={<CarComments />} />
+        <Route path='/rating' element={<Comments />} />
+        <Route path='/rating/:model/:marka' element={<CarComments />} />
         <Route path='/news' element={<NewsLayout />}>
           <Route index element={<News />} />
           <Route path='/news/:title' element={<NewsDetail />} />

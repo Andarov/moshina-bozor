@@ -115,7 +115,7 @@ const Comments = () => {
                   </div>
                   <div className="flex items-center">
                     <Link
-                      to={`/comments/${car.model}/${car.marka}`}
+                      to={`/rating/${car.model}/${car.marka}`}
                       className="text-blue-500"
                     >
                       Ko'proq

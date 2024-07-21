@@ -10,7 +10,7 @@ const Comments = () => {
         <div className='flex justify-between items-center mb-10'>
           <h2 className='text-2xl leading-7 text-111 font-bold sm:text-3xl md:leading-9'>Moshinalar haqida sharxlar</h2>
 
-          <Link to='/comments' className='underline underline-offset-4'>Barcha sharxlar</Link>
+          <Link to='/rating' className='underline underline-offset-4'>Barcha sharxlar</Link>
         </div>
 
         <ul className="grid grid-cols-1 gap-7 md:gap-y-10 md:grid-cols-2 lg:grid-cols-3">
