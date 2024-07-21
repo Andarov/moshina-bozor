@@ -122,6 +122,18 @@ button[aria-expanded="true"] + label {
   background: #e70a32;
 }
 
+/* starRating.css */
+.star {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #d3d3d3; /* Light gray color for unfilled stars */
+}
+
+.star.filled {
+  color: #ffd700; /* Gold color for filled stars */
+}
+
+
 @media only screen and (max-width: 990px) {
   .slider {
     display: flex;
