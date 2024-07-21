@@ -650,3 +650,96 @@ export const contactInfos = [
         text: "24/7"
     }
 ]
+
+export const carComments = [
+    {
+        id: generateUniqueId(),
+        model: 'Chevrolet',
+        marka: 'Malibu',
+        date: new Date().toLocaleString(),
+        author: 'Inomjon',
+        rate: 2,
+        liked: 2,
+        comment: 'Mashina puliga arzimaydi'
+    },
+    {
+        id: generateUniqueId(),
+        model: 'Chevrolet',
+        marka: 'Malibu',
+        date: new Date().toLocaleString(),
+        author: 'Azizbek',
+        rate: 4,
+        liked: 1,
+        comment: 'Yomon emas, tavsiya qilaman'
+    },
+    {
+        id: generateUniqueId(),
+        model: 'Chevrolet',
+        marka: 'Matiz',
+        date: new Date().toLocaleString(),
+        author: 'Ilhomjon',
+        rate: 4,
+        liked: 0,
+        comment: 'Haqiqiy pul topar, kamxarj moshina'
+    },
+    {
+        id: generateUniqueId(),
+        model: 'Tayota',
+        marka: 'Crown',
+        date: new Date().toLocaleString(),
+        author: 'Islombek',
+        rate: 5,
+        liked: 5,
+        comment: 'Puliga arziydi, tavsiya qilaman'
+    },
+    {
+        id: generateUniqueId(),
+        model: 'Chevrolet',
+        marka: 'Malibu',
+        date: new Date().toLocaleString(),
+        author: 'Bobur',
+        rate: 5,
+        liked: 4,
+        comment: 'Moshina olganimga 2oy boldi, juda yaxshi'
+    },
+    {
+        id: generateUniqueId(),
+        model: 'Chevrolet',
+        marka: 'Damas',
+        date: new Date().toLocaleString(),
+        author: 'Inomjon',
+        rate: 4,
+        liked: 2,
+        comment: 'Pul topmoqchi bosez Damas oling'
+    },
+    {
+        id: generateUniqueId(),
+        model: 'Kia',
+        marka: 'Sportage',
+        date: new Date().toLocaleString(),
+        author: 'Behzod',
+        rate: 4,
+        liked: 4,
+        comment: 'Moshina yumoshoq, tezligi ham yaxshi'
+    },
+    {
+        id: generateUniqueId(),
+        model: 'Kia',
+        marka: 'K5',
+        date: new Date().toLocaleString(),
+        author: 'Omad',
+        rate: 5,
+        liked: 3,
+        comment: 'Shu paytgacha 10ta moshina mingan bolsam ichida menga eng yoqqani shu boldi'
+    },
+    {
+        id: generateUniqueId(),
+        model: 'Chevrolet',
+        marka: 'Monza',
+        date: new Date().toLocaleString(),
+        author: 'Abbos',
+        rate: 5,
+        liked: 2,
+        comment: 'Yaxshi moshina, Gentra orniga shu moshinani olilar'
+    },
+]

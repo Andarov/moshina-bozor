@@ -17,6 +17,7 @@ import NewsDetail from './pages/NewsDetail'
 import Ad from './pages/Ad'
 import AddCar from './pages/AddCar'
 import AddComment from './pages/AddComment'
+import Comments from './pages/Comments'
 
 const App = () => {
   const router = createBrowserRouter(
@@ -29,6 +30,7 @@ const App = () => {
           <Route path='/catalog/:model/:marka' element={<Catalog/>}/>
           <Route path='/catalog/:model/car/:id' element={<CarDetail/>}/>
         </Route>
+        <Route path='/comments' element={<Comments/>}/>
         <Route path='/news' element={<NewsLayout/>}>
           <Route index element={<News/>}/>
           <Route path='/news/:title' element={<NewsDetail/>}/>

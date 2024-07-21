@@ -17,7 +17,7 @@ const CarItem = ({id, marka, model, images, year, run, color, place, price}) => 
             {year}
           </span>
         </div>
-        {/* car dexcription */}
+        {/* car description */}
         <div className="space-y-2">
           <h3 className="text-111 text-[20px] font-bold leading-7">
             {model} {marka}
