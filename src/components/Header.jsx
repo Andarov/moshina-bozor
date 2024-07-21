@@ -341,21 +341,24 @@ const Header = () => {
 
         <nav className="mb-auto">
           <ul className="flex text-lg text-111 font-medium leading-7 flex-col items-start gap-3">
-            <li>
-              <NavLink to="/catalog">Katalog</NavLink>
-            </li>
-            <li>
-              <NavLink to="/news">Yangiliklar</NavLink>
-            </li>
-            <li>
-              <NavLink to="/elon">Elon joylash</NavLink>
-            </li>
-            <li>
-              <NavLink to="/elon/sharx">Sharx qoldirish</NavLink>
-            </li>
-            <li>
-              <NavLink to="/contact">Bog'lanish</NavLink>
-            </li>
+          <li>
+                <NavLink to="/catalog">Katalog</NavLink>
+              </li>
+              <li>
+                <NavLink to="/news">Yangiliklar</NavLink>
+              </li>
+              <li>
+                <NavLink to="/rating">Reyting</NavLink>
+              </li>
+              <li>
+                <NavLink to="/elon">Elon joylash</NavLink>
+              </li>
+              <li>
+                <NavLink to="/elon/sharx">Sharx qoldirish</NavLink>
+              </li>
+              <li>
+                <NavLink to="/contact">Bog'lanish</NavLink>
+              </li>
           </ul>
         </nav>
 
