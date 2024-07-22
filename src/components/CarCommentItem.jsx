@@ -1,4 +1,5 @@
 import React from "react";
+import like from '../img/like.svg'
 
 const CarCommentItem = ({ id, model, marka, author, rate, liked, comment }) => {
   // Yulduzcha rangini belgilash uchun
@@ -48,7 +49,7 @@ const CarCommentItem = ({ id, model, marka, author, rate, liked, comment }) => {
   };
 
   return (
-    <li key={id} className="bg-white p-5 rounded-xl shadow-md">
+    <li key={id} className="flex flex-col bg-white p-5 rounded-xl shadow-md">
       {/* comment info */}
       <div>
         <h3 className="text-111 text-[20px] font-bold leading-7">
@@ -65,11 +66,14 @@ const CarCommentItem = ({ id, model, marka, author, rate, liked, comment }) => {
         </div>
       </div>
       {/* comment */}
-      <p className="my-3">{comment}</p>
+      <p className="my-3 grow">{comment}</p>
       {/* like */}
       <div className="flex justify-between items-center border-t pt-2">
         <div>{liked}ta odam yoqtirdi</div>
-        <button>Foydali</button>
+        <button className="inline-flex space-x-2">
+          <span>Foydali</span>
+          <img className="w-5 h-5" src={like} alt="" />
+        </button>
       </div>
     </li>
   );
