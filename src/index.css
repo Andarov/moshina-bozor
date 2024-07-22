@@ -133,6 +133,15 @@ button[aria-expanded="true"] + label {
   color: #ffd700; /* Gold color for filled stars */
 }
 
+/* Modal */
+.modal-open .modal {
+  transform: translateY(0) !important;
+}
+
+.modal {
+  transition: transform 0.3s ease-in-out;
+}
+
 
 @media only screen and (max-width: 990px) {
   .slider {

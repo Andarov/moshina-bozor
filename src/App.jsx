@@ -19,6 +19,7 @@ import AddCar from './pages/AddCar'
 import AddComment from './pages/AddComment'
 import Comments from './pages/Comments'
 import CarComments from './pages/CarComments'
+import SignIn from './pages/SignIn'
 
 const App = () => {
   const router = createBrowserRouter(
@@ -43,6 +44,7 @@ const App = () => {
         </Route>
         <Route path='/contact' element={<Contact />} />
         <Route path='/ad' element={<Ad />} />
+        <Route path="/signin" element={<SignIn />} />
       </Route>
     )
   )
