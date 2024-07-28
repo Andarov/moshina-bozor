@@ -23,9 +23,7 @@ const MainLayout = () => {
       </div>
       <main className="grow">
         <div
-          className={`w-full max-w-base mx-auto px-5 ${
-            !home ? "pt-10" : "pt-0"
-          }`}
+          className={`w-full max-w-base mx-auto px-5`}
         >
           {!home && <Breadcrumbs />}
         </div>

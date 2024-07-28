@@ -10,7 +10,7 @@ const Breadcrumbs = () => {
   const isCarPath = tayyorArr.find((path)=> path === 'car');
 
   return (
-    <ul className="flex flex-wrap text-base leading-6 text-[#767980] mb-10">
+    <ul className="flex flex-wrap text-base leading-6 text-[#767980] py-4">
       <li>
         <Link to="/">
           <span className="text-main text-sm font-medium slash">Bosh sahifa</span> 

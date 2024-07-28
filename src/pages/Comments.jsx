@@ -4,12 +4,14 @@ import { carComments } from "../data";
 import { getUniqueCars } from "../utils";
 
 const Comments = () => {
-  const [filterRate, setFilterRate] = useState(null);
+  const [filterRate, setFilterRate] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("all");
 
   const handleRateFilter = (rate) => {
-    setFilterRate(rate);
+    setFilterRate((prev) =>
+      prev.includes(rate) ? prev.filter((r) => r !== rate) : [...prev, rate]
+    );
   };
 
   const handleSearch = (event) => {
@@ -28,11 +30,14 @@ const Comments = () => {
         car.model.toLowerCase().includes(searchTerm.toLowerCase()) ||
         car.marka.toLowerCase().includes(searchTerm.toLowerCase())
     )
-    .filter((car) => !filterRate || Math.round(car.averageRate) === filterRate);
+    .filter(
+      (car) =>
+        !filterRate.length || filterRate.includes(Math.round(car.averageRate))
+    );
 
   const sortedCars = () => {
     if (sortOption === "all") {
-      return filteredCars; // No additional sorting
+      return filteredCars;
     }
 
     return filteredCars.sort((a, b) => {
@@ -45,32 +50,59 @@ const Comments = () => {
   };
 
   return (
-    <div className="py-14 bg-gray-300">
-      <div className="w-full max-w-7xl mx-auto px-5 grid items-start grid-cols-1 md:grid-cols-2 gap-5">
+    <div className="py-14 bg-gray-100">
+      <div className="w-full max-w-base mx-auto px-5 grid items-start grid-cols-1 md:grid-cols-3 gap-5">
+        {/* filter sidebar */}
         <div className="w-full bg-white p-5 rounded-md shadow-md">
-          <div className="flex flex-col space-y-4">
-            <div className="flex items-center space-x-3">
-              {[1, 2, 3, 4, 5].map((rate) => (
-                <button
-                  key={rate}
-                  onClick={() => handleRateFilter(rate)}
-                  className={`py-2 px-4 rounded-full border ${
-                    filterRate === rate ? "bg-blue-500 text-white" : "bg-white"
-                  }`}
-                >
-                  {rate}
-                </button>
-              ))}
-              {filterRate && (
-                <button
-                  onClick={() => setFilterRate(null)}
-                  className="py-2 px-4 rounded-full border bg-gray-500 text-white"
-                >
-                  Clear
-                </button>
-              )}
+          <div className="flex flex-col">
+            {/* reyting */}
+            <h1 className="font-semibold mb-3">Reyting</h1>
+            <div className="flex items-center space-x-3 pb-5 border-b">
+              {[1, 2, 3, 4, 5].map((rate) => {
+                let bgColor;
+                let textColor = "text-black"; // default text color
+
+                if (filterRate.includes(rate)) {
+                  if (rate === 1) {
+                    bgColor = "bg-red-500";
+                  } else if (rate === 2) {
+                    bgColor = "bg-red-400";
+                  } else if (rate === 3) {
+                    bgColor = "bg-yellow-400";
+                  } else if (rate === 4) {
+                    bgColor = "bg-cyan-400";
+                  } else {
+                    bgColor = "bg-green-400";
+                  }
+                  textColor = "text-white";
+                } else {
+                  if (rate === 1) {
+                    bgColor = "bg-red-200";
+                  } else if (rate === 2) {
+                    bgColor = "bg-red-100";
+                  } else if (rate === 3) {
+                    bgColor = "bg-yellow-100";
+                  } else if (rate === 4) {
+                    bgColor = "bg-cyan-100";
+                  } else {
+                    bgColor = "bg-green-100";
+                  }
+                }
+
+                return (
+                  <button
+                    key={rate}
+                    onClick={() => handleRateFilter(rate)}
+                    className={`w-12 h-10 rounded-full border font-semibold ${bgColor} ${textColor}`}
+                  >
+                    {rate}
+                  </button>
+                );
+              })}
             </div>
-            <div>
+
+            {/* search with model and marka */}
+            <div className="pt-5">
               <h3 className="text-lg font-medium mb-2">Moshina nomi</h3>
               <input
                 type="search"
@@ -83,48 +115,55 @@ const Comments = () => {
           </div>
         </div>
 
-        <div>
-          <div className="flex justify-between items-center mb-10">
-            <h2 className="text-xl font-semibold">Barcha moshinalar</h2>
-            <select
-              value={sortOption}
-              onChange={handleSortChange}
-              className="p-2 border rounded-md"
-            >
-              <option value="all">Hammasi</option>
-              <option value="few">Eng kam sharx</option>
-              <option value="more">Eng kop sharx</option>
-              <option value="best">Eng yuqori reyting</option>
-              <option value="worst">Eng past reyting</option>
-            </select>
-          </div>
-
-          <ul className="flex flex-col space-y-5">
-            {sortedCars().map((car, index) => (
-              <li
-                key={index}
-                className="cursor-pointer p-4 bg-white rounded-md shadow-md"
+        <div className="col-span-2">
+          {/* all cars with rating */}
+          <div>
+            <div className="flex justify-between items-center mb-10">
+              <h2 className="text-xl font-semibold">Barcha moshinalar</h2>
+              <select
+                value={sortOption}
+                onChange={handleSortChange}
+                className="p-2 border rounded-md"
               >
-                <div className="flex justify-between">
-                  <div>
-                    <h3 className="text-lg font-semibold">
-                      {car.model} {car.marka}
-                    </h3>
-                    <p>Sharhlar soni: {car.count}</p>
-                    <p>O'rtacha reyting: {car.averageRate.toFixed(1)}</p>
-                  </div>
-                  <div className="flex items-center">
-                    <Link
-                      to={`/rating/${car.model}/${car.marka}`}
-                      className="text-blue-500"
-                    >
-                      Ko'proq
-                    </Link>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
+                <option value="all">Hammasi</option>
+                <option value="few">Eng kam sharx</option>
+                <option value="more">Eng kop sharx</option>
+                <option value="best">Eng yuqori reyting</option>
+                <option value="worst">Eng past reyting</option>
+              </select>
+            </div>
+
+            {sortedCars().length > 0 ? (
+              <ul className="flex flex-col space-y-5">
+                {sortedCars().map((car, index) => (
+                  <li
+                    key={index}
+                    className="cursor-pointer p-4 bg-white rounded-md shadow-md"
+                  >
+                    <div className="flex justify-between">
+                      <div>
+                        <h3 className="text-lg font-semibold">
+                          {car.model} {car.marka}
+                        </h3>
+                        <p>Sharhlar soni: {car.count}</p>
+                        <p>O'rtacha reyting: {car.averageRate.toFixed(1)}</p>
+                      </div>
+                      <div className="flex items-center">
+                        <Link
+                          to={`/rating/${car.model}/${car.marka}`}
+                          className="text-blue-500"
+                        >
+                          Ko'proq
+                        </Link>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-center text-xl font-medium">Natija topilmadi</p>
+            )}
+          </div>
         </div>
       </div>
     </div>
