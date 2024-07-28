@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { carComments } from "../data";
+import { carCommentsWithImage } from "../data";
 import { getUniqueCars } from "../utils";
 
 const Comments = () => {
   const [filterRate, setFilterRate] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("all");
+  console.log(carCommentsWithImage);
 
   const handleRateFilter = (rate) => {
     setFilterRate((prev) =>
@@ -22,7 +23,7 @@ const Comments = () => {
     setSortOption(event.target.value);
   };
 
-  const uniqueCars = getUniqueCars(carComments);
+  const uniqueCars = getUniqueCars(carCommentsWithImage);
 
   const filteredCars = uniqueCars
     .filter(
@@ -49,7 +50,7 @@ const Comments = () => {
     });
   };
 
-  const choosedCars = ['Malibu', 'Crown', 'Matiz'];
+  const choosedCars = ['Malibu', 'Crown', 'Sportage'];
   const recomendedCars = filteredCars.filter((car)=> choosedCars.includes(car.marka));
 
   return (
@@ -124,12 +125,16 @@ const Comments = () => {
             <ul className="grid grid-cols-3 gap-3">
               {
                 recomendedCars.map((car)=>{
+                  console.log(car);
                   return(
-                    <li className="flex flex-col gap-1 justify-center items-center p-5 bg-white rounded-lg">
-                      <h3 className="font-semibold">{car.model} {car.marka}</h3>
-                      <div className="flex flex-col items-center">
-                        <p><span className="font-medium">Rate:</span> {car.averageRate.toFixed(1)}</p>
-                        <p><span className="font-medium">Sharxlar soni:</span> {car.count}ta</p>
+                    <li key={car.id} className="flex flex-col gap-1 justify-center items-center bg-white rounded-lg">
+                      <img className="w-full h-32 object-cover rounded-lg" src={car.image} alt="" />
+                      <div className="p-5">
+                        <h3 className="font-semibold">{car.model} {car.marka}</h3>
+                        <div className="flex flex-col items-center">
+                          <p><span className="font-medium">Rate:</span> {car.averageRate.toFixed(1)}</p>
+                          <p><span className="font-medium">Sharxlar soni:</span> {car.count}ta</p>
+                        </div>
                       </div>
                     </li>
                   )

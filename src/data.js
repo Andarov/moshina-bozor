@@ -661,7 +661,7 @@ export const contactInfos = [
   },
 ];
 
-export const carComments = [
+const carComments = [
   {
     id: generateUniqueId(),
     model: "Chevrolet",
@@ -754,6 +754,43 @@ export const carComments = [
     comment: "Yaxshi moshina, Gentra orniga shu moshinani olilar",
   },
 ];
+
+const imageCars = {
+  'default': chevrolet,
+  'malibu': malibu,
+  'matiz': matiz,
+  'onix': onix,
+  'spark': spark,
+  'cobalt': cobalt,
+  'captiva': captiva,
+  'tracker': tracker,
+  'nexia 2': nexia2,
+  'nexia 3': ravon,
+  'monza': monza,
+  'gentra': gentra,
+  'damas': damas,
+  'labo': labo,
+  'k5': kiaK5,
+  'sorento': kiaSorento,
+  'sportage': kiaSportage1,
+  'a1': audiA1,
+  'a4': audiA4,
+  'a5': audiA5,
+  'q5': audiQ5,
+  'q7': audiQ7,
+  'amg': mersAMG,
+  'glc': mersGLC,
+  'maybach': mersMaybach,
+  'crown': tayotaCrown,
+  'camry': tayotaCamry
+}
+
+export const carCommentsWithImage = carComments.map((car)=>{
+  return{
+    ...car,
+    image: imageCars[car.marka.toLowerCase()] || imageCars.default
+  }
+})
 
 export const carBrands = [
   { id: "toyota", name: "Toyota" },

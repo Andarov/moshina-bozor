@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { carComments } from '../data'
+import { carCommentsWithImage } from '../data'
 import CarCommentItem from './CarCommentItem'
 
 const Comments = () => {
@@ -14,7 +14,7 @@ const Comments = () => {
         </div>
 
         <ul className="grid grid-cols-1 gap-7 md:gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          {carComments.slice(0,6).map((car) => (
+          {carCommentsWithImage.slice(0,6).map((car) => (
             <CarCommentItem key={car.id} {...car} />
           ))}
         </ul>

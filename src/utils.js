@@ -8,6 +8,7 @@ export const getUniqueCars = (comments) => {
           marka: comment.marka,
           count: 1,
           totalRate: comment.rate,
+          image: comment.image
         });
       } else {
         const car = carMap.get(key);
