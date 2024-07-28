@@ -49,6 +49,9 @@ const Comments = () => {
     });
   };
 
+  const choosedCars = ['Malibu', 'Crown', 'Matiz'];
+  const recomendedCars = filteredCars.filter((car)=> choosedCars.includes(car.marka));
+
   return (
     <div className="py-14 bg-gray-100">
       <div className="w-full max-w-base mx-auto px-5 grid items-start grid-cols-1 md:grid-cols-3 gap-5">
@@ -115,11 +118,29 @@ const Comments = () => {
           </div>
         </div>
 
-        <div className="col-span-2">
+        <div className="col-span-2 pt-3 space-y-10">
+          <div>
+            <h3 className="mb-5 font-semibold text-xl">Moshina bozor tavsiyasi</h3>
+            <ul className="grid grid-cols-3 gap-3">
+              {
+                recomendedCars.map((car)=>{
+                  return(
+                    <li className="flex flex-col gap-1 justify-center items-center p-5 bg-white rounded-lg">
+                      <h3 className="font-semibold">{car.model} {car.marka}</h3>
+                      <div className="flex flex-col items-center">
+                        <p><span className="font-medium">Rate:</span> {car.averageRate.toFixed(1)}</p>
+                        <p><span className="font-medium">Sharxlar soni:</span> {car.count}ta</p>
+                      </div>
+                    </li>
+                  )
+                })
+              }
+            </ul>
+          </div>
           {/* all cars with rating */}
           <div>
             <div className="flex justify-between items-center mb-10">
-              <h2 className="text-xl font-semibold">Barcha moshinalar</h2>
+              <h3 className="text-xl font-semibold">Barcha moshinalar</h3>
               <select
                 value={sortOption}
                 onChange={handleSortChange}
