@@ -6,9 +6,9 @@ const CarItem = ({id, marka, model, images, year, run, color, place, price}) => 
     <li key={id}>
       <Link to={`/catalog/${model}/car/${id}`}>
         {/* car image */}
-        <div className="relative w-full h-[260px] mb-3">
+        <div className="relative w-full h-[260px] mb-3 overflow-hidden rounded-[18px]">
           <img
-            className="w-full h-full bg-gray-400 object-cover rounded-[18px] hover:scale-105 transition-all  duration-300 cursor-pointer"
+            className="w-full h-full bg-gray-400 object-cover hover:scale-110 transition-all  duration-300 cursor-pointer"
             height={260}
             src={images[0]}
             alt={marka}
