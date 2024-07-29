@@ -7,6 +7,8 @@ import Hero from "../components/Hero";
 const MainLayout = () => {
   const location = useLocation();
   const home = location.pathname === "/";
+  const signUp = location.pathname === "/signup";
+  const signIn = location.pathname === "/signin";
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
@@ -18,18 +20,22 @@ const MainLayout = () => {
           home ? "bg-heroBg" : "bg-white"
         } bg-cover bg-bottom bg-no-repeat z-[9999]`}
       >
-        <Header />
+        {
+          !signIn && !signUp && <Header />
+        }
         {home && <Hero />}
       </div>
       <main className="grow">
         <div
           className={`w-full max-w-base mx-auto px-5`}
         >
-          {!home && <Breadcrumbs />}
+          {!home && !signIn && !signUp && <Breadcrumbs />}
         </div>
         <Outlet />
       </main>
-      <Footer />
+      {
+        !signIn && !signUp && <Footer />
+      }
     </div>
   );
 };

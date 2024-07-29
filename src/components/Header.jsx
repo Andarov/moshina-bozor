@@ -254,29 +254,23 @@ const Header = () => {
               </span>
             </Link>
 
-            {/* call */}
-            <a
-              title="contact"
-              aria-label="contact"
-              className="hidden md:inline-block"
-              href="tel:+998881690033"
-            >
+            {/* sign in */}
+            <Link to='/signin'>
               <svg
-                width="28"
-                height="28"
-                viewBox="0 0 28 28"
+                width="28px"
+                height="28px"
+                viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16.9727 19.0348L18.6721 17.3346C18.9336 17.0699 19.245 16.8595 19.5882 16.7161C19.9315 16.5726 20.2998 16.4989 20.6717 16.4989C21.0438 16.4989 21.412 16.5726 21.7554 16.7161C22.0986 16.8595 22.4099 17.0699 22.6714 17.3346L24.6646 19.3288C24.9292 19.5903 25.1394 19.9016 25.2828 20.245C25.4261 20.5884 25.5 20.957 25.5 21.3291C25.5 21.7013 25.4261 22.0699 25.2828 22.4133C25.1394 22.7567 24.9292 23.0679 24.6646 23.3294L23.7574 24.2498C23.1324 24.8812 22.3239 25.2992 21.4474 25.4438C20.5709 25.5883 19.6711 25.4525 18.8765 25.0552C12.0385 21.5338 6.46884 15.9662 2.94327 9.12839C2.54581 8.33259 2.41085 7.43118 2.55779 6.55381C2.70473 5.67642 3.126 4.86816 3.76104 4.24542L4.66818 3.32512C5.19962 2.79667 5.91851 2.5 6.66782 2.5C7.41714 2.5 8.13602 2.79667 8.66747 3.32512L10.6735 5.33204C11.2018 5.86371 11.4983 6.5828 11.4983 7.33242C11.4983 8.08204 11.2018 8.80113 10.6735 9.3328L8.97411 11.033C10.0978 12.5535 11.332 13.9888 12.6667 15.3276C13.9938 16.6575 15.4205 17.8841 16.9344 18.9964L16.9727 19.0348Z"
-                  stroke={isHome ? "#fff" : "#111"}
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7 3C6.44772 3 6 3.44772 6 4C6 4.55228 6.44772 5 7 5H18C18.5523 5 19 5.44772 19 6V18C19 18.5523 18.5523 19 18 19H7C6.44772 19 6 19.4477 6 20C6 20.5523 6.44772 21 7 21H18C19.6569 21 21 19.6569 21 18V6C21 4.34315 19.6569 3 18 3H7ZM12.7071 7.29289C12.3166 6.90237 11.6834 6.90237 11.2929 7.29289C10.9024 7.68342 10.9024 8.31658 11.2929 8.70711L13.5858 11H4C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13H13.5858L11.2929 15.2929C10.9024 15.6834 10.9024 16.3166 11.2929 16.7071C11.6834 17.0976 12.3166 17.0976 12.7071 16.7071L16.7071 12.7071C17.0976 12.3166 17.0976 11.6834 16.7071 11.2929L12.7071 7.29289Z"
+                  fill="#000000"
                 />
               </svg>
-            </a>
+            </Link>
 
             {/* hamburger */}
             <button
@@ -341,51 +335,26 @@ const Header = () => {
 
         <nav className="mb-auto">
           <ul className="flex text-lg text-111 font-medium leading-7 flex-col items-start gap-3">
-          <li>
-                <NavLink to="/catalog">Katalog</NavLink>
-              </li>
-              <li>
-                <NavLink to="/news">Yangiliklar</NavLink>
-              </li>
-              <li>
-                <NavLink to="/rating">Reyting</NavLink>
-              </li>
-              <li>
-                <NavLink to="/elon">Elon joylash</NavLink>
-              </li>
-              <li>
-                <NavLink to="/elon/sharx">Sharx qoldirish</NavLink>
-              </li>
-              <li>
-                <NavLink to="/contact">Bog'lanish</NavLink>
-              </li>
+            <li>
+              <NavLink to="/catalog">Katalog</NavLink>
+            </li>
+            <li>
+              <NavLink to="/news">Yangiliklar</NavLink>
+            </li>
+            <li>
+              <NavLink to="/rating">Reyting</NavLink>
+            </li>
+            <li>
+              <NavLink to="/elon">Elon joylash</NavLink>
+            </li>
+            <li>
+              <NavLink to="/elon/sharx">Sharx qoldirish</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact">Bog'lanish</NavLink>
+            </li>
           </ul>
         </nav>
-
-        {/* call */}
-        <a
-          title="contact"
-          aria-label="contact"
-          className="flex w-auto bg-main items-center justify-center gap-3 px-6 py-2.5 rounded-full mobile-m:w-64 mt-5 md:hidden"
-          href="tel:+998881690033"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 28 28"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16.9727 19.0348L18.6721 17.3346C18.9336 17.0699 19.245 16.8595 19.5882 16.7161C19.9315 16.5726 20.2998 16.4989 20.6717 16.4989C21.0438 16.4989 21.412 16.5726 21.7554 16.7161C22.0986 16.8595 22.4099 17.0699 22.6714 17.3346L24.6646 19.3288C24.9292 19.5903 25.1394 19.9016 25.2828 20.245C25.4261 20.5884 25.5 20.957 25.5 21.3291C25.5 21.7013 25.4261 22.0699 25.2828 22.4133C25.1394 22.7567 24.9292 23.0679 24.6646 23.3294L23.7574 24.2498C23.1324 24.8812 22.3239 25.2992 21.4474 25.4438C20.5709 25.5883 19.6711 25.4525 18.8765 25.0552C12.0385 21.5338 6.46884 15.9662 2.94327 9.12839C2.54581 8.33259 2.41085 7.43118 2.55779 6.55381C2.70473 5.67642 3.126 4.86816 3.76104 4.24542L4.66818 3.32512C5.19962 2.79667 5.91851 2.5 6.66782 2.5C7.41714 2.5 8.13602 2.79667 8.66747 3.32512L10.6735 5.33204C11.2018 5.86371 11.4983 6.5828 11.4983 7.33242C11.4983 8.08204 11.2018 8.80113 10.6735 9.3328L8.97411 11.033C10.0978 12.5535 11.332 13.9888 12.6667 15.3276C13.9938 16.6575 15.4205 17.8841 16.9344 18.9964L16.9727 19.0348Z"
-              stroke="#fff"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <span className="font-medium text-lg text-white">Telefon raqam</span>
-        </a>
       </div>
 
       {/* search */}
@@ -476,7 +445,9 @@ const Header = () => {
         {/* search results */}
         <div className="z-10 h-[calc(100%-136px)] pt-5 md:pt-10 overflow-y-auto search-result">
           <div className="w-full max-w-base mx-auto px-5 pt-2 pb-10">
-            <h1 className="text-xl leading-7 text-111 font-semibold mb-8 sm:text-2xl md:leading-9">Qidiruv bo'yicha natijalar:</h1>
+            <h1 className="text-xl leading-7 text-111 font-semibold mb-8 sm:text-2xl md:leading-9">
+              Qidiruv bo'yicha natijalar:
+            </h1>
             {searchedCars.length > 0 ? (
               <ul className="grid grid-cols-1 gap-7 md:gap-y-10 md:grid-cols-2 lg:grid-cols-3">
                 {searchedCars.map((car) => (
