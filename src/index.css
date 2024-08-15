@@ -6,11 +6,25 @@
   * {
     z-index: 1;
   }
+
   html {
     scroll-behavior: smooth;
   }
-  button, a {
+
+  button,
+  a {
     @apply cursor-pointer;
+  }
+
+  /* form elements */
+  input,
+  textarea,
+  select {
+    @apply w-full px-4 py-2.5 rounded-md border border-111/25 outline-teal-500 transition-colors hover:bg-gray-50 focus:bg-gray-50;
+  }
+
+  form button[type="submit"] {
+    @apply w-full bg-teal-500 px-3.5 py-[11px] rounded-md text-white transition-colors hover:bg-teal-600 active:bg-teal-400;
   }
 }
 
@@ -141,7 +155,6 @@ button[aria-expanded="true"] + label {
 .modal {
   transition: transform 0.3s ease-in-out;
 }
-
 
 @media only screen and (max-width: 990px) {
   .slider {
