@@ -1,7 +1,7 @@
 import React from "react";
 
 // input mask
-import ReactInputMask from "a";
+import ReactInputMask from "react-input-mask-next";
 
 const CustomInputMask = ({
   value,
