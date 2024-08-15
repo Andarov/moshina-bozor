@@ -47,7 +47,7 @@ const App = () => {
         </Route>
         <Route path="elon" element={<FormLayout />}>
           <Route index element={<AddCar />} />
-          <Route path="elon/sharx" element={<AddComment />} />
+          <Route path="sharx" element={<AddComment />} />
         </Route>
         <Route path="contact" element={<Contact />} />
         <Route path="ad" element={<Ad />} />

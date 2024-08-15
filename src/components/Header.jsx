@@ -255,9 +255,9 @@ const Header = () => {
             </Link>
 
             {/* sign in */}
-            <Link to='/signin'>
+            <Link to='/auth/signin'>
               <svg
-                width="30px"
+                width="30zpx"
                 height="30px"
                 viewBox="0 0 24 24"
                 fill="none"

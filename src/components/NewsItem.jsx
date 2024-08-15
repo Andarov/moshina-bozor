@@ -21,7 +21,7 @@ const NewsItem = ({ id, img, title, date }) => {
 
       <div className="flex items-center justify-between">
         <Link className="text-main text-sm font-medium" to={`${news ? `/news/${title}` : `news/${title}`}`}>
-          Batafsil
+          Batafsil 
         </Link>
 
         <div className="flex items-center space-x-1"> 
