@@ -18,6 +18,8 @@
     "react-countup": "^6.5.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",
+    "react-input-mask": "^2.0.4",
+    "react-input-mask-next": "^3.0.0-alpha.12",
     "react-intersection-observer": "^9.6.0",
     "react-router-dom": "^6.21.1",
     "react-slick": "^0.29.0",
