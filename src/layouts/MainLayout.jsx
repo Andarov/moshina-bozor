@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
 // components
+import Top from "../components/Top";
 import Hero from "../components/Hero";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -20,18 +21,16 @@ const MainLayout = () => {
 
   return (
     <div className="w-full min-h-screen flex flex-col font-montserrat">
-      {/* top */}
-      <div
-        className={`${
-          home ? "bg-heroBg" : "bg-white"
-        } bg-cover bg-bottom bg-no-repeat z-[9999]`}
-      >
-        {/* header */}
-        {!signIn && !signUp && <Header />}
+      {/* header */}
+      {!signIn && !signUp && (
+        <>
+          <Top />
+          <Header />
+        </>
+      )}
 
-        {/* hero */}
-        {home && <Hero />}
-      </div>
+      {/* hero */}
+      {home && <Hero />}
 
       {/* main */}
       <main className="grow">
