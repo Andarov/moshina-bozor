@@ -35,19 +35,19 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="catalog" element={<CatalogLayout />}>
           <Route index element={<Catalog />} />
-          <Route path="catalog/:model" element={<Catalog />} />
-          <Route path="catalog/:model/:marka" element={<Catalog />} />
-          <Route path="catalog/:model/car/:id" element={<CarDetail />} />
+          <Route path=":model" element={<Catalog />} />
+          <Route path=":model/:marka" element={<Catalog />} />
+          <Route path=":model/car/:id" element={<CarDetail />} />
         </Route>
         <Route path="rating" element={<Comments />} />
         <Route path="rating/:model/:marka" element={<CarComments />} />
         <Route path="news" element={<NewsLayout />}>
           <Route index element={<News />} />
-          <Route path="news/:title" element={<NewsDetail />} />
+          <Route path=":title" element={<NewsDetail />} />
         </Route>
         <Route path="elon" element={<FormLayout />}>
           <Route index element={<AddCar />} />
-          <Route path="elon/sharx" element={<AddComment />} />
+          <Route path="sharx" element={<AddComment />} />
         </Route>
         <Route path="contact" element={<Contact />} />
         <Route path="ad" element={<Ad />} />
