@@ -1,30 +1,71 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+
 const Hero = () => {
+  // ref & states
+  const heroContentRef = useRef(null);
+  const [topPosition, setTopPosition] = useState(0);
+
+  useEffect(() => {
+    if (heroContentRef.current) {
+      setTopPosition(heroContentRef.current.getBoundingClientRect().top);
+    }
+  }, []);
+
   return (
-    <div className="flex items-center pb-14 pt-24 sm:py-28">
-      <div className="w-full max-w-base mx-auto px-5">
-        {/* contents */}
-        <div className="flex flex-col items-start space-y-3.5 text-white text-start sm:items-center sm:text-center">
-          <h1 className="text-lg max-w-56 leading-5 sm:text-xl sm:max-w-max">
-            Mashina bozor - siz izlagan mashina bizda bor
-          </h1>
-          <p className="hidden text-4xl font-bold sm:block">
-            O'zbekistondagi #1 mashina bozor sayti!
-          </p>
-          <p className="block font-bold text-3xl sm:hidden">
-            O'zbekistondagi <br /> #1 mashina bozor sayti!
-          </p>
-          <p className="max-w-lg font-medium text-xl leading-6 sm:max-w-2xl sm:text-2xl">
-            Har xil markadagi moshinalarni hamyonbop narxda Oson soting va sotib
-            oling!
-          </p>
-          <Link
-            to="/catalog"
-            className="text-base border-2 border-main bg-main w-56 inline-block text-center py-2 rounded-lg font-semibold hover:bg-white hover:text-main transition-all duration-300 md:py-3"
-          >
-            Katalog
-          </Link>
+    <div
+      ref={heroContentRef}
+      style={{ height: `calc(100vh - ${topPosition}px)` }}
+      className="min-h-sm max-h-lg bg-hero bg-cover bg-right lg:bg-center bg-no-repeat"
+    >
+      <div className="flex items-end h-full container">
+        <div className="flex items-end justify-between w-full pb-28 text-white">
+          {/* content left */}
+          <div>
+            <h1 className="mb-5 text-lg font-medium sm:text-xl">
+              Mashina bozor
+            </h1>
+
+            {/* description */}
+            <strong className="block mb-9 text-3xl font-semibold leading-normal sm:!leading-relaxed sm:mb-16 sm:text-4xl lg:text-5xl">
+              O'zbekistondagi №1 <br /> mashina bozor sayti!
+            </strong>
+
+            {/* catalog link */}
+            <Link
+              to="/catalog"
+              className="bg-main px-8 py-3 rounded-lg font-medium transition-colors duration-200 hover:bg-white hover:text-main sm:px-10 sm:py-3.5"
+            >
+              Mashinalarni ko'rsatish
+            </Link>
+          </div>
+
+          {/* content right */}
+          <div className="hidden space-y-5 lg:block">
+            <ul className="space-y-8">
+              {/* item */}
+              <li className="space-y-3.5 max-w-72">
+                {/* item title */}
+                <h3 className="text-xl font-semibold">Keng imkoniyatlar</h3>
+
+                {/* item description */}
+                <p className="text-gray-300">
+                  Keng tanlov va imkoniyatlar faqatgina bizda!
+                </p>
+              </li>
+
+              {/* item */}
+              <li className="space-y-3.5 max-w-72">
+                {/* item title */}
+                <h3 className="text-xl font-semibold">Tezkor</h3>
+
+                {/* item description */}
+                <p className="text-gray-300">
+                  Mashinalarni tezkorlik bilan soting va sotib oling!
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
