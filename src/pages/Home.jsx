@@ -1,10 +1,12 @@
 import React from "react";
-import BestCars from "../components/BestCars";
-import Catalog from "../components/Catalog";
-import Count from "../components/Count";
-import New from "../components/NewCars";
-import News from "../components/News";
+
+// components
 import CTA from "../components/CTA";
+import News from "../components/News";
+import New from "../components/NewCars";
+import Count from "../components/Count";
+import Catalog from "../components/Catalog";
+import BestCars from "../components/BestCars";
 import Comments from "../components/Comments";
 
 const Home = () => {
