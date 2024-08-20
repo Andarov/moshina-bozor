@@ -27,7 +27,7 @@ const HeaderMenu = ({ isOpen = false }) => {
   return (
     <div
       ref={contentRef}
-      className="overflow-hidden max-h-lg transition-[height] duration-200"
+      className="overflow-hidden max-h-lg transition-[height] duration-300"
       style={{ height: isOpen ? `calc(100vh - ${topPosition}px)` : "0px" }}
     >
       <div className="h-full overflow-y-scroll">
@@ -40,9 +40,9 @@ const HeaderMenu = ({ isOpen = false }) => {
               {/* list */}
               <nav>
                 <ul className="space-y-3.5">
-                  {/* item */}
+                  {/* catalog */}
                   <li className="py-4 rounded-xl transition-[background-color,padding] duration-300 hover:bg-gray-50 hover:px-4">
-                    <NavLink to="/" className="flex items-start gap-4">
+                    <NavLink to="/catalog" className="flex items-start gap-4">
                       {/* item icon */}
                       <div className="shrink-0 bg-white border border-111/15 p-2 rounded-lg">
                         <img
@@ -67,9 +67,9 @@ const HeaderMenu = ({ isOpen = false }) => {
                     </NavLink>
                   </li>
 
-                  {/* item */}
+                  {/* elon */}
                   <li className="py-4 rounded-xl transition-[background-color,padding] duration-300 hover:bg-gray-50 hover:px-4 md:hidden">
-                    <NavLink to="/" className="flex items-start gap-4">
+                    <NavLink to="/elon" className="flex items-start gap-4">
                       {/* item icon */}
                       <div className="shrink-0 bg-white border border-111/15 p-2 rounded-lg">
                         <img
@@ -94,9 +94,9 @@ const HeaderMenu = ({ isOpen = false }) => {
                     </NavLink>
                   </li>
 
-                  {/* item */}
+                  {/* news */}
                   <li className="py-4 rounded-xl transition-[background-color,padding] duration-300 hover:bg-gray-50 hover:px-4">
-                    <NavLink to="/" className="flex items-start gap-4">
+                    <NavLink to="/news" className="flex items-start gap-4">
                       {/* item icon */}
                       <div className="shrink-0 bg-white border border-111/15 p-2 rounded-lg">
                         <img
@@ -121,9 +121,9 @@ const HeaderMenu = ({ isOpen = false }) => {
                     </NavLink>
                   </li>
 
-                  {/* item */}
+                  {/* rating */}
                   <li className="py-4 rounded-xl transition-[background-color,padding] duration-300 hover:bg-gray-50 hover:px-4">
-                    <NavLink to="/" className="flex items-start gap-4">
+                    <NavLink to="/rating" className="flex items-start gap-4">
                       {/* item icon */}
                       <div className="shrink-0 bg-white border border-111/15 p-2 rounded-lg">
                         <img
@@ -150,7 +150,7 @@ const HeaderMenu = ({ isOpen = false }) => {
 
                   {/* item */}
                   <li className="py-4 rounded-xl transition-[background-color,padding] duration-300 hover:bg-gray-50 hover:px-4">
-                    <NavLink to="/" className="flex items-start gap-4">
+                    <NavLink to="/elon/sharx" className="flex items-start gap-4">
                       {/* item icon */}
                       <div className="shrink-0 bg-white border border-111/15 p-2 rounded-lg">
                         <img
@@ -177,7 +177,7 @@ const HeaderMenu = ({ isOpen = false }) => {
 
                   {/* item */}
                   <li className="py-4 rounded-xl transition-[background-color,padding] duration-300 hover:bg-gray-50 hover:px-4">
-                    <NavLink to="/" className="flex items-start gap-4">
+                    <NavLink to="/contact" className="flex items-start gap-4">
                       {/* item icon */}
                       <div className="shrink-0 bg-white border border-111/15 p-2 rounded-lg">
                         <img
@@ -205,13 +205,13 @@ const HeaderMenu = ({ isOpen = false }) => {
               </nav>
             </li>
 
-            {/* contact */}
+            {/* extra contact */}
             <li className="space-y-5">
               <h3 className="text-lg font-semibold">Tezkor bog'lanish</h3>
 
               {/* list */}
               <ul className="space-y-3.5">
-                {/* item */}
+                {/* tel */}
                 <li className="py-4 rounded-xl transition-[background-color,padding] duration-300 hover:bg-gray-50 hover:px-4">
                   <a
                     href="tel:+998881690033"
@@ -241,7 +241,7 @@ const HeaderMenu = ({ isOpen = false }) => {
                   </a>
                 </li>
 
-                {/* item */}
+                {/* email */}
                 <li className="py-4 rounded-xl transition-[background-color,padding] duration-300 hover:bg-gray-50 hover:px-4">
                   <a
                     href="mailto:example@gmail.com"
@@ -271,7 +271,7 @@ const HeaderMenu = ({ isOpen = false }) => {
                   </a>
                 </li>
 
-                {/* item */}
+                {/* bot */}
                 <li className="py-4 rounded-xl transition-[background-color,padding] duration-300 hover:bg-gray-50 hover:px-4">
                   <a
                     target="_blank"
@@ -304,7 +304,7 @@ const HeaderMenu = ({ isOpen = false }) => {
               </ul>
             </li>
 
-            {/* social */}
+            {/* socials */}
             <li className="md:col-span-2">
               <div className="divider mb-8"></div>
 

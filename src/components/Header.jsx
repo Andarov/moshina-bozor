@@ -132,7 +132,7 @@ const Header = () => {
           {/* header actions */}
           <div className="flex items-center gap-4 sm:gap-7">
             {/* announcement */}
-            <Link className="hidden items-center gap-2.5 p-2.5 bg-main/5 rounded-lg border border-b-0 border-main/[0.08] transition-colors hover:bg-main/[0.08] md:flex">
+            <Link to='/elon' className="hidden items-center gap-2.5 p-2.5 bg-main/5 rounded-lg border border-b-0 border-main/[0.08] transition-colors hover:bg-main/[0.08] md:flex">
               {/* icon */}
               <img
                 width={24}

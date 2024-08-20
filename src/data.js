@@ -1,11 +1,11 @@
 import { v4 as uuidv4 } from "uuid";
 
 // car model icons
-import chevrolet from "./img/model/chevrolet.svg";
-import toyota from "./img/model/toyota.svg";
-import mers from "./img/model/mers.svg";
-import audi from "./img/model/audi.svg";
 import kia from "./img/model/kia.svg";
+import audi from "./img/model/audi.svg";
+import mers from "./img/model/mers.svg";
+import toyota from "./img/model/toyota.svg";
+import chevrolet from "./img/model/chevrolet.svg";
 
 // car markas images
 import malibu from "./img/malibu.jpg";
