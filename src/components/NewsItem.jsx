@@ -1,32 +1,61 @@
-// NewsItem.js
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import dateIcon from '../img/date.svg'
+import { Link } from "react-router-dom";
+
+// coponents
+import ArrowSolid from "./ArrowSolid";
+
+// images
+import dateIcon from "../img/icon/date.svg";
 
 const NewsItem = ({ id, img, title, date }) => {
-  const location = useLocation();
-
-  const news = location.pathname === '/news';
   return (
-    <li className="flex flex-col" key={id}>
+    <li className="flex flex-col gap-5" key={id}>
+      {/* image */}
       <img
-        className="w-full h-[260px] rounded-[18px] mb-5 object-cover bg-gray-400"
-        height={260}
         src={img}
+        width={374}
         alt={title}
+        height={260}
+        className="w-full h-[260px] rounded-[18px] object-cover bg-gray-400"
       />
-      <h3 className="grow text-[20px] font-semibold text-111 leading-7 line-clamp-2 mb-3">
-        {title}
-      </h3>
 
-      <div className="flex items-center justify-between">
-        <Link className="text-main text-sm font-medium" to={`${news ? `/news/${title}` : `news/${title}`}`}>
-          Batafsil 
-        </Link>
+      {/* details */}
+      <div className="flex flex-col gap-3.5 grow">
+        {/* title */}
+        <h3 className="grow text-xl font-semibold line-clamp-2">{title}</h3>
 
-        <div className="flex items-center space-x-1"> 
-          <img className="w-5 h-5" src={dateIcon} alt="" />
-          <span>{date}</span>
+        {/* bottom */}
+        <div className="flex items-center justify-between">
+          {/* date */}
+          <div className="flex items-center gap-2">
+            <img
+              width={20}
+              height={20}
+              src={dateIcon}
+              alt="date icon"
+              className="size-6"
+            />
+
+            <span className="font-medium">{date}</span>
+          </div>
+
+          {/* link */}
+          <Link
+            to={"/news/" + title}
+            className="group flex items-center gap-1.5 relative overflow-hidden py-1.5"
+          >
+            <span className="translate-x-5 text-main text-base font-medium transition-transform duration-200 group-hover:translate-x-0">
+              Ba'tafsil o'qish
+            </span>
+
+            {/* icon */}
+            <ArrowSolid
+              size={20}
+              fill="#e70a32"
+              direction="right"
+              className="translate-x-full transition-transform duration-200 group-hover:translate-x-0"
+            />
+          </Link>
         </div>
       </div>
     </li>
