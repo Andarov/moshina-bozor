@@ -27,7 +27,7 @@ const HeaderMenu = ({ isOpen = false }) => {
   return (
     <div
       ref={contentRef}
-      className="overflow-hidden max-h-lg transition-[height] duration-200"
+      className="overflow-hidden max-h-lg transition-[height] duration-300"
       style={{ height: isOpen ? `calc(100vh - ${topPosition}px)` : "0px" }}
     >
       <div className="h-full overflow-y-scroll">
