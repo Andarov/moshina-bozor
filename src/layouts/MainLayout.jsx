@@ -7,6 +7,7 @@ import Hero from "../components/Hero";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Breadcrumbs from "../components/Breadcrumbs";
+import ScrollToTop from "../components/ScrollToTop";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -42,6 +43,9 @@ const MainLayout = () => {
 
       {/* footer */}
       {!signIn && !signUp && <Footer />}
+
+      {/* scroll to top btn */}
+      <ScrollToTop />
     </div>
   );
 };
