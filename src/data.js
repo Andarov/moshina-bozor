@@ -636,31 +636,6 @@ export const news = [
   },
 ];
 
-// contact-infos
-import location from "./img/location.svg";
-import call from "./img/call.svg";
-import hour from "./img/hour.svg";
-export const contactInfos = [
-  {
-    id: generateUniqueId(),
-    img: location,
-    title: "Manzil",
-    text: "Andijon shahar, Qo'shariq 22-uy",
-  },
-  {
-    id: generateUniqueId(),
-    img: call,
-    title: "Telefon",
-    text: "+998(88) 169-00-33",
-  },
-  {
-    id: generateUniqueId(),
-    img: hour,
-    title: "Ish vaqti",
-    text: "24/7",
-  },
-];
-
 const carComments = [
   {
     id: generateUniqueId(),
