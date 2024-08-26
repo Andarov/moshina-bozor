@@ -1,0 +1,14 @@
+@keyframes bding {
+  from {
+    opacity: 0;
+    transform: translateY(96px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.animate-bding {
+  animation: bding 0.5s ease;
+}
