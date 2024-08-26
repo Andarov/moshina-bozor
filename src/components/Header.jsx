@@ -103,7 +103,7 @@ const Header = () => {
               to="/"
               aria-label="home"
               title="mashina bozor"
-              className="flex items-center justify-center gap-4 text-xl font-semibold leading-none"
+              className="flex items-center justify-center gap-4"
             >
               <img
                 width={44}
@@ -114,13 +114,13 @@ const Header = () => {
               />
 
               {/* mobile text */}
-              <span className="sm:hidden">
+              <span className="text-xl font-semibold leading-none sm:hidden">
                 <span>M</span>
                 <span className="text-main">B</span>
               </span>
 
               {/* laptop text */}
-              <h1 className="hidden sm:inline-block">
+              <h1 className="hidden text-xl font-semibold leading-none sm:inline-block">
                 <span className="text-main">M</span>
                 <span>ashina</span>
                 <span className="text-main">B</span>
@@ -132,7 +132,10 @@ const Header = () => {
           {/* header actions */}
           <div className="flex items-center gap-4 sm:gap-7">
             {/* announcement */}
-            <Link to='/elon' className="hidden items-center gap-2.5 p-2.5 bg-main/5 rounded-lg border border-b-0 border-main/[0.08] transition-colors hover:bg-main/[0.08] md:flex">
+            <Link
+              to="/elon"
+              className="hidden items-center gap-2.5 p-2.5 bg-main/5 rounded-lg border border-b-0 border-main/[0.08] transition-colors hover:bg-main/[0.08] md:flex"
+            >
               {/* icon */}
               <img
                 width={24}

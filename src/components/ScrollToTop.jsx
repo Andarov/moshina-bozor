@@ -28,19 +28,20 @@ const ScrollToTop = () => {
   };
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo(0, 0);
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", toggleVisibility);
-    window.addEventListener("scroll", calculateScrollProgress);
+    window.addEventListener("scroll", () => {
+      toggleVisibility();
+      calculateScrollProgress();
+    });
 
     return () => {
-      window.removeEventListener("scroll", toggleVisibility);
-      window.removeEventListener("scroll", calculateScrollProgress);
+      window.removeEventListener("scroll", () => {
+        toggleVisibility();
+        calculateScrollProgress();
+      });
     };
   }, []);
 

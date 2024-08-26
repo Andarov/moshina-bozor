@@ -30,6 +30,15 @@
   form button[type="submit"] {
     @apply w-full bg-teal-500 px-3.5 py-[11px] rounded-md text-white transition-colors hover:bg-teal-600 active:bg-teal-400;
   }
+
+  /* headings */
+  h1 {
+    @apply text-3xl font-bold md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl font-bold sm:text-[28px] sm:leading-9;
+  }
 }
 
 @layer components {
@@ -103,6 +112,7 @@ button[aria-expanded="true"] + label {
   font-size: 14px;
 }
 
+/* slick slider */
 .slider {
   display: flex !important;
   flex-direction: row;
@@ -118,7 +128,8 @@ button[aria-expanded="true"] + label {
 }
 
 .slick-dots.slick-thumb {
-  display: flex;
+  top: auto !important;
+  bottom: -36px !important;
 }
 
 .slick-thumb li {
