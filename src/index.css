@@ -24,7 +24,11 @@
   input,
   textarea,
   select {
-    @apply w-full px-4 py-2.5 rounded-md border border-111/25 outline-teal-500 transition-colors hover:bg-gray-50 focus:bg-gray-50;
+    @apply w-full px-4 py-2.5 rounded-md border border-111/25 outline-teal-500 transition-colors placeholder:!text-111/30 placeholder:!font-medium hover:bg-gray-50 focus:bg-gray-50;
+  }
+
+  label{
+    @apply font-medium;
   }
 
   form button[type="submit"] {
@@ -129,13 +133,14 @@ button[aria-expanded="true"] + label {
 
 .slick-dots.slick-thumb {
   top: auto !important;
+  height: 72px;
   bottom: -36px !important;
 }
 
 .slick-thumb li {
-  width: 100%;
-  max-width: 100px;
-  height: 65px;
+  width: 100% !important;
+  max-width: 100px !important;
+  height: 65px !important;
   object-fit: cover;
 }
 

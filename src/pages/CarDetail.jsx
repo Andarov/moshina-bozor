@@ -11,17 +11,22 @@ import Slider from "react-slick";
 import CTA from "../components/CTA";
 import Arrow from "../components/Arrow";
 import CarItem from "../components/CarItem";
+import LikeIcon from "../components/LikeIcon";
 import DottedLabel from "../components/DottedLabel";
+
+// redux
+import { useDispatch } from "react-redux";
+import { openModal } from "../store/slices/modalsSlice";
 
 // images
 import shareIcon from "../img/icon/share.svg";
 import moreIcon from "../img/icon/more-circle.svg";
 import chatIcon from "../img/icon/chat-round-line.svg";
 import warningIcon from "../img/icon/warning-circle.svg";
-import LikeIcon from "../components/LikeIcon";
 
 const CarDetail = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
   const [isLiked, setIsLiked] = useState(false);
   const carItem = cars.find((car) => car.id === id);
   const selectedCarMarkaArray = cars.filter(
@@ -81,6 +86,10 @@ const CarDetail = () => {
     },
   };
 
+  const openCarComplaintModal = () => {
+    dispatch(openModal("carComplaintModal"));
+  };
+
   return (
     <>
       {/* car item */}
@@ -127,6 +136,7 @@ const CarDetail = () => {
                 <button
                   title="Shikoyat qilish"
                   aria-label="complaining"
+                  onClick={openCarComplaintModal}
                   className="bg-main/5 rounded-full p-2 transition-colors hover:bg-main/10 sm:p-2.5"
                 >
                   <img
