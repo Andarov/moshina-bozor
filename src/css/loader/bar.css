@@ -1,0 +1,45 @@
+:root {
+  --bar-color: #111111;
+}
+
+.white-bar {
+  --bar-color: #ffffff;
+}
+
+.green-bar {
+  --bar-color: #009688;
+}
+
+.red-bar {
+  --bar-color: #e70a32;
+}
+
+.bar-loader {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  --c: no-repeat
+    linear-gradient(
+      var(--bar-color) calc(50% - 10px),
+      #1110 0 calc(50% + 10px),
+      var(--bar-color) 0
+    );
+  background: var(--c) 0% 100%, var(--c) 50% 100%, var(--c) 100% 100%;
+  background-size: 20% calc(200% + 20px);
+  animation: bar-animation 1s infinite linear;
+}
+
+@keyframes bar-animation {
+  33% {
+    background-position: 0% 50%, 50% 100%, 100% 100%;
+  }
+  50% {
+    background-position: 0% 0%, 50% 50%, 100% 100%;
+  }
+  66% {
+    background-position: 0% 0%, 50% 0%, 100% 50%;
+  }
+  100% {
+    background-position: 0% 0%, 50% 0%, 100% 0%;
+  }
+}
