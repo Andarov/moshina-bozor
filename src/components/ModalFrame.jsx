@@ -86,9 +86,7 @@ const ModalFrame = ({
           )}
 
           {/* modal body */}
-          {children && (
-            <div className={"space-y-5 " + className}>{children}</div>
-          )}
+          {children && <div className={className}>{children}</div>}
         </div>
       </div>
     </div>
