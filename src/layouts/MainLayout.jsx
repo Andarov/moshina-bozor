@@ -1,6 +1,12 @@
 import React, { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
+// toaster (notification)
+import { Toaster } from "react-hot-toast";
+
+// redux
+import { useSelector } from "react-redux";
+
 // components
 import Top from "../components/Top";
 import Hero from "../components/Hero";
@@ -9,9 +15,6 @@ import Footer from "../components/Footer";
 import Breadcrumbs from "../components/Breadcrumbs";
 import ScrollToTop from "../components/ScrollToTop";
 import CarComplaintModal from "../components/CarComplaintModal";
-
-// redux
-import { useSelector } from "react-redux";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -54,6 +57,9 @@ const MainLayout = () => {
 
       {/* scroll to top btn */}
       <ScrollToTop />
+
+      {/* toaster notification container */}
+      <Toaster />
     </div>
   );
 };
