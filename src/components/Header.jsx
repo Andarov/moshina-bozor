@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 
 // components
 import Dropdown from "./Dropdown";
+import LikeIcon from "./LikeIcon";
 import HeaderMenu from "./HeaderMenu";
 
 // images
@@ -178,7 +179,7 @@ const Header = () => {
               aria-label="favorites"
               className="relative p-1.5"
             >
-              <svg
+              {/* <svg
                 width="24"
                 height="24"
                 fill="none"
@@ -190,7 +191,8 @@ const Header = () => {
                   stroke="#111111"
                   d="M13.2261 6.99763L14.2996 7.91784C14.3548 7.96512 14.4362 7.96512 14.4914 7.91784L15.5649 6.99763C18.5678 4.42372 23.1789 5.26951 25.0728 8.74164C26.4382 11.2449 25.9265 14.356 23.8312 16.2901L14.6961 24.7225C14.5264 24.8792 14.2647 24.8792 14.0949 24.7225L4.95978 16.2901C2.86453 14.356 2.35283 11.2449 3.71825 8.74164C5.61214 5.26951 10.2232 4.42372 13.2261 6.99763Z"
                 />
-              </svg>
+              </svg> */}
+              <LikeIcon size={24} strokeWidth={1.7} />
 
               {/* circle shape */}
               <span className="absolute size-3 bg-main top-1.5 right-0.5 rounded-full border-2 border-white"></span>

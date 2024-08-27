@@ -2,10 +2,10 @@ import React from "react";
 
 const LikeIcon = ({
   size = 24,
-  isLiked = true,
   className = "",
-  strokeWidth = 2,
+  isLiked = false,
   fill = "#111111",
+  strokeWidth = 1.5,
 }) => {
   const red = "#E70A32";
   return (
