@@ -12,6 +12,7 @@ import Top from "../components/Top";
 import Hero from "../components/Hero";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ShareModal from "../components/ShareModal";
 import Breadcrumbs from "../components/Breadcrumbs";
 import ScrollToTop from "../components/ScrollToTop";
 import CarComplaintModal from "../components/CarComplaintModal";
@@ -31,6 +32,7 @@ const MainLayout = () => {
   return (
     <div className="flex flex-col w-full min-h-screen">
       {/* modals */}
+      {modals.shareModal.isOpen && <ShareModal />}
       {modals.carComplaintModal.isOpen && <CarComplaintModal />}
 
       {/* header */}

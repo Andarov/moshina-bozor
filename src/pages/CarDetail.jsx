@@ -86,8 +86,13 @@ const CarDetail = () => {
     },
   };
 
+  // open modal
   const openCarComplaintModal = () => {
     dispatch(openModal("carComplaintModal"));
+  };
+
+  const openShareModal = () => {
+    dispatch(openModal("shareModal"));
   };
 
   return (
@@ -120,6 +125,7 @@ const CarDetail = () => {
                 {/* share */}
                 <button
                   title="Ulashish"
+                  onClick={openShareModal}
                   aria-label="share this car"
                   className="bg-gray-50 rounded-full p-2 transition-colors hover:bg-gray-200/70 sm:p-2.5"
                 >
