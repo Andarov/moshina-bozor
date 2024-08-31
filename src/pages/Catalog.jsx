@@ -1,9 +1,13 @@
 import React, { useRef, useState, useEffect } from "react";
-import { cars } from "../data";
-import CarItem from "../components/CarItem";
 import { Link, useParams } from "react-router-dom";
+
+// data
+import { cars } from "../data";
+
+// components
 import Filter from "../components/Filter";
-import Pagination from "../components/Pagination";
+import CarItem from "../components/CarItem";
+import DynamicPagination from "../components/DynamicPagination";
 
 const Catalog = () => {
   const { model, marka } = useParams();
@@ -28,11 +32,7 @@ const Catalog = () => {
     scrollToTop();
   }, [currentPage]);
 
-  const handlePageChange = (pageNumber) => {
-    if (pageNumber >= 1 && pageNumber <= totalPages) {
-      setCurrentPage(pageNumber);
-    }
-  };
+  const handlePageChange = (page) => setCurrentPage(page);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -68,7 +68,7 @@ const Catalog = () => {
           </ul>
         )}
 
-        <Filter markaArray={filteredCars} setFilteredCars={setFilteredCars}/>
+        <Filter markaArray={filteredCars} setFilteredCars={setFilteredCars} />
 
         <ul className="grid grid-cols-1 gap-7 md:gap-y-10 md:grid-cols-2 lg:grid-cols-3">
           {filteredCars.slice(startIndex, endIndex).map((car) => (
@@ -76,10 +76,12 @@ const Catalog = () => {
           ))}
         </ul>
 
-        <Pagination
-          currentPage={currentPage}
+        {/* pagination */}
+        <DynamicPagination
+          defaultPage={1}
+          className="mt-8"
           totalPages={totalPages}
-          handlePageChange={handlePageChange}
+          onChange={handlePageChange}
         />
       </div>
     </div>
