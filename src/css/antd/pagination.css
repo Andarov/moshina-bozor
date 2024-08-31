@@ -1,0 +1,15 @@
+:root {
+  --main-color: #009688 ;
+}
+
+.ant-pagination-item-active {
+  border-color: var(--main-color) !important;
+}
+
+.ant-pagination-item-active a {
+  color: var(--main-color) !important;
+}
+
+:is(.anticon-double-right, .anticon-double-left) svg {
+  fill: var(--main-color);
+}
