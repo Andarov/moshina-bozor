@@ -23,6 +23,7 @@ import AddCar from "./pages/AddCar";
 import Contact from "./pages/Contact";
 import Catalog from "./pages/Catalog";
 import Comments from "./pages/Comments";
+import Favorites from "./pages/Favorites";
 import CarDetail from "./pages/CarDetail";
 import NewsDetail from "./pages/NewsDetail";
 import AddComment from "./pages/AddComment";
@@ -70,6 +71,9 @@ const App = () => {
           <Route index path="signup" element={<SignUp />} />
           <Route path="signin" element={<SignIn />} />
         </Route>
+
+        {/* favorites */}
+        <Route path="favorites" element={<Favorites />} />
       </Route>
     )
   );
