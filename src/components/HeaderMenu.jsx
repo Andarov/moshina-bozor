@@ -16,21 +16,21 @@ import telegramMulticolorIcon from "../img/icon/telegram-multicolor.svg";
 
 const HeaderMenu = ({ isOpen = false }) => {
   const contentRef = useRef(null);
-  const [topPosition, setTopPosition] = useState(0);
+  const [contentHeight, setContentHeight] = useState(0);
 
   useEffect(() => {
     if (contentRef.current) {
-      setTopPosition(contentRef.current.getBoundingClientRect().top);
+      setContentHeight(contentRef.current.scrollHeight);
     }
-  }, []);
+  }, [contentRef.current]);
 
   return (
     <div
       ref={contentRef}
-      className="overflow-hidden max-h-lg transition-[height] duration-300"
-      style={{ height: isOpen ? `calc(100vh - ${topPosition}px)` : "0px" }}
+      style={{ height: isOpen ? contentHeight + "px" : "0px" }}
+      className="max-h-lg overflow-hidden transition-[height] duration-300"
     >
-      <div className="h-full overflow-y-scroll">
+      <div className="h-full">
         <div className="container pt-10 pb-12 sm:pt-12 sm:pb-16">
           <ul className="grid grid-cols-1 gap-y-8 gap-x-5 md:grid-cols-2">
             {/* company */}
@@ -150,7 +150,10 @@ const HeaderMenu = ({ isOpen = false }) => {
 
                   {/* item */}
                   <li className="py-4 rounded-xl transition-[background-color,padding] duration-300 hover:bg-gray-50 hover:px-4">
-                    <NavLink to="/elon/sharx" className="flex items-start gap-4">
+                    <NavLink
+                      to="/elon/sharx"
+                      className="flex items-start gap-4"
+                    >
                       {/* item icon */}
                       <div className="shrink-0 bg-white border border-111/15 p-2 rounded-lg">
                         <img
