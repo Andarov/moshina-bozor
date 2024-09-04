@@ -1,9 +1,20 @@
 import React from "react";
 
-const Checkbox = ({ name = "", id = "", className = "" }) => {
+const Checkbox = ({
+  id = "",
+  name = "",
+  className = "",
+  onChecked = () => false,
+}) => {
   return (
     <>
-      <input id={id} name={name} type="checkbox" className="checkbox" />
+      <input
+        id={id}
+        name={name}
+        type="checkbox"
+        className="checkbox"
+        onChange={(e) => onChecked(e.target.checked)}
+      />
       <div role="checkbox" className={"virtual-checkbox " + className}>
         <svg
           width="16"

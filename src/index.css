@@ -56,7 +56,7 @@
   }
 
   .virtual-checkbox {
-    @apply flex items-center justify-center size-[22px] border-2 border-teal-400 rounded-md transition-colors duration-500;
+    @apply flex items-center justify-center size-[22px] border-2 border-teal-400 rounded-md transition-colors duration-300;
   }
 
   .virtual-checkbox-icon {
