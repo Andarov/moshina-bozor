@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Outlet,
   Route,
   RouterProvider,
   createBrowserRouter,
@@ -9,7 +10,6 @@ import {
 // Layouts
 import MainLayout from "./layouts/MainLayout";
 import NewsLayout from "./layouts/NewsLayout";
-import FormLayout from "./layouts/FormLayout";
 import AuthLayout from "./layouts/AuthLayout";
 import CatalogLayout from "./layouts/CatalogLayout";
 
@@ -55,7 +55,7 @@ const App = () => {
         </Route>
 
         {/* elon */}
-        <Route path="elon" element={<FormLayout />}>
+        <Route path="elon" element={<Outlet />}>
           <Route index element={<AddCar />} />
           <Route path="sharx" element={<AddComment />} />
         </Route>
