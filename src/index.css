@@ -27,7 +27,7 @@
     @apply w-full px-4 py-2.5 rounded-md border border-111/25 outline-teal-500 transition-colors placeholder:!text-111/30 placeholder:!font-medium hover:bg-gray-50 focus:bg-gray-50;
   }
 
-  label{
+  label {
     @apply font-medium;
   }
 
@@ -49,6 +49,10 @@
   .divider {
     @apply w-full bg-111/15;
     height: 1px;
+  }
+
+  .height-auto {
+    height: calc-size(auto);
   }
 
   /* hamburger btn */

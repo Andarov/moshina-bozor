@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Outlet,
   Route,
   RouterProvider,
   createBrowserRouter,
@@ -9,7 +10,6 @@ import {
 // Layouts
 import MainLayout from "./layouts/MainLayout";
 import NewsLayout from "./layouts/NewsLayout";
-import FormLayout from "./layouts/FormLayout";
 import AuthLayout from "./layouts/AuthLayout";
 import CatalogLayout from "./layouts/CatalogLayout";
 
@@ -23,6 +23,7 @@ import AddCar from "./pages/AddCar";
 import Contact from "./pages/Contact";
 import Catalog from "./pages/Catalog";
 import Comments from "./pages/Comments";
+import Favorites from "./pages/Favorites";
 import CarDetail from "./pages/CarDetail";
 import NewsDetail from "./pages/NewsDetail";
 import AddComment from "./pages/AddComment";
@@ -54,7 +55,7 @@ const App = () => {
         </Route>
 
         {/* elon */}
-        <Route path="elon" element={<FormLayout />}>
+        <Route path="elon" element={<Outlet />}>
           <Route index element={<AddCar />} />
           <Route path="sharx" element={<AddComment />} />
         </Route>
@@ -70,6 +71,9 @@ const App = () => {
           <Route index path="signup" element={<SignUp />} />
           <Route path="signin" element={<SignIn />} />
         </Route>
+
+        {/* favorites */}
+        <Route path="favorites" element={<Favorites />} />
       </Route>
     )
   );
