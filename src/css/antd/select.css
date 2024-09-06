@@ -1,0 +1,61 @@
+.ant-select *,
+.ant-select-selection-item,
+.ant-select-item-option-content {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.ant-select {
+  height: 46px !important;
+}
+
+.ant-select-selector,
+.ant-select-selection-search,
+.ant-select-selection-search input {
+  height: 100% !important;
+  transition: none !important;
+}
+
+.ant-select-selector {
+  border: 1px solid rgb(17 17 17 / 0.25) !important;
+}
+
+.ant-select-open .ant-select-selector,
+.ant-select-focused .ant-select-selector {
+  border: 2px solid #009688 !important;
+  box-shadow: 0px 0px 0px #009688 !important;
+}
+
+.ant-select-item-option-active,
+.ant-select-item-option-selected {
+  background: rgba(224, 225, 231, 0.3) !important;
+}
+
+.ant-select-selection-item,
+.ant-select-item-option-content {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  color: #111 !important;
+}
+
+.ant-select-selection-item {
+  height: 24px !important;
+  padding-right: 24px !important;
+  padding-left: 5px !important;
+}
+
+.ant-select-arrow {
+  top: 21px !important;
+  right: 12px !important;
+}
+
+.ant-select-arrow,
+.ant-select-arrow * {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.ant-select-item-option-disabled {
+  opacity: 0.3 !important;
+}
+ 
