@@ -1,14 +1,19 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+
+// data
 import { carCommentsWithImage } from "../data";
+
+// components
+import ProgressBar from "../components/ProgressBar";
+import Breadcrumbs from "../components/Breadcrumbs";
 import CarCommentItem from "../components/CarCommentItem";
-import ProgressBar from "../components/ProgressBar"; // Import the custom ProgressBar
-import { Link } from 'react-router-dom';
 
 const calculateProgress = (comments) => {
   const total = comments.length;
   const ratings = [1, 2, 3, 4, 5].map(
-    (rate) => (comments.filter((comment) => comment.rate === rate).length / total) * 100
+    (rate) =>
+      (comments.filter((comment) => comment.rate === rate).length / total) * 100
   );
   return ratings;
 };
@@ -16,12 +21,16 @@ const calculateProgress = (comments) => {
 const CarComment = () => {
   const { model, marka } = useParams();
   const comments = carCommentsWithImage.filter(
-    (comment) => comment.model.toLowerCase() === model.toLowerCase() && comment.marka.toLowerCase() === marka.toLowerCase()
+    (comment) =>
+      comment.model.toLowerCase() === model.toLowerCase() &&
+      comment.marka.toLowerCase() === marka.toLowerCase()
   );
 
   const ratings = calculateProgress(comments);
   const totalComments = comments.length;
-  const averageRate = (comments.reduce((acc, comment) => acc + comment.rate, 0) / totalComments).toFixed(1);
+  const averageRate = (
+    comments.reduce((acc, comment) => acc + comment.rate, 0) / totalComments
+  ).toFixed(1);
 
   const getStarColor = (rate) => {
     if (rate <= 2) return "text-red-500";
@@ -32,7 +41,7 @@ const CarComment = () => {
   };
 
   const renderStars = (rate) => {
-    const totalStars = 5; 
+    const totalStars = 5;
     const stars = [];
     const starColor = getStarColor(rate);
     for (let i = 0; i < totalStars; i++) {
@@ -67,52 +76,75 @@ const CarComment = () => {
     return stars;
   };
 
-  const image = comments.length > 0 ? comments[0].image : 'https://example.com/images/default-car.jpg';
+  const image =
+    comments.length > 0
+      ? comments[0].image
+      : "https://example.com/images/default-car.jpg";
 
   return (
-    <div className="py-14 bg-gray-300">
-      <div className="w-full max-w-base mx-auto px-5">
-        <div className="grid grid-cols-3 gap-5 items-start">
-          {/* comments */}
-          <div className="col-span-2">
-            <img className="w-full h-52 object-cover rounded-md" src={image} alt={`${model} ${marka}`} />
-            <div className="relative bg-white p-5 rounded-md shadow-md mb-4">
-              <Link to="/elon/sharx" className="absolute right-5 bg-blue-400 px-5 py-2 rounded-md !text-white font-medium">Sharx qoldirish</Link>
-              <h2 className="text-xl font-semibold mb-2">
-                {model} {marka} haqida sharhlar
-              </h2>
-              <div className="mb-4">
-                <p>Jami sharhlar: {totalComments}</p>
-                <p>O'rtacha reyting: {averageRate}</p>
-              </div>
-              <div className="mb-4">
-                {ratings.map((rating, index) => (
-                  <div className="flex items-center space-x-4 " key={index}>
-                    <div className="flex">{renderStars(index + 1)}</div>
+    <>
+      {/* breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { name: "Reyting", href: "rating" },
+          { name: model + " " + marka },
+        ]}
+      />
 
-                    <ProgressBar
-                      key={index}
-                      value={rating}
-                      label={`${rating.toFixed(2)}%`}
-                    />
-                  </div>
-                ))}
+      {/* page */}
+      <div className="pt-12 pb-20 bg-gray-100">
+        <div className="w-full max-w-base mx-auto px-5">
+          <div className="grid grid-cols-3 gap-5 items-start">
+            {/* comments */}
+            <div className="col-span-2">
+              <img
+                className="w-full h-52 object-cover rounded-md"
+                src={image}
+                alt={`${model} ${marka}`}
+              />
+              <div className="relative bg-white p-5 rounded-md shadow-md mb-4">
+                <Link
+                  to="/elon/sharx"
+                  className="absolute right-5 bg-blue-400 px-5 py-2 rounded-md !text-white font-medium"
+                >
+                  Sharx qoldirish
+                </Link>
+                <h2 className="text-xl font-semibold mb-2">
+                  {model} {marka} haqida sharhlar
+                </h2>
+                <div className="mb-4">
+                  <p>Jami sharhlar: {totalComments}</p>
+                  <p>O'rtacha reyting: {averageRate}</p>
+                </div>
+                <div className="mb-4">
+                  {ratings.map((rating, index) => (
+                    <div className="flex items-center space-x-4 " key={index}>
+                      <div className="flex">{renderStars(index + 1)}</div>
+
+                      <ProgressBar
+                        key={index}
+                        value={rating}
+                        label={`${rating.toFixed(2)}%`}
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
+              <ul className="flex flex-col space-y-5">
+                {comments.map((comment) => (
+                  <CarCommentItem key={comment.id} {...comment} />
+                ))}
+              </ul>
             </div>
-            <ul className="flex flex-col space-y-5">
-              {comments.map((comment) => (
-                <CarCommentItem key={comment.id} {...comment} />
-              ))}
-            </ul>
-          </div>
-              
-          {/* Reklama */}
-          <div className="p-5 bg-white rounded-lg">
-            <h2>Reklama uchun joy</h2>
+
+            {/* Reklama */}
+            <div className="p-5 bg-white rounded-lg">
+              <h2>Reklama uchun joy</h2>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

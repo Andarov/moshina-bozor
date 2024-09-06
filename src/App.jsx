@@ -9,9 +9,7 @@ import {
 
 // Layouts
 import MainLayout from "./layouts/MainLayout";
-import NewsLayout from "./layouts/NewsLayout";
 import AuthLayout from "./layouts/AuthLayout";
-import CatalogLayout from "./layouts/CatalogLayout";
 
 // Pages
 import Ad from "./pages/Ad";
@@ -37,7 +35,7 @@ const App = () => {
         <Route index element={<Home />} />
 
         {/* catalog */}
-        <Route path="catalog" element={<CatalogLayout />}>
+        <Route path="catalog" element={<Outlet />}>
           <Route index element={<Catalog />} />
           <Route path=":model" element={<Catalog />} />
           <Route path=":model/:marka" element={<Catalog />} />
@@ -49,7 +47,7 @@ const App = () => {
         <Route path="rating/:model/:marka" element={<CarComments />} />
 
         {/* news */}
-        <Route path="news" element={<NewsLayout />}>
+        <Route path="news" element={<Outlet />}>
           <Route index element={<News />} />
           <Route path=":title" element={<NewsDetail />} />
         </Route>

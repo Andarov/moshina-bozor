@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { carModels, carBrands } from "../data";
+
+// components
 import Checkbox from "../components/Checkbox";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const AddComment = () => {
   const [formData, setFormData] = useState({
@@ -40,102 +42,108 @@ const AddComment = () => {
   };
 
   return (
-    <div className="pb-20">
-      <div className="container space-y-8">
-        {/* page title */}
-        <h1>Mashina haqida sharx qoldirish</h1>
+    <>
+      {/* breadcrumbs */}
+      <Breadcrumbs items={[{ name: "Mashina haqida sharx qoldirish" }]} />
 
-        {/* divider (line) */}
-        <div className="divider" />
+      {/* page */}
+      <div className="pb-20">
+        <div className="container space-y-8">
+          {/* page title */}
+          <h1>Mashina haqida sharx qoldirish</h1>
 
-        {/* form */}
-        <form
-          className="grid grid-cols-1 gap-5 md:grid-cols-2"
-          onSubmit={handleSubmit}
-        >
-          {/* name */}
-          <div className="space-y-3">
-            <label htmlFor="name" className="font-medium">
-              Ism*
-            </label>
+          {/* divider (line) */}
+          <div className="divider" />
 
-            {/* input */}
-            <input id="name" type="text" name="name" placeholder="Bektur" />
-          </div>
+          {/* form */}
+          <form
+            className="grid grid-cols-1 gap-5 md:grid-cols-2"
+            onSubmit={handleSubmit}
+          >
+            {/* name */}
+            <div className="space-y-3">
+              <label htmlFor="name" className="font-medium">
+                Ism*
+              </label>
 
-          {/* type */}
-          <div className="space-y-3">
-            <label htmlFor="car-type" className="font-medium">
-              Mashina modeli*
-            </label>
+              {/* input */}
+              <input id="name" type="text" name="name" placeholder="Bektur" />
+            </div>
 
-            {/* input */}
-            <input
-              type="text"
-              id="car-type"
-              name="car type"
-              placeholder="Chevrolet"
-            />
-          </div>
+            {/* type */}
+            <div className="space-y-3">
+              <label htmlFor="car-type" className="font-medium">
+                Mashina modeli*
+              </label>
 
-          {/* marka */}
-          <div className="space-y-3">
-            <label htmlFor="car-marka" className="font-medium">
-              Mashina markasi*
-            </label>
+              {/* input */}
+              <input
+                type="text"
+                id="car-type"
+                name="car type"
+                placeholder="Chevrolet"
+              />
+            </div>
 
-            {/* input */}
-            <input
-              type="text"
-              id="car-marka"
-              name="car marka"
-              placeholder="Damas"
-            />
-          </div>
+            {/* marka */}
+            <div className="space-y-3">
+              <label htmlFor="car-marka" className="font-medium">
+                Mashina markasi*
+              </label>
 
-          {/* rating */}
-          <div className="space-y-3">
-            <label htmlFor="rate" className="font-medium">
-              Baholash*
-            </label>
+              {/* input */}
+              <input
+                type="text"
+                id="car-marka"
+                name="car marka"
+                placeholder="Damas"
+              />
+            </div>
 
-            {/* input */}
-            <input id="rate" type="text" name="rate" placeholder="A'lo" />
-          </div>
+            {/* rating */}
+            <div className="space-y-3">
+              <label htmlFor="rate" className="font-medium">
+                Baholash*
+              </label>
 
-          {/* comment */}
-          <div className="space-y-3 lg:col-span-2">
-            <label htmlFor="comment" className="font-medium">
-              Sharx*
-            </label>
+              {/* input */}
+              <input id="rate" type="text" name="rate" placeholder="A'lo" />
+            </div>
 
-            {/* input */}
-            <textarea
-              id="comment"
-              name="comment"
-              className="min-h-40"
-              placeholder="Mashinaga gap yo'q..."
-            ></textarea>
-          </div>
+            {/* comment */}
+            <div className="space-y-3 lg:col-span-2">
+              <label htmlFor="comment" className="font-medium">
+                Sharx*
+              </label>
 
-          <div className="space-y-5">
-            {/* checkbox */}
-            <label className="flex items-center gap-2.5">
+              {/* input */}
+              <textarea
+                id="comment"
+                name="comment"
+                className="min-h-40"
+                placeholder="Mashinaga gap yo'q..."
+              ></textarea>
+            </div>
+
+            <div className="space-y-5">
               {/* checkbox */}
-              <Checkbox />
+              <label className="flex items-center gap-2.5">
+                {/* checkbox */}
+                <Checkbox />
 
-              {/* text */}
-              <span>Anonim yuborish</span>
-            </label>
+                {/* text */}
+                <span>Anonim yuborish</span>
+              </label>
 
-            {/* submit btn */}
-            <button type="submit" className="sm:max-w-80">
-              Yuborish
-            </button>
-          </div>
-        </form>
+              {/* submit btn */}
+              <button type="submit" className="sm:max-w-80">
+                Yuborish
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
