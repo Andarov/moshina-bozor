@@ -12,6 +12,7 @@ import CTA from "../components/CTA";
 import Arrow from "../components/Arrow";
 import CarItem from "../components/CarItem";
 import LikeIcon from "../components/LikeIcon";
+import Breadcrumbs from "../components/Breadcrumbs";
 import DottedLabel from "../components/DottedLabel";
 
 // redux
@@ -97,6 +98,14 @@ const CarDetail = () => {
 
   return (
     <>
+      {/* breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { name: "Mashinalar", href: "catalog" },
+          { name: carItem.model + " " + carItem.marka },
+        ]}
+      />
+
       {/* car item */}
       <div className="container lg:pb-8">
         {carItem ? (

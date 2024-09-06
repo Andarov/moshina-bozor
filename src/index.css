@@ -51,8 +51,24 @@
     height: 1px;
   }
 
-  .height-auto {
-    height: calc-size(auto);
+  .checkbox {
+    @apply hidden;
+  }
+
+  .virtual-checkbox {
+    @apply flex items-center justify-center size-[22px] border-2 border-teal-400 rounded-md transition-colors duration-300;
+  }
+
+  .virtual-checkbox-icon {
+    @apply size-[18px] transition-[transform,opacity] scale-[2] opacity-0;
+  }
+
+  .checkbox:checked ~ .virtual-checkbox .virtual-checkbox-icon {
+    @apply scale-100 opacity-100;
+  }
+
+  .checkbox:checked ~ .virtual-checkbox {
+    @apply bg-teal-400;
   }
 
   /* hamburger btn */

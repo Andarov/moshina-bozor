@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
+// components
+import LikeIcon from "./LikeIcon";
 
 const CarItem = ({
   id,
@@ -12,8 +15,11 @@ const CarItem = ({
   price,
   images,
 }) => {
+  const [isLiked, setIsLiked] = useState(false);
+
   return (
-    <li key={id}>
+    <li key={id} className="relative">
+      {/* item content */}
       <Link to={`/catalog/${model}/car/${id}`}>
         {/* car image */}
         <div className="relative w-full h-[260px] mb-3 overflow-hidden rounded-[18px]">
@@ -72,6 +78,20 @@ const CarItem = ({
           </div>
         </div>
       </Link>
+
+      {/* like btn */}
+      <button
+        aria-label="toggle like"
+        onClick={() => setIsLiked((state) => !state)}
+        className="absolute top-3.5 right-3.5 z-20 bg-gray-50/70 backdrop-blur-md rounded-full p-2 transition-colors hover:bg-gray-200 sm:p-2"
+        title={
+          isLiked
+            ? "Yoqtirilganlardan olib tashlash"
+            : "Yoqtirilganlarga qo'shish"
+        }
+      >
+        <LikeIcon isLiked={isLiked} strokeWidth={1.5} />
+      </button>
     </li>
   );
 };
