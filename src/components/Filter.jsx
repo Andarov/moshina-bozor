@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { cars } from "../data";
-import { Select } from "antd";
-import '../css/antd.css'
 
+// antd option
+import { Select } from "antd";
 const { Option } = Select;
 
-const Filter = ({ markaArray, setFilteredCars }) => {
+// data
+import { cars } from "../data";
+
+// components
+import CustomSelect from "./CustomSelect";
+
+const Filter = ({ setFilteredCars }) => {
   const [selectedModel, setSelectedModel] = useState("");
   const [selectedMarka, setSelectedMarka] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
@@ -46,36 +51,22 @@ const Filter = ({ markaArray, setFilteredCars }) => {
     updateFilteredCars();
   };
 
-  const getUniqueValues = (key) => {
-    if (!markaArray || markaArray.length === 0) {
-      return [];
-    }
-
-    return markaArray
-      .reduce((uniqueValues, car) => {
-        if (!uniqueValues.includes(car[key])) {
-          uniqueValues.push(car[key]);
-        }
-        return uniqueValues;
-      }, [])
-      .sort();
-  };
-
   const renderOptions = (key) => {
-    const filteredOptions = filterCars().map(car => car[key]);
+    const filteredOptions = filterCars().map((car) => car[key]);
     const uniqueValues = Array.from(new Set(filteredOptions));
-    
+
     return uniqueValues.map((value, index) => (
       <Option key={index} value={value}>
         {value}
       </Option>
     ));
   };
-  
+
   return (
     <form className="grid grid-cols-1 gap-5 pb-10 md:gap-7 sm:grid-cols-2 md:grid-cols-3">
-      <Select
-        size="large"
+      {/* model */}
+      <CustomSelect
+        items={false}
         defaultValue="Modelni tanlang"
         onChange={(value) => setSelectedModel(value)}
       >
@@ -83,9 +74,11 @@ const Filter = ({ markaArray, setFilteredCars }) => {
           Modelni tanlang
         </Option>
         {renderOptions("model")}
-      </Select>
-      <Select
-        size="large"
+      </CustomSelect>
+
+      {/* marka */}
+      <CustomSelect
+        items={false}
         defaultValue="Markani tanlang"
         onChange={(value) => setSelectedMarka(value)}
       >
@@ -93,9 +86,11 @@ const Filter = ({ markaArray, setFilteredCars }) => {
           Markani tanlang
         </Option>
         {renderOptions("marka")}
-      </Select>
-      <Select
-        size="large"
+      </CustomSelect>
+
+      {/* year */}
+      <CustomSelect
+        items={false}
         defaultValue="Yilni tanlang"
         onChange={(value) => setSelectedYear(value)}
       >
@@ -103,9 +98,11 @@ const Filter = ({ markaArray, setFilteredCars }) => {
           Yilni tanlang
         </Option>
         {renderOptions("year")}
-      </Select>
-      <Select
-        size="large"
+      </CustomSelect>
+
+      {/* place */}
+      <CustomSelect
+        items={false}
         defaultValue="Viloyatni tanlang"
         onChange={(value) => setSelectedPlace(value)}
       >
@@ -113,9 +110,11 @@ const Filter = ({ markaArray, setFilteredCars }) => {
           Viloyatni tanlang
         </Option>
         {renderOptions("place")}
-      </Select>
-      <Select
-        size="large"
+      </CustomSelect>
+
+      {/* color */}
+      <CustomSelect
+        items={false}
         defaultValue="Rangni tanlang"
         onChange={(value) => setSelectedColor(value)}
       >
@@ -123,10 +122,12 @@ const Filter = ({ markaArray, setFilteredCars }) => {
           Rangni tanlang
         </Option>
         {renderOptions("color")}
-      </Select>
+      </CustomSelect>
+
+      {/* filter button */}
       <button
         onClick={handleFilter}
-        className={"bg-main text-white font-semibold rounded-md py-2"}
+        className={"bg-main text-white font-medium rounded-md py-2"}
       >
         {filteredCarCount !== cars.length
           ? `${filteredCarCount} ta moshina`
